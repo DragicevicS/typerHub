@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 export default function App() {
   const text =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sagittis sem sem, in egestas lectus elementum nec. Vestibulum aliquet mauris nisi, quis consectetur magna pellentesque et. Etiam urna nunc, venenatis at vehicula sed, sagittis quis mi. Proin dolor enim, elementum et nulla vitae, cursus tempus leo. Vivamus sit amet urna nisl. Nunc id magna dignissim, convallis lacus nec, accumsan est. Proin nec diam ac arcu vulputate tincidunt quis sed orci.";
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sagittis sem sem, in egestas lectus elementum nec. Vestibulum aliquet mauris nisi, quis consectetur magna pellentesque et.";
   const numOfWords = text.split(" ").length;
   const [counter, setCounter] = useState(0);
   const [currentLetter, setCurrentLetter] = useState(text[0]);
