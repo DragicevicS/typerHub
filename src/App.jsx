@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import KeyboardLayout from "./components/KeyboardLayout";
 
 export default function App() {
   const text =
@@ -103,6 +104,7 @@ export default function App() {
           </button>
         </div>
       )}
+      <KeyboardLayout />
     </div>
   );
 }
