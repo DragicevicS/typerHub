@@ -12,15 +12,28 @@ export default function App() {
   const [accuracyCounter, setAccuracyCounter] = useState(0);
   const [startTime, setStartTime] = useState(null);
   const [endTime, setEndTime] = useState(null);
+  const [typo, setTypo] = useState(false);
 
   useEffect(() => {
+    const keyboardSound = new Audio("./src/assets/keyboard-sound.mp3");
+    const errorSound = new Audio("./src/assets/error-sound.mp3");
+
     function handleKeyInput(e) {
       if (e.key === "Shift") return;
 
       if (!startTime) setStartTime(Date.now());
 
-      if (e.key === currentLetter) handleCorrectInput(e.key);
-      else handleIncorrectInput(e.key);
+      if (e.key === currentLetter) {
+        keyboardSound.play();
+        handleCorrectInput(e.key);
+        setTypo(false);
+      }
+      if (e.key !== currentLetter && typo === false) {
+        errorSound.play();
+        handleIncorrectInput(e.key);
+        setTypo(true);
+      }
+      if (e.key !== currentLetter && typo === true) errorSound.play();
     }
 
     function handleCorrectInput() {
@@ -49,7 +62,7 @@ export default function App() {
     return () => {
       document.removeEventListener("keydown", handleKeyInput);
     };
-  }, [accuracyCounter, counter, correctLetter, currentLetter, startTime]);
+  }, [accuracyCounter, counter, correctLetter, currentLetter, startTime, typo]);
 
   let speed = null;
   if (startTime && endTime) {
