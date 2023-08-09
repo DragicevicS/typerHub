@@ -15,8 +15,8 @@ export default function App() {
   const [typo, setTypo] = useState(false);
 
   useEffect(() => {
-    const keyboardSound = new Audio("/src/assets/keyboard-sound.mp3");
-    const errorSound = new Audio("/src/assets/error-sound.mp3");
+    const keyboardSound = new Audio("/sounds/keyboard-sound.mp3");
+    const errorSound = new Audio("/sounds/error-sound.mp3");
 
     function handleKeyInput(e) {
       if (e.key === "Shift") return;
