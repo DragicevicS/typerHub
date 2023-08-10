@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import KeyboardLayout from "./components/KeyBoardLayout";
+import KeyboardLayout from "./components/KeyboardLayout";
 
 export default function App() {
   const text =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sagittis sem sem, in egestas lectus elementum nec. Vestibulum aliquet mauris nisi, quis consectetur magna pellentesque et.";
+    "Once upon a time in a quaint village, there lived a curious young boy named Max. Max loved exploring the nearby woods, where he discovered hidden treasures and secret pathways. One day, he stumbled upon a mysterious map with intriguing symbols and numbers. The map seemed to lead to a grand adventure. With a determined spirit, Max followed the map's directions...";
   const numOfWords = text.split(" ").length;
   const [counter, setCounter] = useState(0);
   const [currentLetter, setCurrentLetter] = useState(text[0]);
@@ -21,7 +21,6 @@ export default function App() {
     const checkCapsLock = (e) => {
       setCapsLock(e.getModifierState("CapsLock"));
     };
-    checkCapsLock(new KeyboardEvent("keydown"));
 
     document.addEventListener("keydown", checkCapsLock);
 
@@ -35,7 +34,6 @@ export default function App() {
     const errorSound = new Audio("/sounds/error-sound.mp3");
 
     function handleKeyInput(e) {
-      console.log(e.key);
       if (
         e.key.includes("Arrow") ||
         e.key.includes("Page") ||
@@ -113,7 +111,7 @@ export default function App() {
 
   return (
     <div className="flex flex-col h-full gap-2">
-      {capsLock && <h2>CapsLock is on!</h2>}
+      {capsLock && <h2 className="text-red-300">Warning: CapsLock is on!</h2>}
       <div>
         {text.split("").map((letter, index) => (
           <span
