@@ -388,9 +388,11 @@ export default function KeyboardLayout2({ currentLetter, pressedKey }) {
                   ? "flex-grow"
                   : "w-20"
               } flex justify-center items-center rounded-md p-2 border-2 ${
-                key.displayValue === currentLetter ? "border-green-500" : ""
+                key.normalPressValue === currentLetter ||
+                key.normalPressValue === pressedKey
+                  ? "border-green-500"
+                  : ""
               } ${
-                key.displayValue === pressedKey ||
                 key.shiftPressValue === pressedKey ||
                 key.normalPressValue === pressedKey
                   ? "bg-gray-500"

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import KeyboardLayout2 from "./components/KeyBoardLayout2";
+import KeyboardLayout from "./components/KeyBoardLayout";
 
 export default function App() {
   const text =
@@ -148,7 +148,7 @@ export default function App() {
           <hr className="w-full mt-1" />
         </div>
       )}
-      <KeyboardLayout2 currentLetter={currentLetter} pressedKey={pressedKey} />
+      <KeyboardLayout currentLetter={currentLetter} pressedKey={pressedKey} />
     </div>
   );
 }
