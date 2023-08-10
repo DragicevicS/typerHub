@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import KeyboardLayout from "./components/KeyboardLayout";
+import KeyboardLayout2 from "./components/KeyBoardLayout2";
 
 export default function App() {
   const text =
@@ -13,28 +13,68 @@ export default function App() {
   const [accuracyCounter, setAccuracyCounter] = useState(0);
   const [startTime, setStartTime] = useState(null);
   const [endTime, setEndTime] = useState(null);
+  const [pressedKey, setPressedKey] = useState(null);
   const [typo, setTypo] = useState(false);
+  const [capsLock, setCapsLock] = useState(null);
+
+  useEffect(() => {
+    const checkCapsLock = (e) => {
+      setCapsLock(e.getModifierState("CapsLock"));
+    };
+    checkCapsLock(new KeyboardEvent("keydown"));
+
+    document.addEventListener("keydown", checkCapsLock);
+
+    return () => {
+      document.removeEventListener("keydown", checkCapsLock);
+    };
+  }, []);
 
   useEffect(() => {
     const keyboardSound = new Audio("/sounds/keyboard-sound.mp3");
     const errorSound = new Audio("/sounds/error-sound.mp3");
 
     function handleKeyInput(e) {
-      if (e.key === "Shift") return;
+      console.log(e.key);
+      if (
+        e.key.includes("Arrow") ||
+        e.key.includes("Page") ||
+        (e.key.startsWith("F") && e.key.length === 2) ||
+        e.key === "Escape"
+      )
+        return;
 
-      if (!startTime) setStartTime(Date.now());
+      if (e.key !== "Shift" && e.key !== "CapsLock" && !startTime)
+        setStartTime(Date.now());
 
-      if (e.key === currentLetter) {
+      setPressedKey(e.key);
+
+      if (
+        e.key !== "Shift" &&
+        e.key !== "CapsLock" &&
+        e.key === currentLetter
+      ) {
         keyboardSound.play();
         handleCorrectInput(e.key);
         setTypo(false);
       }
-      if (e.key !== currentLetter && typo === false) {
+      if (
+        e.key !== "Shift" &&
+        e.key !== "CapsLock" &&
+        e.key !== currentLetter &&
+        typo === false
+      ) {
         errorSound.play();
         handleIncorrectInput(e.key);
         setTypo(true);
       }
-      if (e.key !== currentLetter && typo === true) errorSound.play();
+      if (
+        e.key !== "Shift" &&
+        e.key !== "CapsLock" &&
+        e.key !== currentLetter &&
+        typo === true
+      )
+        errorSound.play();
     }
 
     function handleCorrectInput() {
@@ -72,24 +112,27 @@ export default function App() {
   }
 
   return (
-    <div>
-      {text.split("").map((letter, index) => (
-        <span
-          className={`text-2xl mr-[1px] ${
-            correctLetter[index] === true
-              ? "bg-green-50 text-black rounded-sm"
-              : correctLetter[index] === false
-              ? "bg-red-100 text-black rounded-sm"
-              : ""
-          } ${index === counter ? "bg-gray-600 rounded-sm animate-pulse" : ""}
-          `}
-          key={index}
-        >
-          {letter}
-        </span>
-      ))}
+    <div className="flex flex-col h-full gap-2">
+      {capsLock && <h2>CapsLock is on!</h2>}
+      <div>
+        {text.split("").map((letter, index) => (
+          <span
+            className={`text-2xl mr-[1px] ${
+              correctLetter[index] === true
+                ? "bg-green-50 text-black rounded-sm"
+                : correctLetter[index] === false
+                ? "bg-red-100 text-black rounded-sm"
+                : ""
+            } ${index === counter ? "bg-gray-600 rounded-sm animate-pulse" : ""}
+            `}
+            key={index}
+          >
+            {letter}
+          </span>
+        ))}
+      </div>
       {counter >= text.length && (
-        <div className="flex flex-col justify-center items-center mt-4 gap-1">
+        <div className="flex flex-col justify-center items-center mt-4 gap-2">
           <hr className="w-full mt-2" />
           <p>
             Accuracy: {Math.round((accuracyCounter * 100) / text.length)}% (
@@ -102,9 +145,10 @@ export default function App() {
           >
             Restart
           </button>
+          <hr className="w-full mt-1" />
         </div>
       )}
-      <KeyboardLayout />
+      <KeyboardLayout2 currentLetter={currentLetter} pressedKey={pressedKey} />
     </div>
   );
 }
