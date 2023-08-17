@@ -13,7 +13,6 @@ export default function App() {
   const [accuracyCounter, setAccuracyCounter] = useState(0);
   const [startTime, setStartTime] = useState(null);
   const [endTime, setEndTime] = useState(null);
-  const [pressedKey, setPressedKey] = useState(null);
   const [typo, setTypo] = useState(false);
   const [capsLock, setCapsLock] = useState(null);
 
@@ -37,15 +36,13 @@ export default function App() {
       if (
         e.key.includes("Arrow") ||
         e.key.includes("Page") ||
-        (e.key.startsWith("F") && e.key.length === 2) ||
+        (e.key.startsWith("F") && e.key.length >= 2) ||
         e.key === "Escape"
       )
         return;
 
       if (e.key !== "Shift" && e.key !== "CapsLock" && !startTime)
         setStartTime(Date.now());
-
-      setPressedKey(e.key);
 
       if (
         e.key !== "Shift" &&
@@ -112,10 +109,10 @@ export default function App() {
   return (
     <div className="flex flex-col h-full gap-2">
       {capsLock && <h2 className="text-red-300">Warning: CapsLock is on!</h2>}
-      <div>
+      <div className="leading-loose">
         {text.split("").map((letter, index) => (
           <span
-            className={`text-2xl mr-[1px] ${
+            className={`text-3xl  ${
               correctLetter[index] === true
                 ? "bg-green-50 text-black rounded-sm"
                 : correctLetter[index] === false
@@ -146,7 +143,7 @@ export default function App() {
           <hr className="w-full mt-1" />
         </div>
       )}
-      <KeyboardLayout currentLetter={currentLetter} pressedKey={pressedKey} />
+      <KeyboardLayout currentLetter={currentLetter} />
     </div>
   );
 }
