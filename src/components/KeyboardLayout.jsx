@@ -432,7 +432,7 @@ const keyRows = [
   ],
 ];
 
-export default function KeyboardLayout({ currentLetter }) {
+const KeyboardLayout = ({ currentLetter }) => {
   return (
     <div className="flex flex-col gap-2 items-center p-2 mt-10 rounded-sm">
       {keyRows.map((row, rowIndex) => (
@@ -497,4 +497,6 @@ export default function KeyboardLayout({ currentLetter }) {
       </div>
     </div>
   );
-}
+};
+
+export default KeyboardLayout;

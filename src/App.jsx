@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import KeyboardLayout from "./components/KeyboardLayout";
 
-export default function App() {
+const App = () => {
   const text =
     "Once upon a time in a quaint village, there lived a curious young boy named Max. Max loved exploring the nearby woods, where he discovered hidden treasures and secret pathways. One day, he stumbled upon a mysterious map with intriguing symbols and numbers. The map seemed to lead to a grand adventure. With a determined spirit, Max followed the map's directions...";
   const numOfWords = text.split(" ").length;
@@ -146,4 +146,6 @@ export default function App() {
       <KeyboardLayout currentLetter={currentLetter} />
     </div>
   );
-}
+};
+
+export default App;
