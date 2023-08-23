@@ -7,3 +7,21 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+.floating {
+  animation-name: floating;
+  animation-duration: 4.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0%) rotate(-55deg);
+  }
+  50% {
+    transform: translateY(300%) rotate(360deg);
+  }
+  100% {
+    transform: translateY(0%) rotate(-55deg);
+  }
+}
