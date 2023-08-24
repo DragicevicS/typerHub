@@ -1,9 +1,14 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import FloatingLettersAnimation from "../components/FloatingLettersAnimation";
 import Footer from "../components/Footer";
+import TypingLessons from "../components/TypingLessons";
+import TypingPractice from "../components/TypingPractice";
+import TypingTests from "../components/TypingTests";
+import ProblemKeys from "../components/ProblemKeys";
+import useLocalStorage from "../components/useLocalStorage";
 
 const Home = () => {
+  const [homeTab, setHomeTab] = useState(0);
   return (
     <div className="flex flex-col w-full h-full">
       <header className="flex w-full h-36 items-center relative overflow-hidden bg-gray-900 cursor-default">
@@ -14,25 +19,53 @@ const Home = () => {
         <FloatingLettersAnimation />
       </header>
       <main className="flex flex-1 p-10 justify-center items-center">
-        <div className="flex justify-center items-center w-full h-full">
+        <div className="flex justify-center w-full h-full">
           <nav className="min-w-max">
             <ul className="flex flex-col gap-10 font-cursive cursor-pointer text-2xl">
-              <li className="hover-effect p-3 border-l-2 border-blue-500 rounded-l-full">
+              <li
+                className={`p-3 border-l-2 border-blue-500 rounded-l-full ${
+                  homeTab === 0 ? "bg-gray-900" : "bg-gray-800 hover-effect"
+                }`}
+                onClick={() => setHomeTab(0)}
+              >
                 Typing <span className="text-blue-500">Lessons</span>
               </li>
-              <li className="hover-effect p-3 border-l-2 border-blue-500 rounded-l-full">
+              <li
+                className={`p-3 border-l-2 border-blue-500 rounded-l-full ${
+                  homeTab === 1 ? "bg-gray-900" : "bg-gray-800 hover-effect"
+                }`}
+                onClick={() => setHomeTab(1)}
+              >
                 Typing <span className="text-blue-500">Practice</span>
               </li>
-              <li className="hover-effect p-3 border-l-2 border-blue-500 rounded-l-full">
+              <li
+                className={`p-3 border-l-2 border-blue-500 rounded-l-full ${
+                  homeTab === 2 ? "bg-gray-900" : "bg-gray-800 hover-effect"
+                }`}
+                onClick={() => setHomeTab(2)}
+              >
                 Typing <span className="text-blue-500">Tests</span>
               </li>
-              <li className="hover-effect p-3 border-l-2 border-blue-500 rounded-l-full">
+              <li
+                className={`p-3 border-l-2 border-blue-500 rounded-l-full ${
+                  homeTab === 3 ? "bg-gray-900" : "bg-gray-800 hover-effect"
+                }`}
+                onClick={() => setHomeTab(3)}
+              >
                 Problem <span className="text-blue-500">Keys</span>
               </li>
             </ul>
           </nav>
-          <div className="w-2/4 h-full">
-            <div className="w-full h-full bg-gray-900"></div>
+          <div className="flex flex-col items-center w-2/4 px-10 py-5 gap-2 bg-gray-900 h-fit">
+            {homeTab === 0 ? (
+              <TypingLessons />
+            ) : homeTab === 1 ? (
+              <TypingPractice />
+            ) : homeTab === 2 ? (
+              <TypingTests />
+            ) : homeTab === 3 ? (
+              <ProblemKeys />
+            ) : undefined}
           </div>
         </div>
       </main>
