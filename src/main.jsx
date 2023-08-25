@@ -4,6 +4,7 @@ import App from "./App.jsx";
 import "./index.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home.jsx";
+import Level from "./pages/Level.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -11,6 +12,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/app" element={<App />} />
+        <Route path="/level" element={<Level />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

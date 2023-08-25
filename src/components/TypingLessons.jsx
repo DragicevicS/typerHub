@@ -17,7 +17,7 @@ const TypingLessons = () => {
                 <span>Time: 00:00</span>
               </div>
             </div>
-            <Link to="#">
+            <Link to="/level">
               <button className="h-min px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:border-blue-500 hover:text-blue-500">
                 Start
               </button>
@@ -36,7 +36,7 @@ const TypingLessons = () => {
                 <span>Time: 00:00</span>
               </div>
             </div>
-            <Link to="#">
+            <Link to="/level">
               <button className="h-min px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:border-blue-500 hover:text-blue-500">
                 Start
               </button>
@@ -55,7 +55,7 @@ const TypingLessons = () => {
                 <span>Time: 00:00</span>
               </div>
             </div>
-            <Link to="#">
+            <Link to="/level">
               <button className="h-min px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:border-blue-500 hover:text-blue-500">
                 Start
               </button>
@@ -74,7 +74,7 @@ const TypingLessons = () => {
                 <span>Time: 00:00</span>
               </div>
             </div>
-            <Link to="#">
+            <Link to="/level">
               <button className="h-min px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:border-blue-500 hover:text-blue-500">
                 Start
               </button>
@@ -96,7 +96,7 @@ const TypingLessons = () => {
                 <span>Time: 00:00</span>
               </div>
             </div>
-            <Link to="#">
+            <Link to="/level">
               <button className="h-min px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:border-blue-500 hover:text-blue-500">
                 Start
               </button>
@@ -115,7 +115,7 @@ const TypingLessons = () => {
                 <span>Time: 00:00</span>
               </div>
             </div>
-            <Link to="#">
+            <Link to="/level">
               <button className="h-min px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:border-blue-500 hover:text-blue-500">
                 Start
               </button>
@@ -134,7 +134,7 @@ const TypingLessons = () => {
                 <span>Time: 00:00</span>
               </div>
             </div>
-            <Link to="#">
+            <Link to="/level">
               <button className="h-min px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:border-blue-500 hover:text-blue-500">
                 Start
               </button>
@@ -153,7 +153,7 @@ const TypingLessons = () => {
                 <span>Time: 00:00</span>
               </div>
             </div>
-            <Link to="#">
+            <Link to="/level">
               <button className="h-min px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:border-blue-500 hover:text-blue-500">
                 Start
               </button>
@@ -175,7 +175,7 @@ const TypingLessons = () => {
                 <span>Time: 00:00</span>
               </div>
             </div>
-            <Link to="#">
+            <Link to="/level">
               <button className="h-min px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:border-blue-500 hover:text-blue-500">
                 Start
               </button>
@@ -194,7 +194,7 @@ const TypingLessons = () => {
                 <span>Time: 00:00</span>
               </div>
             </div>
-            <Link to="#">
+            <Link to="/level">
               <button className="h-min px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:border-blue-500 hover:text-blue-500">
                 Start
               </button>
@@ -213,7 +213,7 @@ const TypingLessons = () => {
                 <span>Time: 00:00</span>
               </div>
             </div>
-            <Link to="#">
+            <Link to="/level">
               <button className="h-min px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:border-blue-500 hover:text-blue-500">
                 Start
               </button>
@@ -232,7 +232,7 @@ const TypingLessons = () => {
                 <span>Time: 00:00</span>
               </div>
             </div>
-            <Link to="#">
+            <Link to="/level">
               <button className="h-min px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:border-blue-500 hover:text-blue-500">
                 Start
               </button>

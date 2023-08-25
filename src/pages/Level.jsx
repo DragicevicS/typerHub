@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react";
-import KeyboardLayout from "./components/KeyboardLayout";
-import useLocalStorage from "./components/useLocalStorage";
+import { useState, useEffect } from "react";
+import useLocalStorage from "../components/useLocalStorage";
+import FloatingLettersAnimation from "../components/FloatingLettersAnimation";
+import KeyboardLayout from "../components/KeyboardLayout";
+import Footer from "../components/Footer";
 
-const App = () => {
+const Level = () => {
   const text =
     "Once upon a time in a quaint village, there lived a curious young boy named Max.";
   const numOfWords = text.split(" ").length;
@@ -101,52 +103,70 @@ const App = () => {
     };
   }, [accuracyCounter, counter, correctLetter, currentLetter, startTime, typo]);
 
-  const [speed, setSpeed] = useLocalStorage("speed", 0);
+  let speed = null;
   if (startTime && endTime) {
     const timeInMinutes = (endTime - startTime) / (1000 * 60);
-    setSpeed(Math.round(numOfWords / timeInMinutes));
+    speed = Math.round(numOfWords / timeInMinutes);
   }
 
   return (
-    <div className="flex flex-col h-full gap-2">
-      {capsLock && <h2 className="text-red-300">Warning: CapsLock is on!</h2>}
-      <div className="leading-loose">
-        {text.split("").map((letter, index) => (
-          <span
-            className={`text-3xl  ${
-              correctLetter[index] === true
-                ? "bg-green-50 text-black rounded-sm"
-                : correctLetter[index] === false
-                ? "bg-red-100 text-black rounded-sm"
-                : ""
-            } ${index === counter ? "bg-gray-600 rounded-sm animate-pulse" : ""}
+    <div className="flex flex-col w-full h-screen">
+      <header className="flex-shrink-0 p-5 relative overflow-hidden bg-gray-900 cursor-default">
+        <h1 className="text-7xl ml-8 font-cursive italic underline">
+          Typer
+          <span className="text-blue-500">Hub</span>
+        </h1>
+        <FloatingLettersAnimation />
+      </header>
+      <main className="flex h-full p-10 justify-center items-center">
+        <div className="flex flex-col h-full justify-evenly gap-2">
+          {capsLock && (
+            <h2 className="text-red-300">Warning: CapsLock is on!</h2>
+          )}
+          <div className="leading-loose">
+            {text.split("").map((letter, index) => (
+              <span
+                className={`text-3xl  ${
+                  correctLetter[index] === true
+                    ? "bg-green-50 text-black rounded-sm"
+                    : correctLetter[index] === false
+                    ? "bg-red-100 text-black rounded-sm"
+                    : ""
+                } ${
+                  index === counter
+                    ? "bg-gray-600 rounded-sm animate-pulse"
+                    : ""
+                }
             `}
-            key={index}
-          >
-            {letter}
-          </span>
-        ))}
-      </div>
-      {counter >= text.length && (
-        <div className="flex flex-col justify-center items-center mt-4 gap-2">
-          <hr className="w-full mt-2" />
-          <p>
-            Accuracy: {Math.round((accuracyCounter * 100) / text.length)}% (
-            {accuracyCounter}/{text.length} letters)
-          </p>
-          <p>Speed: {speed} WPM</p>
-          <button
-            onClick={() => location.reload()}
-            className="p-2 rounded-xl bg-slate-600 hover:bg-slate-50 hover:text-black cursor-pointer"
-          >
-            Restart
-          </button>
-          <hr className="w-full mt-1" />
+                key={index}
+              >
+                {letter}
+              </span>
+            ))}
+          </div>
+          {counter >= text.length && (
+            <div className="flex flex-col justify-center items-center mt-4 gap-2">
+              <hr className="w-full mt-2" />
+              <p>
+                Accuracy: {Math.round((accuracyCounter * 100) / text.length)}% (
+                {accuracyCounter}/{text.length} letters)
+              </p>
+              <p>Speed: {speed} WPM</p>
+              <button
+                onClick={() => location.reload()}
+                className="p-2 rounded-xl bg-slate-600 hover:bg-slate-50 hover:text-black cursor-pointer"
+              >
+                Restart
+              </button>
+              <hr className="w-full mt-1" />
+            </div>
+          )}
+          <KeyboardLayout currentLetter={currentLetter} />
         </div>
-      )}
-      <KeyboardLayout currentLetter={currentLetter} />
+      </main>
+      <Footer />
     </div>
   );
 };
 
-export default App;
+export default Level;

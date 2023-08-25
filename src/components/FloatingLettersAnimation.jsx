@@ -53,7 +53,7 @@ const FloatingLettersAnimation = () => {
       </span>
       <span
         className="floating absolute opacity-50"
-        style={{ animationDelay: "3.62s", top: "33%", left: "35%" }}
+        style={{ animationDelay: "2.12s", top: "33%", left: "35%" }}
       >
         {getRandomLetter()}
       </span>
@@ -101,7 +101,7 @@ const FloatingLettersAnimation = () => {
       </span>
       <span
         className="floating absolute opacity-50"
-        style={{ animationDelay: "2.8s", top: "50%", left: "75%" }}
+        style={{ animationDelay: "2.3s", top: "50%", left: "75%" }}
       >
         {getRandomLetter()}
       </span>
@@ -125,13 +125,13 @@ const FloatingLettersAnimation = () => {
       </span>
       <span
         className="floating absolute opacity-50"
-        style={{ animationDelay: "3.1s", top: "12%", left: "95%" }}
+        style={{ animationDelay: "1.1s", top: "12%", left: "95%" }}
       >
         {getRandomLetter()}
       </span>
       <span
         className="floating absolute opacity-50"
-        style={{ animationDelay: "2.1s", top: "55%", left: "99%" }}
+        style={{ animationDelay: "2s", top: "55%", left: "99%" }}
       >
         {getRandomLetter()}
       </span>

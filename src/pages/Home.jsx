@@ -10,15 +10,15 @@ import useLocalStorage from "../components/useLocalStorage";
 const Home = () => {
   const [homeTab, setHomeTab] = useState(0);
   return (
-    <div className="flex flex-col w-full h-full">
-      <header className="flex w-full h-36 items-center relative overflow-hidden bg-gray-900 cursor-default">
-        <h1 className="text-7xl p-4 ml-8 font-cursive italic underline">
+    <div className="flex flex-col w-full h-screen">
+      <header className="flex-shrink-0 p-5 relative overflow-hidden bg-gray-900 cursor-default">
+        <h1 className="text-7xl ml-8 font-cursive italic underline">
           Typer
           <span className="text-blue-500">Hub</span>
         </h1>
         <FloatingLettersAnimation />
       </header>
-      <main className="flex flex-1 p-10 justify-center items-center">
+      <main className="flex-grow p-10 overflow-y-auto">
         <div className="flex justify-center w-full h-full">
           <nav className="min-w-max">
             <ul className="flex flex-col gap-10 font-cursive cursor-pointer text-2xl">
@@ -56,7 +56,7 @@ const Home = () => {
               </li>
             </ul>
           </nav>
-          <div className="flex flex-col items-center w-2/4 px-10 py-5 gap-2 bg-gray-900 h-fit">
+          <div className="flex flex-col items-center w-2/4 px-10 py-5 gap-2 bg-gray-900 h-full overflow-y-scroll rounded-tr-lg rounded-br-lg rounded-bl-lg">
             {homeTab === 0 ? (
               <TypingLessons />
             ) : homeTab === 1 ? (
