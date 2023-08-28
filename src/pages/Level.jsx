@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 
 const Level = () => {
   const text =
-    "Once upon a time in a quaint village, there lived a curious young boy named Max.";
+    "fff fff fff jjj jjj jjj ff jj fj fj jf jf ffj jjf fjf jfj ffj jjf jfj ffj";
   const numOfWords = text.split(" ").length;
   const [counter, setCounter] = useState(0);
   const [currentLetter, setCurrentLetter] = useState(text[0]);
@@ -119,14 +119,14 @@ const Level = () => {
         <FloatingLettersAnimation />
       </header>
       <main className="flex h-full p-10 justify-center items-center">
-        <div className="flex flex-col h-full justify-evenly gap-2">
+        <div className="flex flex-col h-full w-3/4 justify-evenly gap-2">
           {capsLock && (
             <h2 className="text-red-300">Warning: CapsLock is on!</h2>
           )}
-          <div className="leading-loose">
+          <div className="leading-loose text-center">
             {text.split("").map((letter, index) => (
               <span
-                className={`text-3xl  ${
+                className={`text-3xl px-1 ${
                   correctLetter[index] === true
                     ? "bg-green-50 text-black rounded-sm"
                     : correctLetter[index] === false
