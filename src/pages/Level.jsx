@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import useLocalStorage from "../components/useLocalStorage";
+import { Link } from "react-router-dom";
 import FloatingLettersAnimation from "../components/FloatingLettersAnimation";
 import KeyboardLayout from "../components/KeyboardLayout";
 import Footer from "../components/Footer";
@@ -96,7 +96,8 @@ const Level = () => {
 
     if (counter >= text.length) setEndTime(Date.now());
 
-    document.addEventListener("keydown", handleKeyInput);
+    if (counter < text.length)
+      document.addEventListener("keydown", handleKeyInput);
 
     return () => {
       document.removeEventListener("keydown", handleKeyInput);
@@ -118,51 +119,84 @@ const Level = () => {
         </h1>
         <FloatingLettersAnimation />
       </header>
-      <main className="flex h-full p-10 justify-center items-center">
-        <div className="flex flex-col h-full w-3/4 justify-evenly gap-2">
-          {capsLock && (
-            <h2 className="text-red-300">Warning: CapsLock is on!</h2>
+      <main className="flex flex-col h-full justify-center items-center">
+        <div className="flex text-center items-center w-full px-6 py-1 bg-gray-700 ">
+          <Link to="/">
+            <img
+              src="../../images/arrow-left.svg"
+              alt="Home"
+              title="Return Home"
+              className="w-8 h-auto rounded-lg hover:bg-blue-100 ease-in-out duration-500"
+            />
+          </Link>
+          {capsLock ? (
+            <h2 className="w-full text-xl text-red-300 animate-bounce">
+              Warning: CapsLock is on!
+            </h2>
+          ) : (
+            <h2 className="w-full font-cursive text-xl text-blue-500">
+              Beginner - Middle Row
+            </h2>
           )}
-          <div className="leading-loose text-center">
-            {text.split("").map((letter, index) => (
-              <span
-                className={`text-3xl px-1 ${
-                  correctLetter[index] === true
-                    ? "bg-green-50 text-black rounded-sm"
-                    : correctLetter[index] === false
-                    ? "bg-red-100 text-black rounded-sm"
-                    : ""
-                } ${
-                  index === counter
-                    ? "bg-gray-600 rounded-sm animate-pulse"
-                    : ""
-                }
-            `}
-                key={index}
-              >
-                {letter}
-              </span>
-            ))}
+          <div className="flex justify-end gap-3">
+            <img
+              src="../../images/redo.svg"
+              alt="Redo"
+              title="Redo"
+              className="w-8 h-auto rounded-lg hover:bg-blue-100 cursor-pointer ease-in-out duration-500"
+              onClick={() => location.reload()}
+            />
+            <img
+              src="../../images/volume-on.svg"
+              alt="Home"
+              className="w-8 h-auto rounded-lg hover:bg-blue-100 cursor-pointer ease-in-out duration-500"
+            />
+            <img
+              src="../../images/keyboard-on.svg"
+              alt="Home"
+              className="w-8 h-auto rounded-lg hover:bg-blue-100 cursor-pointer ease-in-out duration-500"
+            />
           </div>
-          {counter >= text.length && (
-            <div className="flex flex-col justify-center items-center mt-4 gap-2">
-              <hr className="w-full mt-2" />
-              <p>
-                Accuracy: {Math.round((accuracyCounter * 100) / text.length)}% (
-                {accuracyCounter}/{text.length} letters)
-              </p>
-              <p>Speed: {speed} WPM</p>
-              <button
-                onClick={() => location.reload()}
-                className="p-2 rounded-xl bg-slate-600 hover:bg-slate-50 hover:text-black cursor-pointer"
-              >
-                Restart
-              </button>
-              <hr className="w-full mt-1" />
-            </div>
-          )}
-          <KeyboardLayout currentLetter={currentLetter} />
         </div>
+        {counter < text.length ? (
+          <div className="flex flex-col justify-evenly h-full w-3/5 gap-2 px-10">
+            <div className="leading-loose font-mono text-center">
+              {text.split("").map((letter, index) => (
+                <span
+                  className={`text-3xl px-[2px] ${
+                    correctLetter[index] === true
+                      ? "bg-green-100 text-black rounded-sm"
+                      : correctLetter[index] === false
+                      ? "bg-red-200 text-black rounded-sm"
+                      : ""
+                  } ${
+                    index === counter
+                      ? "bg-gray-600 rounded-sm animate-pulse"
+                      : ""
+                  }`}
+                  key={index}
+                >
+                  {letter}
+                </span>
+              ))}
+            </div>
+            <KeyboardLayout currentLetter={currentLetter} />
+          </div>
+        ) : (
+          <div className="flex flex-col h-full justify-center items-center gap-2">
+            <p>
+              Accuracy: {Math.round((accuracyCounter * 100) / text.length)}% (
+              {accuracyCounter}/{text.length} letters)
+            </p>
+            <p>Speed: {speed} WPM</p>
+            <button
+              onClick={() => location.reload()}
+              className="p-2 rounded-xl bg-slate-600 hover:bg-slate-50 hover:text-black cursor-pointer"
+            >
+              Restart
+            </button>
+          </div>
+        )}
       </main>
       <Footer />
     </div>

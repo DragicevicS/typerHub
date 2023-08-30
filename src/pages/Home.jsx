@@ -5,7 +5,6 @@ import TypingLessons from "../components/TypingLessons";
 import TypingPractice from "../components/TypingPractice";
 import TypingTests from "../components/TypingTests";
 import ProblemKeys from "../components/ProblemKeys";
-import useLocalStorage from "../components/useLocalStorage";
 
 const Home = () => {
   const [homeTab, setHomeTab] = useState(0);
