@@ -13,7 +13,7 @@ const Home = () => {
       <header className="flex-shrink-0 p-5 relative overflow-hidden bg-gray-900 cursor-default">
         <h1 className="text-7xl ml-8 font-cursive italic underline">
           Typer
-          <span className="text-blue-500">Hub</span>
+          <span className="ml-[-1px] text-blue-500">Hub</span>
         </h1>
         <FloatingLettersAnimation />
       </header>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import FloatingLettersAnimation from "../components/FloatingLettersAnimation";
 import KeyboardLayout from "../components/KeyboardLayout";
 import Footer from "../components/Footer";
@@ -18,6 +18,8 @@ const Level = () => {
   const [endTime, setEndTime] = useState(null);
   const [typo, setTypo] = useState(false);
   const [capsLock, setCapsLock] = useState(null);
+  const params = useParams();
+  const lesson = params.lesson.split("-");
 
   useEffect(() => {
     const checkCapsLock = (e) => {
@@ -113,10 +115,12 @@ const Level = () => {
   return (
     <div className="flex flex-col w-full h-screen">
       <header className="flex-shrink-0 p-5 relative overflow-hidden bg-gray-900 cursor-default">
-        <h1 className="text-7xl ml-8 font-cursive italic underline">
-          Typer
-          <span className="text-blue-500">Hub</span>
-        </h1>
+        <Link to="/">
+          <h1 className="text-7xl ml-8 font-cursive italic underline">
+            Typer
+            <span className="ml-[-1px] text-blue-500">Hub</span>
+          </h1>
+        </Link>
         <FloatingLettersAnimation />
       </header>
       <main className="flex flex-col h-full justify-center items-center">
@@ -130,13 +134,18 @@ const Level = () => {
             />
           </Link>
           {capsLock ? (
-            <h2 className="w-full text-xl text-red-300 animate-bounce">
+            <h2 className="w-full text-xl text-red-600 animate-bounce">
               Warning: CapsLock is on!
             </h2>
           ) : (
-            <h2 className="w-full font-cursive text-xl text-blue-500">
-              Beginner - Middle Row
-            </h2>
+            <div className="w-full font-cursive text-xl text-blue-500">
+              <span>{params.difficulty}</span> -{" "}
+              <span>
+                {lesson.length > 1
+                  ? `${lesson[0]} ${lesson[1]}`
+                  : `${params.lesson}`}
+              </span>
+            </div>
           )}
           <div className="flex justify-end gap-3">
             <img
@@ -193,7 +202,7 @@ const Level = () => {
               onClick={() => location.reload()}
               className="p-2 rounded-xl bg-slate-600 hover:bg-slate-50 hover:text-black cursor-pointer"
             >
-              Restart
+              Next
             </button>
           </div>
         )}
