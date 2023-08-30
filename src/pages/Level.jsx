@@ -5,8 +5,7 @@ import KeyboardLayout from "../components/KeyboardLayout";
 import Footer from "../components/Footer";
 
 const Level = () => {
-  const text =
-    "fff fff fff jjj jjj jjj ff jj fj fj jf jf ffj jjf fjf jfj ffj jjf jfj ffj";
+  const text = "fff fff fff jjj jjj jjj";
   const numOfWords = text.split(" ").length;
   const [counter, setCounter] = useState(0);
   const [currentLetter, setCurrentLetter] = useState(text[0]);
@@ -113,7 +112,7 @@ const Level = () => {
   }
 
   return (
-    <div className="flex flex-col w-full h-screen">
+    <div className="flex flex-col w-full h-full">
       <header className="flex-shrink-0 p-5 relative overflow-hidden bg-gray-900 cursor-default">
         <Link to="/">
           <h1 className="text-7xl ml-8 font-cursive italic underline">
@@ -123,7 +122,7 @@ const Level = () => {
         </Link>
         <FloatingLettersAnimation />
       </header>
-      <main className="flex flex-col h-full justify-center items-center">
+      <main className="flex-grow overflow-y-hidden">
         <div className="flex text-center items-center w-full px-6 py-1 bg-gray-700 ">
           <Link to="/">
             <img
@@ -168,8 +167,11 @@ const Level = () => {
           </div>
         </div>
         {counter < text.length ? (
-          <div className="flex flex-col justify-evenly h-full w-3/5 gap-2 px-10">
-            <div className="leading-loose font-mono text-center">
+          <div className="flex flex-col justify-evenly items-center w-full h-full py-2">
+            <div
+              id="text-box"
+              className="max-h-[35%] w-[55%] overflow-y-auto leading-loose font-mono text-center min-w-[575px]"
+            >
               {text.split("").map((letter, index) => (
                 <span
                   className={`text-3xl px-[2px] ${

@@ -434,7 +434,7 @@ const keyRows = [
 
 const KeyboardLayout = ({ currentLetter }) => {
   return (
-    <div className="flex flex-col gap-2 items-center p-2 mt-10 min-w-[575px] rounded-sm">
+    <div className="flex flex-col gap-2 items-center w-[55%] p-2 mt-10 min-w-[575px] rounded-sm">
       {keyRows.map((row, rowIndex) => (
         <div className="flex gap-1 w-full justify-center" key={rowIndex}>
           {row.map((key, keyIndex) => (

@@ -9,7 +9,7 @@ import ProblemKeys from "../components/ProblemKeys";
 const Home = () => {
   const [homeTab, setHomeTab] = useState(0);
   return (
-    <div className="flex flex-col w-full h-screen">
+    <div className="flex flex-col w-full h-full">
       <header className="flex-shrink-0 p-5 relative overflow-hidden bg-gray-900 cursor-default">
         <h1 className="text-7xl ml-8 font-cursive italic underline">
           Typer
@@ -55,7 +55,7 @@ const Home = () => {
               </li>
             </ul>
           </nav>
-          <div className="flex flex-col items-center w-2/4 px-10 py-5 gap-2 bg-gray-900 h-full overflow-y-scroll border border-gray-900 rounded-tr-lg rounded-br-lg rounded-bl-lg">
+          <div className="flex flex-col items-center w-2/4 h-full px-10 py-5 gap-2 bg-gray-900 overflow-y-auto border border-gray-900 rounded-tr-lg rounded-br-lg rounded-bl-lg min-w-[355px]">
             {homeTab === 0 ? (
               <TypingLessons />
             ) : homeTab === 1 ? (
