@@ -1,22 +1,16 @@
 import { useState } from "react";
-import FloatingLettersAnimation from "../components/FloatingLettersAnimation";
-import Footer from "../components/Footer";
+import Header from "../components/Header";
 import TypingLessons from "../components/TypingLessons";
 import TypingPractice from "../components/TypingPractice";
 import TypingTests from "../components/TypingTests";
-import ProblemKeys from "../components/ProblemKeys";
+import PersonalStats from "../components/PersonalStats";
+import Footer from "../components/Footer";
 
 const Home = () => {
   const [homeTab, setHomeTab] = useState(0);
   return (
     <div className="flex flex-col w-full h-full">
-      <header className="flex-shrink-0 p-5 relative overflow-hidden bg-gray-900 cursor-default">
-        <h1 className="text-7xl ml-8 font-cursive italic underline">
-          Typer
-          <span className="ml-[-1px] text-blue-500">Hub</span>
-        </h1>
-        <FloatingLettersAnimation />
-      </header>
+      <Header />
       <main className="flex-grow p-10 overflow-y-auto">
         <div className="flex justify-center w-full h-full">
           <nav className="min-w-max">
@@ -51,7 +45,7 @@ const Home = () => {
                 }`}
                 onClick={() => setHomeTab(3)}
               >
-                Problem <span className="text-blue-500">Keys</span>
+                Personal <span className="text-blue-500">Stats</span>
               </li>
             </ul>
           </nav>
@@ -63,7 +57,7 @@ const Home = () => {
             ) : homeTab === 2 ? (
               <TypingTests />
             ) : homeTab === 3 ? (
-              <ProblemKeys />
+              <PersonalStats />
             ) : undefined}
           </div>
         </div>
