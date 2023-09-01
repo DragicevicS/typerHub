@@ -7,7 +7,7 @@ import Toolbar from "../components/Toolbar";
 import ScreenStats from "../components/ScreenStats";
 
 const Level = () => {
-  const text = "fff fff fff jjj jjj jjj";
+  const text = "fff fff fff jjj jjj jjj.";
   const numOfWords = text.split(" ").length;
   const [counter, setCounter] = useState(0);
   const [currentLetter, setCurrentLetter] = useState(text[0]);
@@ -111,13 +111,15 @@ const Level = () => {
     speed = Math.round(numOfWords / timeInMinutes);
   }
 
+  console.log(currentLetter);
+
   return (
     <div className="flex flex-col w-full h-full">
       <Header />
-      <main className="flex-grow overflow-y-hidden">
+      <main className="flex flex-col items-center flex-grow overflow-y-hidden w-full">
         <Toolbar capsLock={capsLock} />
         {counter < text.length ? (
-          <div className="flex flex-col justify-evenly items-center w-full h-full py-2">
+          <div className="flex flex-col justify-evenly h-full sm:px-10 md:w-5/6 lg:max-w-[1000px]">
             <TextDisplay
               text={text}
               correctLetter={correctLetter}

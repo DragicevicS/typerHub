@@ -1,10 +1,7 @@
 /* eslint-disable react/prop-types */
 const TextDisplay = ({ text, correctLetter, counter }) => {
   return (
-    <div
-      id="text-box"
-      className="max-h-[35%] w-[55%] overflow-y-auto leading-loose font-mono text-center min-w-[575px]"
-    >
+    <div className="max-h-[35%] overflow-y-auto overflow-x-hidden leading-loose font-mono">
       {text.split("").map((letter, index) => (
         <span
           className={`text-3xl px-[2px] ${

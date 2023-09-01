@@ -434,16 +434,22 @@ const keyRows = [
 
 const KeyboardLayout = ({ currentLetter }) => {
   return (
-    <div className="flex flex-col gap-2 items-center w-[55%] p-2 mt-10 min-w-[575px] rounded-sm">
+    <div className="flex flex-col gap-1 items-center rounded-sm cursor-default">
       {keyRows.map((row, rowIndex) => (
         <div className="flex gap-1 w-full justify-center" key={rowIndex}>
           {row.map((key, keyIndex) => (
             <div
-              className={`${
-                rowIndex !== 4 || key.displayValue === " "
-                  ? "flex-grow"
-                  : "sm:w-18 md:w-20 lg:w-28"
-              } flex justify-center items-center rounded-md p-2 border-2 border-black bg-opacity-70 ${
+              className={`flex justify-center items-center rounded-md p-2 border-2 border-black bg-opacity-70 ${
+                rowIndex !== 4 || key.displayValue === " " ? "flex-grow" : ""
+              } ${
+                rowIndex === 4 && key.displayValue !== " "
+                  ? "sm:px-3 lg:px-5"
+                  : ""
+              } ${
+                key.displayValue === "F" || key.displayValue === "J"
+                  ? "underline underline-offset-8"
+                  : ""
+              } ${
                 key.normalPressValue === currentLetter ||
                 key.shiftPressValue === currentLetter
                   ? "border-white"

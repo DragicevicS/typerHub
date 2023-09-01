@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 const TypingLessons = () => {
   return (
     <>
-      <h2 className="font-cursive text-3xl">Typing Lessons</h2>
+      <h2 className="font-cursive text-2xl">Typing Lessons</h2>
       <div className="flex flex-col gap-2 w-full px-3 py-1">
-        <h3 className="text-2xl font-extrabold">Beginner</h3>
+        <h3 className="text-xl font-extrabold">Beginner</h3>
         <div className="flex flex-col w-full p-1 border-2 border-blue-500 rounded-md">
           <div className="flex justify-between items-center w-full p-3">
             <div className="flex flex-col gap-1">
@@ -84,7 +84,7 @@ const TypingLessons = () => {
         </div>
       </div>
       <div className="flex flex-col gap-2 w-full px-3 py-1">
-        <h3 className="text-2xl font-extrabold">Intermediate</h3>
+        <h3 className="text-xl font-extrabold">Intermediate</h3>
         <div className="flex flex-col w-full p-1 border-2 border-blue-500 rounded-md">
           <div className="flex justify-between items-center w-full p-3">
             <div className="flex flex-col gap-1">
@@ -163,7 +163,7 @@ const TypingLessons = () => {
         </div>
       </div>
       <div className="flex flex-col gap-2 w-full px-3 py-1">
-        <h3 className="text-2xl font-extrabold">Advanced</h3>
+        <h3 className="text-xl font-extrabold">Advanced</h3>
         <div className="flex flex-col w-full p-1 border-2 border-blue-500 rounded-md">
           <div className="flex justify-between items-center w-full p-3">
             <div className="flex flex-col gap-1">

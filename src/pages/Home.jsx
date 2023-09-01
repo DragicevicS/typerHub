@@ -49,7 +49,7 @@ const Home = () => {
               </li>
             </ul>
           </nav>
-          <div className="flex flex-col items-center w-2/4 h-full px-10 py-5 gap-2 bg-gray-900 overflow-y-auto border border-gray-900 rounded-tr-lg rounded-br-lg rounded-bl-lg min-w-[355px]">
+          <div className="flex flex-col items-center h-full py-5 gap-2 bg-gray-900 overflow-y-auto border border-gray-900 rounded-tr-lg rounded-br-lg rounded-bl-lg min-w-[355px] sm:px-10 md:w-5/6 lg:max-w-[1000px]">
             {homeTab === 0 ? (
               <TypingLessons />
             ) : homeTab === 1 ? (
