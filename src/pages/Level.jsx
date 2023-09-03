@@ -1,19 +1,26 @@
 import { useState, useEffect } from "react";
-import TextDisplay from "../components/TextDisplay";
-import KeyboardLayout from "../components/KeyboardLayout";
+import { useParams } from "react-router-dom";
+import TextDisplay from "../components/level/TextDisplay";
+import KeyboardLayout from "../components/level/KeyboardLayout";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import Toolbar from "../components/Toolbar";
-import ScreenStats from "../components/ScreenStats";
+import Toolbar from "../components/level/Toolbar";
+import ScreenStats from "../components/level/ScreenStats";
+import levelText from "../components/levelText";
 
 const Level = () => {
-  const text = "fff fff fff jjj jjj jjj.";
+  const params = useParams();
+  const { difficulty, lesson, index } = params;
+  const [levelCounter, setLevelCounter] = useState(index - 1);
+  const text = levelText[difficulty][lesson][levelCounter];
   const numOfWords = text.split(" ").length;
+
   const [counter, setCounter] = useState(0);
   const [currentLetter, setCurrentLetter] = useState(text[0]);
   const [correctLetter, setCorrectLetter] = useState(
     Array(text.length).fill(null)
   );
+
   const [accuracyCounter, setAccuracyCounter] = useState(0);
   const [startTime, setStartTime] = useState(null);
   const [endTime, setEndTime] = useState(null);
@@ -103,15 +110,21 @@ const Level = () => {
     return () => {
       document.removeEventListener("keydown", handleKeyInput);
     };
-  }, [accuracyCounter, counter, correctLetter, currentLetter, startTime, typo]);
+  }, [
+    accuracyCounter,
+    counter,
+    correctLetter,
+    currentLetter,
+    startTime,
+    typo,
+    text,
+  ]);
 
   let speed = null;
   if (startTime && endTime) {
     const timeInMinutes = (endTime - startTime) / (1000 * 60);
     speed = Math.round(numOfWords / timeInMinutes);
   }
-
-  console.log(currentLetter);
 
   return (
     <div className="flex flex-col w-full h-full">
@@ -129,11 +142,15 @@ const Level = () => {
           </div>
         ) : (
           <ScreenStats
+            levelCounter={levelCounter}
+            difficulty={difficulty}
+            lesson={lesson}
             accuracyCounter={accuracyCounter}
             text={text}
             speed={speed}
           />
         )}
+        {counter >= text.length && setLevelCounter(levelCounter + 1)}
       </main>
       <Footer />
     </div>

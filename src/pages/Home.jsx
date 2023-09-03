@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Header from "../components/Header";
-import TypingLessons from "../components/TypingLessons";
-import TypingPractice from "../components/TypingPractice";
-import TypingTests from "../components/TypingTests";
-import PersonalStats from "../components/PersonalStats";
+import TypingLessons from "../components/home/TypingLessons";
+import TypingPractice from "../components/home/TypingPractice";
+import TypingTests from "../components/home/TypingTests";
+import PersonalStats from "../components/home/PersonalStats";
 import Footer from "../components/Footer";
 
 const Home = () => {

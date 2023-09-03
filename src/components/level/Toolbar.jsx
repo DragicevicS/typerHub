@@ -8,7 +8,7 @@ const Toolbar = ({ capsLock }) => {
     <div className="flex text-center items-center w-full px-6 py-1 bg-gray-700 ">
       <Link to="/">
         <img
-          src="../../images/arrow-left.svg"
+          src="../../../images/arrow-left.svg"
           alt="Home"
           title="Return Home"
           className="w-8 h-auto rounded-lg hover:bg-blue-100 ease-in-out duration-500"
@@ -30,20 +30,20 @@ const Toolbar = ({ capsLock }) => {
       )}
       <div className="flex justify-end gap-3">
         <img
-          src="../../images/redo.svg"
+          src="../../../images/redo.svg"
           alt="Redo"
           title="Redo"
           className="w-8 h-auto rounded-lg hover:bg-blue-100 cursor-pointer ease-in-out duration-500"
           onClick={() => location.reload()}
         />
         <img
-          src="../../images/volume-on.svg"
+          src="../../../images/volume-on.svg"
           alt="Home"
           title="Volume On"
           className="w-8 h-auto rounded-lg hover:bg-blue-100 cursor-pointer ease-in-out duration-500"
         />
         <img
-          src="../../images/keyboard-on.svg"
+          src="../../../images/keyboard-on.svg"
           alt="Home"
           title="Keyboard Display On"
           className="w-8 h-auto rounded-lg hover:bg-blue-100 cursor-pointer ease-in-out duration-500"
