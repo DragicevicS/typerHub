@@ -11,7 +11,7 @@ const ScreenStats = ({
   speed,
 }) => {
   const nextLessonExists =
-    levelText[difficulty][lesson][levelCounter] !== undefined;
+    levelText[difficulty][lesson][levelCounter + 1] !== undefined;
   return (
     <div className="flex flex-col h-full justify-center items-center gap-2">
       <p>
@@ -20,7 +20,7 @@ const ScreenStats = ({
       </p>
       <p>Speed: {speed} WPM</p>
       {nextLessonExists ? (
-        <Link to={`/level/${difficulty}/${lesson}`}>
+        <Link to={`/level/${difficulty}/${lesson}/${levelCounter + 1}`}>
           <button className="p-2 rounded-xl bg-slate-600 hover:bg-slate-50 hover:text-black cursor-pointer">
             Next
           </button>
