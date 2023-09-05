@@ -54,7 +54,7 @@ const Toolbar = ({ capsLock }) => {
 };
 
 Toolbar.propTypes = {
-  capsLock: PropTypes.bool.isRequired,
+  capsLock: PropTypes.oneOf([null, true, false]),
 };
 
 export default Toolbar;

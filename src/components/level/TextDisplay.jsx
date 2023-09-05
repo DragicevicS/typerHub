@@ -23,7 +23,7 @@ const TextDisplay = ({ text, correctLetter, counter }) => {
 
 TextDisplay.propTypes = {
   text: PropTypes.string.isRequired,
-  correctLetter: PropTypes.string.isRequired,
+  correctLetter: PropTypes.array.isRequired,
   counter: PropTypes.number.isRequired,
 };
 

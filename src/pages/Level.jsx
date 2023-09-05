@@ -12,7 +12,7 @@ const Level = () => {
   const params = useParams();
   const { difficulty, lesson, index } = params;
   const levelCounter = parseInt(index, 10);
-  const text = levelText[difficulty][lesson][levelCounter];
+  const text = levelText[difficulty][lesson][levelCounter - 1];
 
   const {
     counter,

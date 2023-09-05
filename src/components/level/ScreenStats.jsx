@@ -11,7 +11,7 @@ const ScreenStats = ({
   speed,
 }) => {
   const nextLessonExists =
-    levelText[difficulty][lesson][levelCounter + 1] !== undefined;
+    levelText[difficulty][lesson][levelCounter] !== undefined;
   return (
     <div className="flex flex-col h-full justify-center items-center gap-2">
       <p>
@@ -42,7 +42,7 @@ ScreenStats.propTypes = {
   lesson: PropTypes.string.isRequired,
   accuracyCounter: PropTypes.number.isRequired,
   text: PropTypes.string.isRequired,
-  speed: PropTypes.number.isRequired,
+  speed: PropTypes.number,
 };
 
 export default ScreenStats;
