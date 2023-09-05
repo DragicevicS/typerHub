@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import levelText from "../levelText";
+import PropTypes from "prop-types";
 
-/* eslint-disable react/prop-types */
 const ScreenStats = ({
   levelCounter,
   difficulty,
@@ -34,6 +34,15 @@ const ScreenStats = ({
       )}
     </div>
   );
+};
+
+ScreenStats.propTypes = {
+  levelCounter: PropTypes.number.isRequired,
+  difficulty: PropTypes.string.isRequired,
+  lesson: PropTypes.string.isRequired,
+  accuracyCounter: PropTypes.number.isRequired,
+  text: PropTypes.string.isRequired,
+  speed: PropTypes.number.isRequired,
 };
 
 export default ScreenStats;

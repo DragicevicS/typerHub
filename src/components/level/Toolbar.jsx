@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import { Link, useParams } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const Toolbar = ({ capsLock }) => {
   const params = useParams();
@@ -51,6 +51,10 @@ const Toolbar = ({ capsLock }) => {
       </div>
     </div>
   );
+};
+
+Toolbar.propTypes = {
+  capsLock: PropTypes.bool.isRequired,
 };
 
 export default Toolbar;

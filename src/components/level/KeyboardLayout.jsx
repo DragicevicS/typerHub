@@ -1,4 +1,5 @@
-/* eslint-disable react/prop-types */
+import PropTypes from "prop-types";
+
 const keyRows = [
   [
     {
@@ -503,6 +504,10 @@ const KeyboardLayout = ({ currentLetter }) => {
       </div>
     </div>
   );
+};
+
+KeyboardLayout.propTypes = {
+  currentLetter: PropTypes.string.isRequired,
 };
 
 export default KeyboardLayout;

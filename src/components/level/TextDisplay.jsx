@@ -1,4 +1,5 @@
-/* eslint-disable react/prop-types */
+import PropTypes from "prop-types";
+
 const TextDisplay = ({ text, correctLetter, counter }) => {
   return (
     <div className="max-h-[35%] overflow-y-auto overflow-x-hidden leading-loose font-mono">
@@ -18,6 +19,12 @@ const TextDisplay = ({ text, correctLetter, counter }) => {
       ))}
     </div>
   );
+};
+
+TextDisplay.propTypes = {
+  text: PropTypes.string.isRequired,
+  correctLetter: PropTypes.string.isRequired,
+  counter: PropTypes.number.isRequired,
 };
 
 export default TextDisplay;
