@@ -5,8 +5,8 @@ import KeyboardLayout from "../components/typing/KeyboardLayout";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Toolbar from "../components/typing/Toolbar";
-import ScreenStats from "../components/typing/ScreenStats";
 import levelText from "../components/levelText";
+import ScreenStats from "../components/typing/ScreenStats";
 
 const Typing = () => {
   const params = useParams();
@@ -24,7 +24,7 @@ const Typing = () => {
   } = useTypingLogic(text);
 
   return (
-    <div key={index} className="flex flex-col w-full h-full">
+    <div className="flex flex-col w-full h-full">
       <Header />
       <main className="flex flex-col items-center flex-grow overflow-y-hidden w-full">
         <Toolbar capsLock={capsLock} />
@@ -39,9 +39,9 @@ const Typing = () => {
           </div>
         ) : (
           <ScreenStats
-            levelCounter={levelCounter}
             difficulty={difficulty}
             lesson={lesson}
+            levelCounter={levelCounter}
             accuracyCounter={accuracyCounter}
             text={text}
             speed={speed}

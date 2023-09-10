@@ -109,6 +109,16 @@ const useTypingLogic = (text) => {
     text,
   ]);
 
+  useEffect(() => {
+    setCounter(0);
+    setCurrentLetter(text[0]);
+    setCorrectLetter(Array(text.length).fill(null));
+    setAccuracyCounter(0);
+    setStartTime(null);
+    setEndTime(null);
+    setTypo(false);
+  }, [text]);
+
   let speed = null;
   if (startTime && endTime) {
     const timeInMinutes = (endTime - startTime) / (1000 * 60);

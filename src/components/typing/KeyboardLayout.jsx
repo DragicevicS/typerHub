@@ -75,7 +75,7 @@ const KeyboardLayout = ({ currentLetter }) => {
 };
 
 KeyboardLayout.propTypes = {
-  currentLetter: PropTypes.string.isRequired,
+  currentLetter: PropTypes.string,
 };
 
 export default KeyboardLayout;

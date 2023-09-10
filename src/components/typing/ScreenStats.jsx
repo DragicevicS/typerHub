@@ -3,9 +3,9 @@ import levelText from "../levelText";
 import PropTypes from "prop-types";
 
 const ScreenStats = ({
-  levelCounter,
   difficulty,
   lesson,
+  levelCounter,
   accuracyCounter,
   text,
   speed,
