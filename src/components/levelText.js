@@ -1,21 +1,21 @@
 const levelText = {
   beginner: {
-    "middle-row": ["ff jj", "gg hh", "dd kk", "ss ll"],
-    "upper-row": [],
-    "lower-row": [],
-    recap: [],
+    1: ["ff jj", "gg hh", "dd kk", "ss ll"],
+    2: [],
+    3: [],
+    4: [],
   },
   intermediate: {
-    capitalization: [],
-    punctuation: [],
-    "short-paragraphs": [],
-    recap: [],
+    1: [],
+    2: [],
+    3: [],
+    4: [],
   },
   advanced: {
-    numbers: [],
-    symbols: [],
-    "accuracy-focus": [],
-    recap: [],
+    1: [],
+    2: [],
+    3: [],
+    4: [],
   },
 };
 

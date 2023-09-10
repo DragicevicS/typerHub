@@ -1,14 +1,14 @@
 import { useParams } from "react-router-dom";
 import useTypingLogic from "../components/hooks/useTypingLogic";
-import TextDisplay from "../components/level/TextDisplay";
-import KeyboardLayout from "../components/level/KeyboardLayout";
+import TextDisplay from "../components/typing/TextDisplay";
+import KeyboardLayout from "../components/typing/KeyboardLayout";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import Toolbar from "../components/level/Toolbar";
-import ScreenStats from "../components/level/ScreenStats";
+import Toolbar from "../components/typing/Toolbar";
+import ScreenStats from "../components/typing/ScreenStats";
 import levelText from "../components/levelText";
 
-const Level = () => {
+const Typing = () => {
   const params = useParams();
   const { difficulty, lesson, index } = params;
   const levelCounter = parseInt(index, 10);
@@ -53,4 +53,4 @@ const Level = () => {
   );
 };
 
-export default Level;
+export default Typing;

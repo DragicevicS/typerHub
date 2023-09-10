@@ -1,9 +1,7 @@
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 const Toolbar = ({ capsLock }) => {
-  const params = useParams();
-  const lesson = params.lesson.split("-");
   return (
     <div className="flex text-center items-center w-full px-6 py-1 bg-gray-700 ">
       <Link to="/">
@@ -19,14 +17,7 @@ const Toolbar = ({ capsLock }) => {
           Warning: CapsLock is on!
         </h2>
       ) : (
-        <div className="w-full font-cursive text-xl text-blue-500">
-          <span>{params.difficulty}</span> -{" "}
-          <span>
-            {lesson.length > 1
-              ? `${lesson[0]} ${lesson[1]}`
-              : `${params.lesson}`}
-          </span>
-        </div>
+        <div className="w-full"></div>
       )}
       <div className="flex justify-end gap-3">
         <img

@@ -20,7 +20,7 @@ const ScreenStats = ({
       </p>
       <p>Speed: {speed} WPM</p>
       {nextLessonExists ? (
-        <Link to={`/level/${difficulty}/${lesson}/${levelCounter + 1}`}>
+        <Link to={`/typing/${difficulty}/${lesson}/${levelCounter + 1}`}>
           <button className="p-2 rounded-xl bg-slate-600 hover:bg-slate-50 hover:text-black cursor-pointer">
             Next
           </button>
