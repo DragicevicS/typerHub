@@ -1,8 +1,12 @@
 import PropTypes from "prop-types";
 
-const TextDisplay = ({ text, correctLetter, counter }) => {
+const TextDisplay = ({ text, correctLetter, counter, keyboardDisplayOn }) => {
   return (
-    <div className="max-h-[35%] overflow-y-auto overflow-x-hidden leading-loose font-mono">
+    <div
+      className={`${
+        keyboardDisplayOn ? "max-h-[35%]" : "h-[90%]"
+      } overflow-y-auto overflow-x-hidden leading-loose font-mono`}
+    >
       {text.split("").map((letter, index) => (
         <span
           className={`text-3xl px-[2px] ${
@@ -25,6 +29,7 @@ TextDisplay.propTypes = {
   text: PropTypes.string.isRequired,
   correctLetter: PropTypes.array.isRequired,
   counter: PropTypes.number.isRequired,
+  keyboardDisplayOn: PropTypes.bool,
 };
 
 export default TextDisplay;

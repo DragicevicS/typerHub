@@ -1,7 +1,9 @@
 import PropTypes from "prop-types";
 import keyRows from "../keyRows";
 
-const KeyboardLayout = ({ currentLetter }) => {
+const KeyboardLayout = ({ currentLetter, keyboardDisplayOn }) => {
+  if (!keyboardDisplayOn) return null;
+
   return (
     <div className="flex flex-col gap-1 items-center rounded-sm cursor-default">
       {keyRows.map((row, rowIndex) => (
@@ -77,6 +79,7 @@ const KeyboardLayout = ({ currentLetter }) => {
 
 KeyboardLayout.propTypes = {
   currentLetter: PropTypes.string,
+  keyboardDisplayOn: PropTypes.bool,
 };
 
 export default KeyboardLayout;

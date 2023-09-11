@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useTypingLogic = (text) => {
+const useTypingLogic = (text, volumeOn) => {
   const numOfWords = text.split(" ").length;
 
   const [counter, setCounter] = useState(0);
@@ -68,7 +68,7 @@ const useTypingLogic = (text) => {
         e.key !== "CapsLock" &&
         e.key === currentLetter
       ) {
-        keyboardSound.play();
+        if (volumeOn) keyboardSound.play();
         handleCorrectInput(e.key);
         setTypo(false);
       }
@@ -78,7 +78,7 @@ const useTypingLogic = (text) => {
         e.key !== currentLetter &&
         typo === false
       ) {
-        errorSound.play();
+        if (volumeOn) errorSound.play();
         handleIncorrectInput(e.key);
         setTypo(true);
       }
@@ -88,7 +88,7 @@ const useTypingLogic = (text) => {
         e.key !== currentLetter &&
         typo === true
       )
-        errorSound.play();
+        if (volumeOn) errorSound.play();
     }
 
     if (counter >= text.length) setEndTime(Date.now());
@@ -107,6 +107,7 @@ const useTypingLogic = (text) => {
     startTime,
     typo,
     text,
+    volumeOn,
   ]);
 
   useEffect(() => {
