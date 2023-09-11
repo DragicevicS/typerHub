@@ -23,7 +23,6 @@ const TypingLessons = () => {
               </button>
             </Link>
           </div>
-          <div className="h-3 w-full border rounded-full cursor-pointer"></div>
         </div>
         <div className="flex flex-col w-full p-1 border-2 border-blue-500 rounded-md">
           <div className="flex justify-between items-center w-full p-3">
@@ -36,13 +35,12 @@ const TypingLessons = () => {
                 <span>Time: 00:00</span>
               </div>
             </div>
-            <Link to="/typing/beginner/upper-row">
+            <Link to="/typing/beginner/2/1">
               <button className="h-min px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:border-blue-500 hover:text-blue-500">
                 Start
               </button>
             </Link>
           </div>
-          <div className="h-3 w-full border rounded-full cursor-pointer"></div>
         </div>
         <div className="flex flex-col w-full p-1 border-2 border-blue-500 rounded-md">
           <div className="flex justify-between items-center w-full p-3">
@@ -55,13 +53,12 @@ const TypingLessons = () => {
                 <span>Time: 00:00</span>
               </div>
             </div>
-            <Link to="/typing/beginner/lower-row">
+            <Link to="/typing/beginner/3/1">
               <button className="h-min px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:border-blue-500 hover:text-blue-500">
                 Start
               </button>
             </Link>
           </div>
-          <div className="h-3 w-full border rounded-full cursor-pointer"></div>
         </div>
         <div className="flex flex-col w-full p-1 border-2 border-blue-500 rounded-md">
           <div className="flex justify-between items-center w-full p-3">
@@ -74,13 +71,12 @@ const TypingLessons = () => {
                 <span>Time: 00:00</span>
               </div>
             </div>
-            <Link to="/typing/beginner/recap">
+            <Link to="/typing/beginner/4/1">
               <button className="h-min px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:border-blue-500 hover:text-blue-500">
                 Start
               </button>
             </Link>
           </div>
-          <div className="h-3 w-full border rounded-full cursor-pointer"></div>
         </div>
       </div>
       <div className="flex flex-col gap-2 w-full px-3 py-1">
@@ -96,13 +92,12 @@ const TypingLessons = () => {
                 <span>Time: 00:00</span>
               </div>
             </div>
-            <Link to="/typing/intermediate/capitalization">
+            <Link to="/typing/intermediate/1/1">
               <button className="h-min px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:border-blue-500 hover:text-blue-500">
                 Start
               </button>
             </Link>
           </div>
-          <div className="h-3 w-full border rounded-full cursor-pointer"></div>
         </div>
         <div className="flex flex-col w-full p-1 border-2 border-blue-500 rounded-md">
           <div className="flex justify-between items-center w-full p-3">
@@ -115,13 +110,12 @@ const TypingLessons = () => {
                 <span>Time: 00:00</span>
               </div>
             </div>
-            <Link to="/typing/intermediate/punctuation">
+            <Link to="/typing/intermediate/2/1">
               <button className="h-min px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:border-blue-500 hover:text-blue-500">
                 Start
               </button>
             </Link>
           </div>
-          <div className="h-3 w-full border rounded-full cursor-pointer"></div>
         </div>
         <div className="flex flex-col w-full p-1 border-2 border-blue-500 rounded-md">
           <div className="flex justify-between items-center w-full p-3">
@@ -134,13 +128,12 @@ const TypingLessons = () => {
                 <span>Time: 00:00</span>
               </div>
             </div>
-            <Link to="/typing/intermediate/short-paragraphs">
+            <Link to="/typing/intermediate/3/1">
               <button className="h-min px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:border-blue-500 hover:text-blue-500">
                 Start
               </button>
             </Link>
           </div>
-          <div className="h-3 w-full border rounded-full cursor-pointer"></div>
         </div>
         <div className="flex flex-col w-full p-1 border-2 border-blue-500 rounded-md">
           <div className="flex justify-between items-center w-full p-3">
@@ -153,13 +146,12 @@ const TypingLessons = () => {
                 <span>Time: 00:00</span>
               </div>
             </div>
-            <Link to="/typing/intermediate/recap">
+            <Link to="/typing/intermediate/4/1">
               <button className="h-min px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:border-blue-500 hover:text-blue-500">
                 Start
               </button>
             </Link>
           </div>
-          <div className="h-3 w-full border rounded-full cursor-pointer"></div>
         </div>
       </div>
       <div className="flex flex-col gap-2 w-full px-3 py-1">
@@ -175,13 +167,12 @@ const TypingLessons = () => {
                 <span>Time: 00:00</span>
               </div>
             </div>
-            <Link to="/typing/advanced/numbers">
+            <Link to="/typing/advanced/1/1">
               <button className="h-min px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:border-blue-500 hover:text-blue-500">
                 Start
               </button>
             </Link>
           </div>
-          <div className="h-3 w-full border rounded-full cursor-pointer"></div>
         </div>
         <div className="flex flex-col w-full p-1 border-2 border-blue-500 rounded-md">
           <div className="flex justify-between items-center w-full p-3">
@@ -194,13 +185,12 @@ const TypingLessons = () => {
                 <span>Time: 00:00</span>
               </div>
             </div>
-            <Link to="/typing/advanced/symbols">
+            <Link to="/typing/advanced/2/1">
               <button className="h-min px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:border-blue-500 hover:text-blue-500">
                 Start
               </button>
             </Link>
           </div>
-          <div className="h-3 w-full border rounded-full cursor-pointer"></div>
         </div>
         <div className="flex flex-col w-full p-1 border-2 border-blue-500 rounded-md">
           <div className="flex justify-between items-center w-full p-3">
@@ -213,13 +203,12 @@ const TypingLessons = () => {
                 <span>Time: 00:00</span>
               </div>
             </div>
-            <Link to="/typing/advanced/accuracy-focus">
+            <Link to="/typing/advanced/3/1">
               <button className="h-min px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:border-blue-500 hover:text-blue-500">
                 Start
               </button>
             </Link>
           </div>
-          <div className="h-3 w-full border rounded-full cursor-pointer"></div>
         </div>
         <div className="flex flex-col w-full p-1 border-2 border-blue-500 rounded-md">
           <div className="flex justify-between items-center w-full p-3">
@@ -232,13 +221,12 @@ const TypingLessons = () => {
                 <span>Time: 00:00</span>
               </div>
             </div>
-            <Link to="/typing/advanced/recap">
+            <Link to="/typing/advanced/4/1">
               <button className="h-min px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:border-blue-500 hover:text-blue-500">
                 Start
               </button>
             </Link>
           </div>
-          <div className="h-3 w-full border rounded-full cursor-pointer"></div>
         </div>
       </div>
     </>

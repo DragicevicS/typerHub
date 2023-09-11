@@ -20,7 +20,8 @@ const KeyboardLayout = ({ currentLetter }) => {
                   : ""
               } ${
                 key.normalPressValue === currentLetter ||
-                key.shiftPressValue === currentLetter
+                key.shiftPressValue === currentLetter ||
+                (currentLetter === " " && key.normalPressValue === "Space")
                   ? "border-white"
                   : ""
               } ${key.finger === "pinkie" ? "bg-red-900" : ""} 

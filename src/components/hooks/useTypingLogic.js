@@ -31,6 +31,25 @@ const useTypingLogic = (text) => {
     const keyboardSound = new Audio("/sounds/keyboard-sound.mp3");
     const errorSound = new Audio("/sounds/error-sound.mp3");
 
+    function handleCorrectInput() {
+      const newCorrectLetter = [...correctLetter];
+      newCorrectLetter[counter] = true;
+
+      setCorrectLetter(newCorrectLetter);
+      setCounter(counter + 1);
+      setCurrentLetter(text[counter + 1]);
+      setAccuracyCounter(accuracyCounter + 1);
+    }
+
+    function handleIncorrectInput() {
+      const newCorrectLetter = [...correctLetter];
+      newCorrectLetter[counter] = false;
+
+      setCorrectLetter(newCorrectLetter);
+      setCounter(counter + 1);
+      setCurrentLetter(text[counter + 1]);
+    }
+
     function handleKeyInput(e) {
       if (!isMounted) return;
       if (
@@ -70,25 +89,6 @@ const useTypingLogic = (text) => {
         typo === true
       )
         errorSound.play();
-    }
-
-    function handleCorrectInput() {
-      const newCorrectLetter = [...correctLetter];
-      newCorrectLetter[counter] = true;
-
-      setCorrectLetter(newCorrectLetter);
-      setCounter(counter + 1);
-      setCurrentLetter(text[counter + 1]);
-      setAccuracyCounter(accuracyCounter + 1);
-    }
-
-    function handleIncorrectInput() {
-      const newCorrectLetter = [...correctLetter];
-      newCorrectLetter[counter] = false;
-
-      setCorrectLetter(newCorrectLetter);
-      setCounter(counter + 1);
-      setCurrentLetter(text[counter + 1]);
     }
 
     if (counter >= text.length) setEndTime(Date.now());
