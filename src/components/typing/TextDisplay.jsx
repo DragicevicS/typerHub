@@ -1,11 +1,35 @@
+import { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
 const TextDisplay = ({ text, correctLetter, counter, keyboardDisplayOn }) => {
+  const containerRef = useRef(null);
+  const spanWidth = 22;
+  const rowHeight = 36;
+  const [lettersInRow, setLettersInRow] = useState(0);
+  const [scrollIncrement, setScrollIncrement] = useState(0);
+
+  useEffect(() => {
+    if (containerRef.current) {
+      const containerWidth = containerRef.current.clientWidth;
+      const newLettersInRow = Math.floor(containerWidth / spanWidth);
+      setLettersInRow(newLettersInRow);
+      setScrollIncrement(newLettersInRow);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (containerRef.current && counter > lettersInRow) {
+      containerRef.current.scrollTop += rowHeight;
+      setLettersInRow((prevState) => prevState + scrollIncrement);
+    }
+  }, [counter, lettersInRow, scrollIncrement]);
+
   return (
     <div
+      ref={containerRef}
       className={`${
         keyboardDisplayOn ? "max-h-[35%]" : "h-[90%]"
-      } overflow-y-auto overflow-x-hidden leading-loose font-mono`}
+      } overflow-y-auto overflow-x-hidden leading-loose font-mono scroll-smooth`}
     >
       {text.split("").map((letter, index) => (
         <span
