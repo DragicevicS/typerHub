@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
-const TextDisplay = ({ text, correctLetter, counter, keyboardDisplayOn }) => {
+const TextDisplay = ({ text, correctLetter, counter, keyboardDisplay }) => {
   const containerRef = useRef(null);
   const spanWidth = 22;
   const rowHeight = 36;
@@ -28,7 +28,7 @@ const TextDisplay = ({ text, correctLetter, counter, keyboardDisplayOn }) => {
     <div
       ref={containerRef}
       className={`${
-        keyboardDisplayOn ? "max-h-[35%]" : "h-[90%]"
+        keyboardDisplay ? "max-h-[35%]" : "h-[90%]"
       } overflow-y-auto overflow-x-hidden leading-loose font-mono scroll-smooth`}
     >
       {text.split("").map((letter, index) => (
@@ -53,7 +53,7 @@ TextDisplay.propTypes = {
   text: PropTypes.string.isRequired,
   correctLetter: PropTypes.array.isRequired,
   counter: PropTypes.number.isRequired,
-  keyboardDisplayOn: PropTypes.bool,
+  keyboardDisplay: PropTypes.bool,
 };
 
 export default TextDisplay;

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import useLocalStorage from "../components/hooks/useLocalStorage";
+import initialUserData from "../components/initialUserData";
 import Header from "../components/Header";
 import TypingLessons from "../components/home/TypingLessons";
 import TypingPractice from "../components/home/TypingPractice";
@@ -7,6 +9,9 @@ import PersonalStats from "../components/home/PersonalStats";
 import Footer from "../components/Footer";
 
 const Home = () => {
+  const storedUserData =
+    JSON.parse(localStorage.getItem("userData")) || initialUserData; // Rename the variable
+  const [userData, setUserData] = useLocalStorage("userData", storedUserData);
   const [homeTab, setHomeTab] = useState(0);
   return (
     <div className="flex flex-col w-full h-full">

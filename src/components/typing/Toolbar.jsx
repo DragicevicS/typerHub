@@ -1,19 +1,25 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-const Toolbar = ({
-  capsLock,
-  keyboardDisplayOn,
-  setKeyboardDisplayOn,
-  volumeOn,
-  setVolumeOn,
-}) => {
+const Toolbar = ({ capsLock, keyboardDisplay, volume, setUserData }) => {
   const toggleVolume = () => {
-    setVolumeOn((prevState) => !prevState);
+    setUserData((prevUserData) => ({
+      ...prevUserData,
+      preferences: {
+        ...prevUserData.preferences,
+        volume: !prevUserData.preferences.volume,
+      },
+    }));
   };
 
   const toggleKeyboardDisplay = () => {
-    setKeyboardDisplayOn((prevState) => !prevState);
+    setUserData((prevUserData) => ({
+      ...prevUserData,
+      preferences: {
+        ...prevUserData.preferences,
+        keyboardDisplay: !prevUserData.preferences.keyboardDisplay,
+      },
+    }));
   };
 
   return (
@@ -43,24 +49,24 @@ const Toolbar = ({
         />
         <img
           src={
-            volumeOn
+            volume
               ? "../../../images/volume-on.svg"
               : "../../../images/volume-off.svg"
           }
           alt="Home"
-          title={volumeOn ? "Volume On" : "Volume Off"}
+          title={volume ? "Volume On" : "Volume Off"}
           className="w-8 h-auto rounded-lg hover:bg-blue-100 cursor-pointer ease-in-out duration-500"
           onClick={toggleVolume}
         />
         <img
           src={
-            keyboardDisplayOn
+            keyboardDisplay
               ? "../../../images/keyboard-on.svg"
               : "../../../images/keyboard-off.svg"
           }
           alt="Home"
           title={
-            keyboardDisplayOn ? "Keyboard Display On" : "Keyboard Display Off"
+            keyboardDisplay ? "Keyboard Display On" : "Keyboard Display Off"
           }
           className="w-8 h-auto rounded-lg hover:bg-blue-100 cursor-pointer ease-in-out duration-500"
           onClick={toggleKeyboardDisplay}
@@ -71,10 +77,9 @@ const Toolbar = ({
 };
 
 Toolbar.propTypes = {
-  keyboardDisplayOn: PropTypes.bool,
-  setKeyboardDisplayOn: PropTypes.func,
-  volumeOn: PropTypes.bool,
-  setVolumeOn: PropTypes.func,
+  keyboardDisplay: PropTypes.bool,
+  volume: PropTypes.bool,
+  setUserData: PropTypes.func,
   capsLock: PropTypes.oneOf([null, true, false]),
 };
 

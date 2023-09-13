@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import useLocalStorage from "../components/hooks/useLocalStorage";
+import initialUserData from "../components/initialUserData";
 import useTypingLogic from "../components/hooks/useTypingLogic";
 import TextDisplay from "../components/typing/TextDisplay";
 import KeyboardLayout from "../components/typing/KeyboardLayout";
@@ -14,11 +15,7 @@ const Typing = () => {
   const { difficulty, lesson, index } = params;
   const levelCounter = parseInt(index, 10);
   const text = levelText[difficulty][lesson][levelCounter - 1];
-  const [keyboardDisplayOn, setKeyboardDisplayOn] = useLocalStorage(
-    "keyboardDisplay",
-    true
-  );
-  const [volumeOn, setVolumeOn] = useLocalStorage("volume", true);
+  const [userData, setUserData] = useLocalStorage("userData", initialUserData);
 
   const {
     counter,
@@ -27,7 +24,7 @@ const Typing = () => {
     accuracyCounter,
     capsLock,
     speed,
-  } = useTypingLogic(text, volumeOn);
+  } = useTypingLogic(text, userData.preferences.volume);
 
   return (
     <div className="flex flex-col w-full h-full">
@@ -35,10 +32,9 @@ const Typing = () => {
       <main className="flex flex-col items-center flex-grow overflow-y-hidden w-full">
         <Toolbar
           capsLock={capsLock}
-          keyboardDisplayOn={keyboardDisplayOn}
-          setKeyboardDisplayOn={setKeyboardDisplayOn}
-          volumeOn={volumeOn}
-          setVolumeOn={setVolumeOn}
+          keyboardDisplay={userData.preferences.keyboardDisplay}
+          volume={userData.preferences.volume}
+          setUserData={setUserData}
         />
         {counter < text.length ? (
           <div className="flex flex-col justify-evenly h-full sm:px-10 md:w-5/6 lg:max-w-[1000px]">
@@ -46,11 +42,11 @@ const Typing = () => {
               text={text}
               correctLetter={correctLetter}
               counter={counter}
-              keyboardDisplayOn={keyboardDisplayOn}
+              keyboardDisplay={userData.preferences.keyboardDisplay}
             />
             <KeyboardLayout
               currentLetter={currentLetter}
-              keyboardDisplayOn={keyboardDisplayOn}
+              keyboardDisplay={userData.preferences.keyboardDisplay}
             />
           </div>
         ) : (
