@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import levelText from "../levelText";
 import PropTypes from "prop-types";
@@ -9,10 +10,35 @@ const ScreenStats = ({
   accuracyCounter,
   text,
   speed,
+  userData,
+  setUserData,
 }) => {
   const nextLessonExists =
     levelText[difficulty][lesson][levelCounter] !== undefined;
   const accPercent = Math.round((accuracyCounter * 100) / text.length);
+
+  const updateUserData = () => {
+    if (userData.completion.lessons[difficulty][lesson - 1]) return;
+    const updatedCompletion = { ...userData.completion };
+    const currentDifficultyCompletion = [
+      ...updatedCompletion.lessons[difficulty],
+    ];
+    currentDifficultyCompletion[lesson - 1] = true;
+    updatedCompletion.lessons[difficulty] = currentDifficultyCompletion;
+    const updatedUserData = {
+      ...userData,
+      completion: updatedCompletion,
+    };
+    setUserData(updatedUserData);
+
+    localStorage.setItem("userData", JSON.stringify(updatedUserData));
+  };
+
+  useEffect(() => {
+    if (!nextLessonExists) {
+      updateUserData();
+    }
+  }, [nextLessonExists]);
 
   return (
     <div className="flex flex-col gap-5 h-full justify-center items-center">
@@ -114,6 +140,8 @@ ScreenStats.propTypes = {
   accuracyCounter: PropTypes.number.isRequired,
   text: PropTypes.string.isRequired,
   speed: PropTypes.number,
+  userData: PropTypes.object,
+  setUserData: PropTypes.func,
 };
 
 export default ScreenStats;

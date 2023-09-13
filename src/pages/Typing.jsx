@@ -57,6 +57,11 @@ const Typing = () => {
             accuracyCounter={accuracyCounter}
             text={text}
             speed={speed}
+            lessonCompletion={
+              userData.completion.lessons[difficulty][lesson - 1]
+            }
+            userData={userData}
+            setUserData={setUserData}
           />
         )}
       </main>

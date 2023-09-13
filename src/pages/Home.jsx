@@ -9,9 +9,7 @@ import PersonalStats from "../components/home/PersonalStats";
 import Footer from "../components/Footer";
 
 const Home = () => {
-  const storedUserData =
-    JSON.parse(localStorage.getItem("userData")) || initialUserData; // Rename the variable
-  const [userData, setUserData] = useLocalStorage("userData", storedUserData);
+  const [userData, setUserData] = useLocalStorage("userData", initialUserData);
   const [homeTab, setHomeTab] = useState(0);
   return (
     <div className="flex flex-col w-full h-full">
@@ -56,7 +54,7 @@ const Home = () => {
           </nav>
           <div className="flex flex-col items-center h-full py-5 gap-2 bg-gray-900 overflow-y-auto border border-gray-900 rounded-tr-lg rounded-br-lg rounded-bl-lg min-w-[355px] sm:px-10 md:w-5/6 lg:max-w-[1000px]">
             {homeTab === 0 ? (
-              <TypingLessons />
+              <TypingLessons userData={userData} />
             ) : homeTab === 1 ? (
               <TypingPractice />
             ) : homeTab === 2 ? (
