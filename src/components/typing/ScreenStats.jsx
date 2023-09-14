@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import levelText from "../levelText";
+import lessonText from "../../data/lessonText";
 import PropTypes from "prop-types";
 
 const ScreenStats = ({
@@ -14,7 +14,7 @@ const ScreenStats = ({
   setUserData,
 }) => {
   const nextTextExists =
-    levelText[difficulty][lesson][levelCounter] !== undefined;
+    lessonText[difficulty][lesson][levelCounter] !== undefined;
   const accPercent = Math.round((accuracyCounter * 100) / text.length);
 
   const handleLessonCompletion = () => {
@@ -115,13 +115,13 @@ const ScreenStats = ({
             to={`/typing/${difficulty}/${lesson}/${levelCounter + 1}`}
             className="text-center mt-2"
           >
-            <button className="h-min px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:border-blue-500 hover:text-blue-500 ease-in-out duration-500">
+            <button className="h-min px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:text-gray-900 ease-in-out duration-500">
               Next
             </button>
           </Link>
         ) : (
           <Link to="/" className="text-center mt-2">
-            <button className="h-min px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:border-blue-500 hover:text-blue-500 ease-in-out duration-500">
+            <button className="h-min px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:text-gray-900 ease-in-out duration-500">
               Finish Lesson
             </button>
           </Link>
@@ -138,8 +138,8 @@ ScreenStats.propTypes = {
   accuracyCounter: PropTypes.number.isRequired,
   text: PropTypes.string.isRequired,
   speed: PropTypes.number,
-  userData: PropTypes.object,
-  setUserData: PropTypes.func,
+  userData: PropTypes.object.isRequired,
+  setUserData: PropTypes.func.isRequired,
 };
 
 export default ScreenStats;

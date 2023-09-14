@@ -53,7 +53,7 @@ TextDisplay.propTypes = {
   text: PropTypes.string.isRequired,
   correctLetter: PropTypes.array.isRequired,
   counter: PropTypes.number.isRequired,
-  keyboardDisplay: PropTypes.bool,
+  keyboardDisplay: PropTypes.bool.isRequired,
 };
 
 export default TextDisplay;

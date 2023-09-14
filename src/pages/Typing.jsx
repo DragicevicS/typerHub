@@ -1,20 +1,20 @@
 import { useParams } from "react-router-dom";
-import useLocalStorage from "../components/hooks/useLocalStorage";
-import initialUserData from "../components/initialUserData";
-import useTypingLogic from "../components/hooks/useTypingLogic";
+import useLocalStorage from "../hooks/useLocalStorage";
+import initialUserData from "../data/initialUserData";
+import useTypingLogic from "../hooks/useTypingLogic";
 import TextDisplay from "../components/typing/TextDisplay";
 import KeyboardLayout from "../components/typing/KeyboardLayout";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Toolbar from "../components/typing/Toolbar";
-import levelText from "../components/levelText";
+import lessonText from "../data/lessonText";
 import ScreenStats from "../components/typing/ScreenStats";
 
 const Typing = () => {
   const params = useParams();
   const { difficulty, lesson, index } = params;
   const levelCounter = parseInt(index, 10);
-  const text = levelText[difficulty][lesson][levelCounter - 1];
+  const text = lessonText[difficulty][lesson][levelCounter - 1];
   const [userData, setUserData] = useLocalStorage("userData", initialUserData);
 
   const {
@@ -55,7 +55,6 @@ const Typing = () => {
             lesson={lesson}
             levelCounter={levelCounter}
             accuracyCounter={accuracyCounter}
-            currentLetter={currentLetter}
             text={text}
             speed={speed}
             userData={userData}

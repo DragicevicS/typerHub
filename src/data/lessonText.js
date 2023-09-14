@@ -1,4 +1,4 @@
-const levelText = {
+const lessonText = {
   beginner: {
     1: [
       "fff jjj ff jj ffj jjf ffj jjf fjf jfj fjj jff fj jf",
@@ -9,7 +9,7 @@ const levelText = {
       "salad flask sad hask gask half ask dash slag glad;",
       "flag gash jag lash adak all dahl skald kad hall;",
     ],
-    2: ["!rr Uu", "ee ii", "ww oo"],
+    2: ["rr uu", "ee ii", "ww oo"],
     3: ["vv mm"],
     4: ["recap"],
   },
@@ -27,4 +27,4 @@ const levelText = {
   },
 };
 
-export default levelText;
+export default lessonText;

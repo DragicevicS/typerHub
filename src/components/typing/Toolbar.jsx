@@ -77,10 +77,10 @@ const Toolbar = ({ capsLock, keyboardDisplay, volume, setUserData }) => {
 };
 
 Toolbar.propTypes = {
+  capsLock: PropTypes.oneOf([null, true, false]),
   keyboardDisplay: PropTypes.bool,
   volume: PropTypes.bool,
   setUserData: PropTypes.func,
-  capsLock: PropTypes.oneOf([null, true, false]),
 };
 
 export default Toolbar;

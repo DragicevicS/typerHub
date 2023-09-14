@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import keyRows from "../keyRows";
+import keyRows from "../../data/keyRows";
 
 const KeyboardLayout = ({ currentLetter, keyboardDisplay }) => {
   if (!keyboardDisplay) return null;
@@ -94,27 +94,27 @@ const KeyboardLayout = ({ currentLetter, keyboardDisplay }) => {
       ))}
       <div className="flex w-full gap-3 justify-center flex-wrap">
         <div className="flex items-center gap-2">
-          <div className="bg-red-900 w-6 h-6 border-black border-2"></div>
+          <div className="bg-red-900 w-6 h-6 border-black border-2 rounded-md"></div>
           <p className="text-lg">Pinkie |</p>
         </div>
         <div className="flex items-center gap-2">
-          <div className="bg-gray-600 w-6 h-6 border-black border-2"></div>
+          <div className="bg-gray-600 w-6 h-6 border-black border-2 rounded-md"></div>
           <p className="text-lg">Ring |</p>
         </div>
         <div className="flex items-center gap-2">
-          <div className="bg-amber-800 w-6 h-6 border-black border-2"></div>
+          <div className="bg-amber-800 w-6 h-6 border-black border-2 rounded-md"></div>
           <p className="text-lg">Middle |</p>
         </div>
         <div className="flex items-center gap-2">
-          <div className="bg-indigo-800 w-6 h-6 border-black border-2"></div>
+          <div className="bg-indigo-800 w-6 h-6 border-black border-2 rounded-md"></div>
           <p className="text-lg">Index(left) |</p>
         </div>
         <div className="flex items-center gap-2">
-          <div className="bg-blue-800 w-6 h-6 border-black border-2"></div>
+          <div className="bg-blue-800 w-6 h-6 border-black border-2 rounded-md"></div>
           <p className="text-lg">Index(right) |</p>
         </div>
         <div className="flex items-center gap-2">
-          <div className="bg-teal-800 w-6 h-6 border-black border-2"></div>
+          <div className="bg-teal-800 w-6 h-6 border-black border-2 rounded-md"></div>
           <p className="text-lg">Thumb</p>
         </div>
       </div>
@@ -123,8 +123,8 @@ const KeyboardLayout = ({ currentLetter, keyboardDisplay }) => {
 };
 
 KeyboardLayout.propTypes = {
-  currentLetter: PropTypes.string,
-  keyboardDisplay: PropTypes.bool,
+  currentLetter: PropTypes.string.isRequired,
+  keyboardDisplay: PropTypes.bool.isRequired,
 };
 
 export default KeyboardLayout;
