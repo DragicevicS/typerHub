@@ -40,7 +40,7 @@ const TypingLessons = ({ userData }) => {
               </div>
             </div>
             <Link to="/typing/beginner/1/1">
-              <button className="h-min min-w-[84px] py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:border-blue-500 hover:text-blue-500 ease-in-out duration-500">
+              <button className="h-min min-w-[84px] py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:text-gray-900 ease-in-out duration-500">
                 {userData.completion.lessons.beginner[0] ? (
                   <>Redo</>
                 ) : (
@@ -82,7 +82,7 @@ const TypingLessons = ({ userData }) => {
               </div>
             </div>
             <Link to="/typing/beginner/2/1">
-              <button className="h-min min-w-[84px] py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:border-blue-500 hover:text-blue-500 ease-in-out duration-500">
+              <button className="h-min min-w-[84px] py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:text-gray-900 ease-in-out duration-500">
                 {userData.completion.lessons.beginner[1] ? (
                   <>Redo</>
                 ) : (
@@ -124,7 +124,7 @@ const TypingLessons = ({ userData }) => {
               </div>
             </div>
             <Link to="/typing/beginner/3/1">
-              <button className="h-min min-w-[84px] py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:border-blue-500 hover:text-blue-500 ease-in-out duration-500">
+              <button className="h-min min-w-[84px] py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:text-gray-900 ease-in-out duration-500">
                 {userData.completion.lessons.beginner[2] ? (
                   <>Redo</>
                 ) : (
@@ -167,7 +167,7 @@ const TypingLessons = ({ userData }) => {
               </div>
             </div>
             <Link to="/typing/beginner/4/1">
-              <button className="h-min min-w-[84px] py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:border-blue-500 hover:text-blue-500 ease-in-out duration-500">
+              <button className="h-min min-w-[84px] py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:text-gray-900 ease-in-out duration-500">
                 {userData.completion.lessons.beginner[3] ? (
                   <>Redo</>
                 ) : (
@@ -214,7 +214,7 @@ const TypingLessons = ({ userData }) => {
               </div>
             </div>
             <Link to="/typing/intermediate/1/1">
-              <button className="h-min min-w-[84px] py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:border-blue-500 hover:text-blue-500 ease-in-out duration-500">
+              <button className="h-min min-w-[84px] py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:text-gray-900 ease-in-out duration-500">
                 {userData.completion.lessons.intermediate[0] ? (
                   <>Redo</>
                 ) : (
@@ -258,7 +258,7 @@ const TypingLessons = ({ userData }) => {
               </div>
             </div>
             <Link to="/typing/intermediate/2/1">
-              <button className="h-min min-w-[84px] py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:border-blue-500 hover:text-blue-500 ease-in-out duration-500">
+              <button className="h-min min-w-[84px] py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:text-gray-900 ease-in-out duration-500">
                 {userData.completion.lessons.intermediate[1] ? (
                   <>Redo</>
                 ) : (
@@ -302,7 +302,7 @@ const TypingLessons = ({ userData }) => {
               </div>
             </div>
             <Link to="/typing/intermediate/3/1">
-              <button className="h-min min-w-[84px] py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:border-blue-500 hover:text-blue-500 ease-in-out duration-500">
+              <button className="h-min min-w-[84px] py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:text-gray-900 ease-in-out duration-500">
                 {userData.completion.lessons.intermediate[2] ? (
                   <>Redo</>
                 ) : (
@@ -346,7 +346,7 @@ const TypingLessons = ({ userData }) => {
               </div>
             </div>
             <Link to="/typing/intermediate/4/1">
-              <button className="h-min min-w-[84px] py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:border-blue-500 hover:text-blue-500 ease-in-out duration-500">
+              <button className="h-min min-w-[84px] py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:text-gray-900 ease-in-out duration-500">
                 {userData.completion.lessons.intermediate[3] ? (
                   <>Redo</>
                 ) : (
@@ -391,7 +391,7 @@ const TypingLessons = ({ userData }) => {
               </div>
             </div>
             <Link to="/typing/advanced/1/1">
-              <button className="h-min min-w-[84px] py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:border-blue-500 hover:text-blue-500 ease-in-out duration-500">
+              <button className="h-min min-w-[84px] py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:text-gray-900 ease-in-out duration-500">
                 {userData.completion.lessons.advanced[0] ? (
                   <>Redo</>
                 ) : (
@@ -433,7 +433,7 @@ const TypingLessons = ({ userData }) => {
               </div>
             </div>
             <Link to="/typing/advanced/2/1">
-              <button className="h-min min-w-[84px] py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:border-blue-500 hover:text-blue-500 ease-in-out duration-500">
+              <button className="h-min min-w-[84px] py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:text-gray-900 ease-in-out duration-500">
                 {userData.completion.lessons.advanced[1] ? (
                   <>Redo</>
                 ) : (
@@ -475,7 +475,7 @@ const TypingLessons = ({ userData }) => {
               </div>
             </div>
             <Link to="/typing/advanced/3/1">
-              <button className="h-min min-w-[84px] py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:border-blue-500 hover:text-blue-500 ease-in-out duration-500">
+              <button className="h-min min-w-[84px] py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:text-gray-900 ease-in-out duration-500">
                 {userData.completion.lessons.advanced[2] ? (
                   <>Redo</>
                 ) : (
@@ -517,7 +517,7 @@ const TypingLessons = ({ userData }) => {
               </div>
             </div>
             <Link to="/typing/advanced/4/1">
-              <button className="h-min min-w-[84px] py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:border-blue-500 hover:text-blue-500 ease-in-out duration-500">
+              <button className="h-min min-w-[84px] py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:text-gray-900 ease-in-out duration-500">
                 {userData.completion.lessons.advanced[3] ? (
                   <>Redo</>
                 ) : (
