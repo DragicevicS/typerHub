@@ -401,7 +401,7 @@ const keyRows = [
       finger: "thumb",
     },
     {
-      displayValue: " ",
+      displayValue: "__",
       normalPressValue: "Space",
       shiftPressValue: "Space",
       hand: "both",

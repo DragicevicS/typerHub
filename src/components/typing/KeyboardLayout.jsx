@@ -4,44 +4,89 @@ import keyRows from "../keyRows";
 const KeyboardLayout = ({ currentLetter, keyboardDisplay }) => {
   if (!keyboardDisplay) return null;
 
+  const getHandForCurrentLetter = () => {
+    for (const row of keyRows) {
+      for (const key of row) {
+        if (
+          key.normalPressValue === currentLetter ||
+          key.shiftPressValue === currentLetter
+        ) {
+          return key.hand;
+        }
+      }
+    }
+    return null;
+  };
+
+  const isShiftActivated = (key) => {
+    if (!currentLetter) return false;
+    const handForCurrentLetter = getHandForCurrentLetter();
+    return (
+      currentLetter.toUpperCase() === currentLetter &&
+      currentLetter !== " " &&
+      ((handForCurrentLetter === "left" && key.hand === "right") ||
+        (handForCurrentLetter === "right" && key.hand === "left"))
+    );
+  };
+
+  const determineClasses = (key) => {
+    const classes = [
+      "flex",
+      "justify-center",
+      "items-center",
+      "rounded-md",
+      "p-2",
+      "border-2",
+      "border-black",
+      "bg-opacity-70",
+    ];
+
+    if (key.displayValue === "F" || key.displayValue === "J") {
+      classes.push("underline", "underline-offset-8");
+    }
+
+    if (
+      key.normalPressValue === currentLetter ||
+      key.shiftPressValue === currentLetter ||
+      (currentLetter === " " && key.normalPressValue === "Space")
+    ) {
+      classes.push("border-white");
+    }
+
+    if (key.displayValue === "Shift" && isShiftActivated(key)) {
+      classes.push("border-white");
+    }
+
+    const fingerColors = {
+      pinkie: "bg-red-900",
+      ring: "bg-gray-600",
+      middle: "bg-amber-800",
+      index: key.hand === "left" ? "bg-indigo-800" : "bg-blue-800",
+      thumb: "bg-teal-800",
+    };
+
+    classes.push(fingerColors[key.finger]);
+
+    if (
+      (key.displayValue === "Ctrl" ||
+        key.displayValue === "Win" ||
+        key.displayValue === "Alt") &&
+      key.displayValue !== "__"
+    ) {
+      classes.push("sm:px-3", "lg:px-5");
+    } else {
+      classes.push("flex-grow");
+    }
+
+    return classes.join(" ");
+  };
+
   return (
     <div className="flex flex-col gap-1 items-center rounded-sm cursor-default">
       {keyRows.map((row, rowIndex) => (
         <div className="flex gap-1 w-full justify-center" key={rowIndex}>
           {row.map((key, keyIndex) => (
-            <div
-              className={`flex justify-center items-center rounded-md p-2 border-2 border-black bg-opacity-70 ${
-                rowIndex !== 4 || key.displayValue === " " ? "flex-grow" : ""
-              } ${
-                rowIndex === 4 && key.displayValue !== " "
-                  ? "sm:px-3 lg:px-5"
-                  : ""
-              } ${
-                key.displayValue === "F" || key.displayValue === "J"
-                  ? "underline underline-offset-8"
-                  : ""
-              } ${
-                key.normalPressValue === currentLetter ||
-                key.shiftPressValue === currentLetter ||
-                (currentLetter === " " && key.normalPressValue === "Space")
-                  ? "border-white"
-                  : ""
-              } ${key.finger === "pinkie" ? "bg-red-900" : ""} 
-              ${key.finger === "ring" ? "bg-gray-600" : ""}
-              ${key.finger === "middle" ? "bg-amber-800" : ""}
-              ${
-                key.finger === "index" && key.hand === "left"
-                  ? "bg-indigo-800"
-                  : ""
-              }
-              ${
-                key.finger === "index" && key.hand === "right"
-                  ? "bg-blue-800"
-                  : ""
-              }
-              ${key.finger === "thumb" ? "bg-teal-800" : ""}`}
-              key={keyIndex}
-            >
+            <div className={determineClasses(key)} key={keyIndex}>
               {key.displayValue}
             </div>
           ))}

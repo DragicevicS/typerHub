@@ -67,7 +67,12 @@ const useTypingLogic = (text, volume) => {
       (key.startsWith("F") && key.length >= 2) ||
       key === "Escape" ||
       key === "Shift" ||
-      key === "CapsLock";
+      key === "CapsLock" ||
+      key === "Control" ||
+      key === "Alt" ||
+      key === "ContextMenu" ||
+      key === "Backspace" ||
+      key === "Tab";
 
     const handleKeyInput = (e) => {
       if (isSpecialKey(e.key)) return;
