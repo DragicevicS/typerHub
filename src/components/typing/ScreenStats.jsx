@@ -9,12 +9,11 @@ const ScreenStats = ({
   levelCounter,
   accuracyCounter,
   text,
-  counter,
   speed,
   userData,
   setUserData,
 }) => {
-  const nextLessonExists =
+  const nextTextExists =
     levelText[difficulty][lesson][levelCounter] !== undefined;
   const accPercent = Math.round((accuracyCounter * 100) / text.length);
 
@@ -34,10 +33,10 @@ const ScreenStats = ({
   };
 
   useEffect(() => {
-    if (!nextLessonExists && counter >= text.length) {
+    if (!nextTextExists && speed === null) {
       handleLessonCompletion();
     }
-  }, [nextLessonExists, counter]);
+  }, [nextTextExists, speed]);
 
   return (
     <div className="flex flex-col gap-5 h-full justify-center items-center">
@@ -111,7 +110,7 @@ const ScreenStats = ({
           />
           Speed : {speed} WPM
         </div>
-        {nextLessonExists ? (
+        {nextTextExists ? (
           <Link
             to={`/typing/${difficulty}/${lesson}/${levelCounter + 1}`}
             className="text-center mt-2"
@@ -133,12 +132,11 @@ const ScreenStats = ({
 };
 
 ScreenStats.propTypes = {
-  levelCounter: PropTypes.number.isRequired,
   difficulty: PropTypes.string.isRequired,
   lesson: PropTypes.string.isRequired,
+  levelCounter: PropTypes.number.isRequired,
   accuracyCounter: PropTypes.number.isRequired,
   text: PropTypes.string.isRequired,
-  counter: PropTypes.number,
   speed: PropTypes.number,
   userData: PropTypes.object,
   setUserData: PropTypes.func,

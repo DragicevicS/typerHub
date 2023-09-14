@@ -33,7 +33,7 @@
     transform: translateY(0%) rotate(-55deg);
   }
   50% {
-    transform: translateY(300%) rotate(360deg);
+    transform: translateY(280%) rotate(360deg);
   }
   100% {
     transform: translateY(0%) rotate(-55deg);

@@ -55,11 +55,9 @@ const Typing = () => {
             lesson={lesson}
             levelCounter={levelCounter}
             accuracyCounter={accuracyCounter}
+            currentLetter={currentLetter}
             text={text}
             speed={speed}
-            lessonCompletion={
-              userData.completion.lessons[difficulty][lesson - 1]
-            }
             userData={userData}
             setUserData={setUserData}
           />

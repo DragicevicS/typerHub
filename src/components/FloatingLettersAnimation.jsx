@@ -10,13 +10,13 @@ const FloatingLettersAnimation = () => {
   };
 
   const [letters] = useState(
-    Array(20)
+    Array(21)
       .fill(null)
       .map(() => getRandomLetter())
   );
 
   const positions = [
-    { delay: "1.17s", top: "10%", left: "1%" },
+    { delay: "1.17s", top: "-10%", left: "0" },
     { delay: "0.26s", top: "60%", left: "5%" },
     { delay: "1s", top: "16%", left: "10%" },
     { delay: "0.57s", top: "43%", left: "15%" },
@@ -35,8 +35,8 @@ const FloatingLettersAnimation = () => {
     { delay: "1.51s", top: "29%", left: "80%" },
     { delay: "0.75s", top: "22%", left: "85%" },
     { delay: "0.69s", top: "68%", left: "90%" },
-    { delay: "1.1s", top: "12%", left: "95%" },
-    { delay: "2s", top: "55%", left: "99%" },
+    { delay: "1.1s", top: "-12%", left: "95%" },
+    { delay: "2s", top: "45%", left: "99%" },
   ];
 
   return (
