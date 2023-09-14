@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const FloatingLettersAnimation = () => {
   const getRandomLetter = () => {
     const randomCharCode =
@@ -7,134 +9,51 @@ const FloatingLettersAnimation = () => {
     return String.fromCharCode(randomCharCode);
   };
 
+  const [letters] = useState(
+    Array(20)
+      .fill(null)
+      .map(() => getRandomLetter())
+  );
+
+  const positions = [
+    { delay: "1.17s", top: "10%", left: "1%" },
+    { delay: "0.26s", top: "60%", left: "5%" },
+    { delay: "1s", top: "16%", left: "10%" },
+    { delay: "0.57s", top: "43%", left: "15%" },
+    { delay: "2s", top: "58%", left: "20%" },
+    { delay: "0.28s", top: "-2%", left: "25%" },
+    { delay: "1.11s", top: "25%", left: "30%" },
+    { delay: "2.12s", top: "33%", left: "35%" },
+    { delay: "0s", top: "4%", left: "40%" },
+    { delay: "1.17s", top: "69%", left: "45%" },
+    { delay: "0.58s", top: "40%", left: "50%" },
+    { delay: "0.99s", top: "9%", left: "55%" },
+    { delay: "0.44s", top: "59%", left: "60%" },
+    { delay: "0.99s", top: "19%", left: "65%" },
+    { delay: "0.28s", top: "-5%", left: "70%" },
+    { delay: "2.3s", top: "50%", left: "75%" },
+    { delay: "1.51s", top: "29%", left: "80%" },
+    { delay: "0.75s", top: "22%", left: "85%" },
+    { delay: "0.69s", top: "68%", left: "90%" },
+    { delay: "1.1s", top: "12%", left: "95%" },
+    { delay: "2s", top: "55%", left: "99%" },
+  ];
+
   return (
     <>
-      <span
-        className="floating absolute opacity-50"
-        style={{ animationDelay: "1.17s", top: "10%", left: "1%" }}
-      >
-        {getRandomLetter()}
-      </span>
-      <span
-        className="floating absolute opacity-50"
-        style={{ animationDelay: "0.26s", top: "60%", left: "5%" }}
-      >
-        {getRandomLetter()}
-      </span>
-      <span
-        className="floating absolute opacity-50"
-        style={{ animationDelay: "1s", top: "16%", left: "10%" }}
-      >
-        {getRandomLetter()}
-      </span>
-      <span
-        className="floating absolute opacity-50"
-        style={{ animationDelay: "0.57s", top: "43%", left: "15%" }}
-      >
-        {getRandomLetter()}
-      </span>
-      <span
-        className="floating absolute opacity-50"
-        style={{ animationDelay: "2s", top: "58%", left: "20%" }}
-      >
-        {getRandomLetter()}
-      </span>
-      <span
-        className="floating absolute opacity-50"
-        style={{ animationDelay: "0.28s", top: "-2%", left: "25%" }}
-      >
-        {getRandomLetter()}
-      </span>
-      <span
-        className="floating absolute opacity-50"
-        style={{ animationDelay: "1.11s", top: "25%", left: "30%" }}
-      >
-        {getRandomLetter()}
-      </span>
-      <span
-        className="floating absolute opacity-50"
-        style={{ animationDelay: "2.12s", top: "33%", left: "35%" }}
-      >
-        {getRandomLetter()}
-      </span>
-      <span
-        className="floating absolute opacity-50"
-        style={{ animationDelay: "0s", top: "4%", left: "40%" }}
-      >
-        {getRandomLetter()}
-      </span>
-      <span
-        className="floating absolute opacity-50"
-        style={{ animationDelay: "1.17s", top: "69%", left: "45%" }}
-      >
-        {getRandomLetter()}
-      </span>
-      <span
-        className="floating absolute opacity-50"
-        style={{ animationDelay: "0.58s", top: "40%", left: "50%" }}
-      >
-        {getRandomLetter()}
-      </span>
-      <span
-        className="floating absolute opacity-50"
-        style={{ animationDelay: "0.99s", top: "9%", left: "55%" }}
-      >
-        {getRandomLetter()}
-      </span>
-      <span
-        className="floating absolute opacity-50"
-        style={{ animationDelay: "0.44s", top: "59%", left: "60%" }}
-      >
-        {getRandomLetter()}
-      </span>
-      <span
-        className="floating absolute opacity-50"
-        style={{ animationDelay: "0.99s", top: "19%", left: "65%" }}
-      >
-        {getRandomLetter()}
-      </span>
-      <span
-        className="floating absolute opacity-50"
-        style={{ animationDelay: "0.28s", top: "-5%", left: "70%" }}
-      >
-        {getRandomLetter()}
-      </span>
-      <span
-        className="floating absolute opacity-50"
-        style={{ animationDelay: "2.3s", top: "50%", left: "75%" }}
-      >
-        {getRandomLetter()}
-      </span>
-      <span
-        className="floating absolute opacity-50"
-        style={{ animationDelay: "1.51s", top: "29%", left: "80%" }}
-      >
-        {getRandomLetter()}
-      </span>
-      <span
-        className="floating absolute opacity-50"
-        style={{ animationDelay: "0.75s", top: "22%", left: "85%" }}
-      >
-        {getRandomLetter()}
-      </span>
-      <span
-        className="floating absolute opacity-50"
-        style={{ animationDelay: "0.69s", top: "68%", left: "90%" }}
-      >
-        {getRandomLetter()}
-      </span>
-      <span
-        className="floating absolute opacity-50"
-        style={{ animationDelay: "1.1s", top: "12%", left: "95%" }}
-      >
-        {getRandomLetter()}
-      </span>
-      <span
-        className="floating absolute opacity-50"
-        style={{ animationDelay: "2s", top: "55%", left: "99%" }}
-      >
-        {getRandomLetter()}
-      </span>
+      {letters.map((letter, index) => (
+        <span
+          key={index}
+          className="floating absolute opacity-50"
+          style={{
+            animationDelay: positions[index].delay,
+            top: positions[index].top,
+            left: positions[index].left,
+          }}
+        >
+          {letter}
+        </span>
+      ))}
     </>
   );
 };
