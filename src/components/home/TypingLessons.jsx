@@ -11,7 +11,7 @@ const TypingLessons = ({ userData }) => {
         <div
           className={`flex flex-col w-full p-1 border-2 ${
             userData.completion.lessons.beginner[0]
-              ? "border-green-200"
+              ? "border-green-200 opacity-[0.85]"
               : "border-blue-500"
           } rounded-md`}
         >
@@ -53,7 +53,7 @@ const TypingLessons = ({ userData }) => {
         <div
           className={`flex flex-col w-full p-1 border-2 ${
             userData.completion.lessons.beginner[1]
-              ? "border-green-200"
+              ? "border-green-200 opacity-[0.85]"
               : "border-blue-500"
           } rounded-md`}
         >
@@ -95,7 +95,7 @@ const TypingLessons = ({ userData }) => {
         <div
           className={`flex flex-col w-full p-1 border-2 ${
             userData.completion.lessons.beginner[2]
-              ? "border-green-200"
+              ? "border-green-200 opacity-[0.85]"
               : "border-blue-500"
           } rounded-md`}
         >
@@ -137,7 +137,7 @@ const TypingLessons = ({ userData }) => {
         <div
           className={`flex flex-col w-full p-1 border-2 ${
             userData.completion.lessons.beginner[3]
-              ? "border-green-200"
+              ? "border-green-200 opacity-[0.85]"
               : "border-blue-500"
           } rounded-md`}
         >
@@ -183,7 +183,7 @@ const TypingLessons = ({ userData }) => {
         <div
           className={`flex flex-col w-full p-1 border-2 ${
             userData.completion.lessons.intermediate[0]
-              ? "border-green-200"
+              ? "border-green-200 opacity-[0.85]"
               : "border-blue-500"
           } rounded-md`}
         >
@@ -227,7 +227,7 @@ const TypingLessons = ({ userData }) => {
         <div
           className={`flex flex-col w-full p-1 border-2 ${
             userData.completion.lessons.intermediate[1]
-              ? "border-green-200"
+              ? "border-green-200 opacity-[0.85]"
               : "border-blue-500"
           } rounded-md`}
         >
@@ -271,7 +271,7 @@ const TypingLessons = ({ userData }) => {
         <div
           className={`flex flex-col w-full p-1 border-2 ${
             userData.completion.lessons.intermediate[2]
-              ? "border-green-200"
+              ? "border-green-200 opacity-[0.85]"
               : "border-blue-500"
           } rounded-md`}
         >
@@ -315,7 +315,7 @@ const TypingLessons = ({ userData }) => {
         <div
           className={`flex flex-col w-full p-1 border-2 ${
             userData.completion.lessons.intermediate[3]
-              ? "border-green-200"
+              ? "border-green-200 opacity-[0.85]"
               : "border-blue-500"
           } rounded-md`}
         >
@@ -362,7 +362,7 @@ const TypingLessons = ({ userData }) => {
         <div
           className={`flex flex-col w-full p-1 border-2 ${
             userData.completion.lessons.advanced[0]
-              ? "border-green-200"
+              ? "border-green-200 opacity-[0.85]"
               : "border-blue-500"
           } rounded-md`}
         >
@@ -404,7 +404,7 @@ const TypingLessons = ({ userData }) => {
         <div
           className={`flex flex-col w-full p-1 border-2 ${
             userData.completion.lessons.advanced[1]
-              ? "border-green-200"
+              ? "border-green-200 opacity-[0.85]"
               : "border-blue-500"
           } rounded-md`}
         >
@@ -446,7 +446,7 @@ const TypingLessons = ({ userData }) => {
         <div
           className={`flex flex-col w-full p-1 border-2 ${
             userData.completion.lessons.advanced[2]
-              ? "border-green-200"
+              ? "border-green-200 opacity-[0.85]"
               : "border-blue-500"
           } rounded-md`}
         >
@@ -488,7 +488,7 @@ const TypingLessons = ({ userData }) => {
         <div
           className={`flex flex-col w-full p-1 border-2 ${
             userData.completion.lessons.advanced[3]
-              ? "border-green-200"
+              ? "border-green-200 opacity-[0.85]"
               : "border-blue-500"
           } rounded-md`}
         >

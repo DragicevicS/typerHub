@@ -3,137 +3,111 @@ import { useState, useEffect } from "react";
 const useTypingLogic = (text, volume) => {
   const numOfWords = text.split(" ").length;
 
-  const [counter, setCounter] = useState(0);
-  const [currentLetter, setCurrentLetter] = useState(text[0]);
-  const [correctLetter, setCorrectLetter] = useState(
-    Array(text.length).fill(null)
-  );
-  const [accuracyCounter, setAccuracyCounter] = useState(0);
-  const [startTime, setStartTime] = useState(null);
-  const [endTime, setEndTime] = useState(null);
-  const [typo, setTypo] = useState(false);
+  const initialState = {
+    counter: 0,
+    currentLetter: text[0],
+    correctLetter: Array(text.length).fill(null),
+    accuracyCounter: 0,
+    startTime: null,
+    endTime: null,
+    typo: false,
+  };
+
+  const [state, setState] = useState(initialState);
   const [capsLock, setCapsLock] = useState(null);
 
   useEffect(() => {
     const checkCapsLock = (e) => {
       setCapsLock(e.getModifierState("CapsLock"));
     };
-
     document.addEventListener("keydown", checkCapsLock);
-
-    return () => {
-      document.removeEventListener("keydown", checkCapsLock);
-    };
+    return () => document.removeEventListener("keydown", checkCapsLock);
   }, []);
 
   useEffect(() => {
-    let isMounted = true;
     const keyboardSound = new Audio("/sounds/keyboard-sound.mp3");
     const errorSound = new Audio("/sounds/error-sound.mp3");
 
-    function handleCorrectInput() {
-      const newCorrectLetter = [...correctLetter];
-      newCorrectLetter[counter] = true;
+    const playSound = (sound) => volume && sound.play();
 
-      setCorrectLetter(newCorrectLetter);
-      setCounter(counter + 1);
-      setCurrentLetter(text[counter + 1]);
-      setAccuracyCounter(accuracyCounter + 1);
-    }
+    const handleCorrectInput = () => {
+      setState((prevState) => ({
+        ...prevState,
+        correctLetter: [
+          ...prevState.correctLetter.slice(0, prevState.counter),
+          true,
+          ...prevState.correctLetter.slice(prevState.counter + 1),
+        ],
+        counter: prevState.counter + 1,
+        currentLetter: text[prevState.counter + 1],
+        accuracyCounter: prevState.accuracyCounter + 1,
+        typo: false,
+      }));
+      playSound(keyboardSound);
+    };
 
-    function handleIncorrectInput() {
-      const newCorrectLetter = [...correctLetter];
-      newCorrectLetter[counter] = false;
+    const handleIncorrectInput = () => {
+      setState((prevState) => ({
+        ...prevState,
+        correctLetter: [
+          ...prevState.correctLetter.slice(0, prevState.counter),
+          false,
+          ...prevState.correctLetter.slice(prevState.counter + 1),
+        ],
+        counter: prevState.counter + 1,
+        currentLetter: text[prevState.counter + 1],
+        typo: true,
+      }));
+      playSound(errorSound);
+    };
 
-      setCorrectLetter(newCorrectLetter);
-      setCounter(counter + 1);
-      setCurrentLetter(text[counter + 1]);
-    }
+    const isSpecialKey = (key) =>
+      key.includes("Arrow") ||
+      key.includes("Page") ||
+      (key.startsWith("F") && key.length >= 2) ||
+      key === "Escape" ||
+      key === "Shift" ||
+      key === "CapsLock";
 
-    function handleKeyInput(e) {
-      if (!isMounted) return;
-      if (
-        e.key.includes("Arrow") ||
-        e.key.includes("Page") ||
-        (e.key.startsWith("F") && e.key.length >= 2) ||
-        e.key === "Escape"
-      )
-        return;
+    const handleKeyInput = (e) => {
+      if (isSpecialKey(e.key)) return;
 
-      if (e.key !== "Shift" && e.key !== "CapsLock" && !startTime)
-        setStartTime(Date.now());
+      if (!state.startTime)
+        setState((prev) => ({ ...prev, startTime: Date.now() }));
 
-      if (
-        e.key !== "Shift" &&
-        e.key !== "CapsLock" &&
-        e.key === currentLetter
-      ) {
-        if (volume) keyboardSound.play();
-        handleCorrectInput(e.key);
-        setTypo(false);
+      if (e.key === state.currentLetter) {
+        handleCorrectInput();
+      } else if (!state.typo) {
+        handleIncorrectInput();
+      } else {
+        playSound(errorSound);
       }
-      if (
-        e.key !== "Shift" &&
-        e.key !== "CapsLock" &&
-        e.key !== currentLetter &&
-        typo === false
-      ) {
-        if (volume) errorSound.play();
-        handleIncorrectInput(e.key);
-        setTypo(true);
-      }
-      if (
-        e.key !== "Shift" &&
-        e.key !== "CapsLock" &&
-        e.key !== currentLetter &&
-        typo === true
-      )
-        if (volume) errorSound.play();
-    }
+    };
 
-    if (counter >= text.length) setEndTime(Date.now());
-    if (counter < text.length)
+    if (state.counter >= text.length && !state.endTime)
+      setState((prev) => ({ ...prev, endTime: Date.now() }));
+
+    if (state.counter < text.length)
       document.addEventListener("keydown", handleKeyInput);
 
-    return () => {
-      document.removeEventListener("keydown", handleKeyInput);
-      isMounted = false;
-    };
-  }, [
-    accuracyCounter,
-    counter,
-    correctLetter,
-    currentLetter,
-    startTime,
-    typo,
-    text,
-    volume,
-  ]);
+    return () => document.removeEventListener("keydown", handleKeyInput);
+  }, [state, text, volume]);
 
   useEffect(() => {
-    setCounter(0);
-    setCurrentLetter(text[0]);
-    setCorrectLetter(Array(text.length).fill(null));
-    setAccuracyCounter(0);
-    setStartTime(null);
-    setEndTime(null);
-    setTypo(false);
+    setState({
+      ...initialState,
+      currentLetter: text[0],
+      correctLetter: Array(text.length).fill(null),
+    });
   }, [text]);
 
-  let speed = null;
-  if (startTime && endTime) {
-    const timeInMinutes = (endTime - startTime) / (1000 * 60);
-    speed = Math.round(numOfWords / timeInMinutes);
-  }
+  const timeInMinutes =
+    state.startTime && state.endTime
+      ? (state.endTime - state.startTime) / (1000 * 60)
+      : null;
+  const speed = timeInMinutes ? Math.round(numOfWords / timeInMinutes) : null;
 
-  return {
-    counter,
-    currentLetter,
-    correctLetter,
-    accuracyCounter,
-    capsLock,
-    speed,
-  };
+  return { ...state, capsLock, speed };
 };
 
 export default useTypingLogic;

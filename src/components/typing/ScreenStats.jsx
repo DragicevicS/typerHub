@@ -9,6 +9,7 @@ const ScreenStats = ({
   levelCounter,
   accuracyCounter,
   text,
+  counter,
   speed,
   userData,
   setUserData,
@@ -17,14 +18,12 @@ const ScreenStats = ({
     levelText[difficulty][lesson][levelCounter] !== undefined;
   const accPercent = Math.round((accuracyCounter * 100) / text.length);
 
-  const updateUserData = () => {
+  const handleLessonCompletion = () => {
     if (userData.completion.lessons[difficulty][lesson - 1]) return;
     const updatedCompletion = { ...userData.completion };
-    const currentDifficultyCompletion = [
-      ...updatedCompletion.lessons[difficulty],
-    ];
-    currentDifficultyCompletion[lesson - 1] = true;
-    updatedCompletion.lessons[difficulty] = currentDifficultyCompletion;
+    const currentDifficulty = [...updatedCompletion.lessons[difficulty]];
+    currentDifficulty[lesson - 1] = true;
+    updatedCompletion.lessons[difficulty] = currentDifficulty;
     const updatedUserData = {
       ...userData,
       completion: updatedCompletion,
@@ -35,10 +34,10 @@ const ScreenStats = ({
   };
 
   useEffect(() => {
-    if (!nextLessonExists) {
-      updateUserData();
+    if (!nextLessonExists && counter >= text.length) {
+      handleLessonCompletion();
     }
-  }, [nextLessonExists]);
+  }, [nextLessonExists, counter]);
 
   return (
     <div className="flex flex-col gap-5 h-full justify-center items-center">
@@ -139,6 +138,7 @@ ScreenStats.propTypes = {
   lesson: PropTypes.string.isRequired,
   accuracyCounter: PropTypes.number.isRequired,
   text: PropTypes.string.isRequired,
+  counter: PropTypes.number,
   speed: PropTypes.number,
   userData: PropTypes.object,
   setUserData: PropTypes.func,

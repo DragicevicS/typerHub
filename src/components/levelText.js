@@ -9,7 +9,7 @@ const levelText = {
       "salad flask sad hask gask half ask dash slag glad;",
       "flag gash jag lash adak all dahl skald kad hall;",
     ],
-    2: [`rr uu`],
+    2: ["rr uu", "ee ii"],
     3: ["vv mm"],
     4: ["recap"],
   },
