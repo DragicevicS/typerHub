@@ -26,7 +26,16 @@ const TypingLessons = ({ userData, resetTempData }) => {
     <>
       <h2 className="font-cursive text-2xl">Typing Lessons</h2>
       <div className="flex flex-col gap-2 w-full px-3 py-1">
-        <h3 className="text-xl font-extrabold">Beginner</h3>
+        <div className="flex gap-3">
+          <h3 className="text-xl font-extrabold">Beginner</h3>
+          {userData.completion.lessons.beginner.includes(false) ? null : (
+            <img
+              src="../../../images/check.png"
+              alt="Checkmark"
+              className="w-7"
+            />
+          )}
+        </div>
         {beginnerLessons.map((title, index) => (
           <LessonDisplay
             key={index}
@@ -39,7 +48,16 @@ const TypingLessons = ({ userData, resetTempData }) => {
         ))}
       </div>
       <div className="flex flex-col gap-2 w-full px-3 py-1">
-        <h3 className="text-xl font-extrabold">Intermediate</h3>
+        <div className="flex gap-3">
+          <h3 className="text-xl font-extrabold">Intermediate</h3>
+          {userData.completion.lessons.intermediate.includes(false) ? null : (
+            <img
+              src="../../../images/check.png"
+              alt="Check mark"
+              className="w-7"
+            />
+          )}
+        </div>
         {intermediateLessons.map((title, index) => (
           <LessonDisplay
             key={index}
@@ -52,7 +70,16 @@ const TypingLessons = ({ userData, resetTempData }) => {
         ))}
       </div>
       <div className="flex flex-col gap-2 w-full px-3 py-1">
-        <h3 className="text-xl font-extrabold">Advanced</h3>
+        <div className="flex gap-3">
+          <h3 className="text-xl font-extrabold">Advanced</h3>
+          {userData.completion.lessons.advanced.includes(false) ? null : (
+            <img
+              src="../../../images/check.png"
+              alt="Checkmark"
+              className="w-7"
+            />
+          )}
+        </div>
         {advancedLessons.map((title, index) => (
           <LessonDisplay
             key={index}
