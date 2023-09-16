@@ -19,10 +19,9 @@ const ScreenStats = ({
 
   const calculateStars = (accPercent) => {
     if (accPercent < 85) return 0;
-    if (accPercent >= 85 && accPercent < 90) return 1;
-    if (accPercent >= 90 && accPercent < 95) return 2;
-    if (accPercent >= 95) return 3;
-    return 0;
+    if (accPercent < 90) return 1;
+    if (accPercent < 95) return 2;
+    return 3;
   };
 
   const updateTempData = () => {
@@ -72,7 +71,12 @@ const ScreenStats = ({
   }, [speed]);
 
   const feedbackMessage = () => {
-    if (accPercent < 85) return "Good!";
+    if (accPercent < 85)
+      return (
+        <>
+          Good<span className="text-blue-500">!</span>
+        </>
+      );
     if (accPercent < 90)
       return (
         <>
@@ -95,7 +99,6 @@ const ScreenStats = ({
   return (
     <div className="flex flex-col gap-5 h-full justify-center items-center">
       <h3 className="text-3xl font-bold">{feedbackMessage()}</h3>
-
       <div className="flex flex-col gap-3 px-20 py-10 border-2 rounded-sm text-lg">
         <div className="flex gap-1">
           <img

@@ -37,7 +37,7 @@ const Typing = () => {
           setUserData={setUserData}
         />
         {counter < text.length ? (
-          <div className="flex flex-col justify-evenly h-full sm:px-10 md:w-5/6 lg:max-w-[1000px]">
+          <div className="flex flex-col justify-evenly h-full sm:px-1 lg:max-w-[1000px]">
             <TextDisplay
               text={text}
               correctLetter={correctLetter}

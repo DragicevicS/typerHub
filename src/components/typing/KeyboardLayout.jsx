@@ -82,7 +82,7 @@ const KeyboardLayout = ({ currentLetter, keyboardDisplay }) => {
   };
 
   return (
-    <div className="flex flex-col gap-1 items-center rounded-sm cursor-default">
+    <div className="flex flex-col gap-1 items-center min-w-[720px] rounded-sm cursor-default font-sans">
       {keyRows.map((row, rowIndex) => (
         <div className="flex gap-1 w-full justify-center" key={rowIndex}>
           {row.map((key, keyIndex) => (

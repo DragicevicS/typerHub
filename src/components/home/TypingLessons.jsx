@@ -32,7 +32,7 @@ const TypingLessons = ({ userData, resetTempData }) => {
             <img
               src="../../../images/check.png"
               alt="Checkmark"
-              className="w-7"
+              title="Completed"
             />
           )}
         </div>
@@ -54,7 +54,7 @@ const TypingLessons = ({ userData, resetTempData }) => {
             <img
               src="../../../images/check.png"
               alt="Check mark"
-              className="w-7"
+              title="Completed"
             />
           )}
         </div>
@@ -76,7 +76,7 @@ const TypingLessons = ({ userData, resetTempData }) => {
             <img
               src="../../../images/check.png"
               alt="Checkmark"
-              className="w-7"
+              title="Completed"
             />
           )}
         </div>
