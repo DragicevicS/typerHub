@@ -54,6 +54,11 @@ const initialUserData = {
       advanced: [0],
     },
   },
+  temp: {
+    speed: [],
+    accuracy: [],
+    stars: [],
+  },
 };
 
 export default initialUserData;

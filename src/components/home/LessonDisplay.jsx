@@ -2,7 +2,13 @@ import { Link } from "react-router-dom";
 import lessonText from "../../data/lessonText";
 import PropTypes from "prop-types";
 
-const LessonDisplay = ({ title, difficulty, index, userData }) => {
+const LessonDisplay = ({
+  title,
+  difficulty,
+  index,
+  userData,
+  resetTempData,
+}) => {
   const isCompleted = userData.completion.lessons[difficulty][index];
 
   return (
@@ -22,10 +28,15 @@ const LessonDisplay = ({ title, difficulty, index, userData }) => {
           </h3>
           <hr />
           <div className="flex gap-1 text-blue-500">
-            <span>Avg speed: 0 WPM | </span>
-            <span>Avg acc: 0% | </span>
+            <span>
+              Avg speed: {userData.speed.lessons[difficulty][index]} WPM |{" "}
+            </span>
+            <span>
+              Avg acc: {userData.accuracy.lessons[difficulty][index]}% |{" "}
+            </span>
             <span className="flex items-center gap-1">
-              0/{lessonText[difficulty][index + 1].length * 3}
+              {userData.stars.lessons[difficulty][index]}/
+              {lessonText[difficulty][index + 1].length * 3}
               <img
                 src="../../../images/star.png"
                 alt="Star"
@@ -35,9 +46,12 @@ const LessonDisplay = ({ title, difficulty, index, userData }) => {
             </span>
           </div>
         </div>
-        <Link to={`/typing/${difficulty}/${index + 1}/1`}>
+        <Link
+          to={`/typing/${difficulty}/${index + 1}/1`}
+          onClick={resetTempData}
+        >
           <button className="h-min min-w-[84px] py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:text-gray-900 ease-in-out duration-500">
-            {isCompleted ? <>Redo</> : <>Start</>}
+            {!isCompleted ? <>Start</> : <>Redo</>}
           </button>
         </Link>
       </div>
@@ -50,6 +64,7 @@ LessonDisplay.propTypes = {
   difficulty: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
   userData: PropTypes.object.isRequired,
+  resetTempData: PropTypes.func.isRequired,
 };
 
 export default LessonDisplay;

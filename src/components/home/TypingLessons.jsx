@@ -1,7 +1,7 @@
 import LessonDisplay from "./LessonDisplay";
 import PropTypes from "prop-types";
 
-const TypingLessons = ({ userData }) => {
+const TypingLessons = ({ userData, resetTempData }) => {
   const beginnerLessons = [
     "Middle Row",
     "Upper Row",
@@ -34,6 +34,7 @@ const TypingLessons = ({ userData }) => {
             difficulty="beginner"
             index={index}
             userData={userData}
+            resetTempData={resetTempData}
           />
         ))}
       </div>
@@ -46,6 +47,7 @@ const TypingLessons = ({ userData }) => {
             difficulty="intermediate"
             index={index}
             userData={userData}
+            resetTempData={resetTempData}
           />
         ))}
       </div>
@@ -58,6 +60,7 @@ const TypingLessons = ({ userData }) => {
             difficulty="advanced"
             index={index}
             userData={userData}
+            resetTempData={resetTempData}
           />
         ))}
       </div>
@@ -67,6 +70,7 @@ const TypingLessons = ({ userData }) => {
 
 TypingLessons.propTypes = {
   userData: PropTypes.object.isRequired,
+  resetTempData: PropTypes.func.isRequired,
 };
 
 export default TypingLessons;

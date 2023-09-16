@@ -110,7 +110,7 @@ const useTypingLogic = (text, volume) => {
     state.startTime && state.endTime
       ? (state.endTime - state.startTime) / (1000 * 60)
       : null;
-  const speed = timeInMinutes ? Math.round(numOfWords / timeInMinutes) : null;
+  const speed = timeInMinutes ? Math.round(numOfWords / timeInMinutes) : 0;
 
   return { ...state, capsLock, speed };
 };

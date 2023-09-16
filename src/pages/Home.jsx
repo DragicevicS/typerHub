@@ -9,8 +9,19 @@ import PersonalStats from "../components/home/PersonalStats";
 import Footer from "../components/Footer";
 
 const Home = () => {
-  const [userData] = useLocalStorage("userData", initialUserData);
+  const [userData, setUserData] = useLocalStorage("userData", initialUserData);
   const [homeTab, setHomeTab] = useState(0);
+
+  const resetTempData = () => {
+    let tempUserData = { ...userData };
+    tempUserData.temp.speed = [];
+    tempUserData.temp.accuracy = [];
+    tempUserData.temp.stars = [];
+
+    setUserData(tempUserData);
+    localStorage.setItem("userData", JSON.stringify(tempUserData));
+  };
+
   return (
     <div className="flex flex-col w-full h-full">
       <Header />
@@ -54,7 +65,10 @@ const Home = () => {
           </nav>
           <div className="flex flex-col items-center h-full py-5 gap-2 bg-gray-900 overflow-y-auto border border-gray-900 rounded-tr-lg rounded-br-lg rounded-bl-lg min-w-[355px] sm:px-10 md:w-5/6 lg:max-w-[1000px]">
             {homeTab === 0 ? (
-              <TypingLessons userData={userData} />
+              <TypingLessons
+                userData={userData}
+                resetTempData={resetTempData}
+              />
             ) : homeTab === 1 ? (
               <TypingPractice />
             ) : homeTab === 2 ? (

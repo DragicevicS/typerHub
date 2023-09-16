@@ -17,8 +17,40 @@ const ScreenStats = ({
     lessonText[difficulty][lesson][levelCounter] !== undefined;
   const accPercent = Math.round((accuracyCounter * 100) / text.length);
 
+  const calculateStars = (accPercent) => {
+    if (accPercent < 85) return 0;
+    if (accPercent >= 85 && accPercent < 90) return 1;
+    if (accPercent >= 90 && accPercent < 95) return 2;
+    if (accPercent >= 95) return 3;
+    return 0;
+  };
+
+  const updateTempData = () => {
+    const tempUserData = { ...userData };
+
+    tempUserData.temp.speed[levelCounter - 1] = speed;
+    tempUserData.temp.accuracy[levelCounter - 1] = accPercent;
+    tempUserData.temp.stars[levelCounter - 1] = calculateStars(accPercent);
+
+    setUserData(tempUserData);
+    localStorage.setItem("userData", JSON.stringify(tempUserData));
+  };
+
   const handleLessonCompletion = () => {
-    if (userData.completion.lessons[difficulty][lesson - 1]) return;
+    let tempUserData = { ...userData };
+    const avgSpeed = Math.floor(
+      userData.temp.speed.reduce((a, b) => a + b, 0) /
+        userData.temp.speed.length
+    );
+    const avgAccuracy = Math.floor(
+      userData.temp.accuracy.reduce((a, b) => a + b, 0) /
+        userData.temp.accuracy.length
+    );
+    const totalStars = userData.temp.stars.reduce((a, b) => a + b, 0);
+    tempUserData.speed.lessons[difficulty][lesson - 1] = avgSpeed;
+    tempUserData.accuracy.lessons[difficulty][lesson - 1] = avgAccuracy;
+    tempUserData.stars.lessons[difficulty][lesson - 1] = totalStars;
+
     const updatedCompletion = { ...userData.completion };
     const currentDifficulty = [...updatedCompletion.lessons[difficulty]];
     currentDifficulty[lesson - 1] = true;
@@ -33,35 +65,36 @@ const ScreenStats = ({
   };
 
   useEffect(() => {
-    if (!nextTextExists && speed === null) {
-      handleLessonCompletion();
+    if (speed > 0) {
+      updateTempData();
+      if (!nextTextExists) handleLessonCompletion();
     }
-  }, [nextTextExists, speed]);
+  }, [speed]);
+
+  const feedbackMessage = () => {
+    if (accPercent < 85) return "Good!";
+    if (accPercent < 90)
+      return (
+        <>
+          Nice <span className="text-blue-500">work</span>!
+        </>
+      );
+    if (accPercent < 95)
+      return (
+        <>
+          Great <span className="text-blue-500">job</span>!
+        </>
+      );
+    return (
+      <>
+        Excellent<span className="text-blue-500">!</span>
+      </>
+    );
+  };
 
   return (
     <div className="flex flex-col gap-5 h-full justify-center items-center">
-      <h3 className="text-3xl font-bold">
-        {accPercent < 85 && (
-          <>
-            Good<span className="text-blue-500">!</span>
-          </>
-        )}
-        {accPercent >= 85 && accPercent < 90 && (
-          <>
-            Nice <span className="text-blue-500">work</span>!
-          </>
-        )}
-        {accPercent >= 90 && accPercent < 95 && (
-          <>
-            Great <span className="text-blue-500">job</span>!
-          </>
-        )}
-        {accPercent >= 95 && (
-          <>
-            Excellent<span className="text-blue-500">!</span>
-          </>
-        )}
-      </h3>
+      <h3 className="text-3xl font-bold">{feedbackMessage()}</h3>
 
       <div className="flex flex-col gap-3 px-20 py-10 border-2 rounded-sm text-lg">
         <div className="flex gap-1">
