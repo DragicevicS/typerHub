@@ -70,11 +70,14 @@ const Home = () => {
                 resetTempData={resetTempData}
               />
             ) : homeTab === 1 ? (
-              <TypingPractice />
+              <TypingPractice
+                userData={userData}
+                resetTempData={resetTempData}
+              />
             ) : homeTab === 2 ? (
-              <TypingTests />
+              <TypingTests userData={userData} resetTempData={resetTempData} />
             ) : homeTab === 3 ? (
-              <PersonalStats />
+              <PersonalStats userData={userData} />
             ) : undefined}
           </div>
         </div>

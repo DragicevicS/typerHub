@@ -30,6 +30,7 @@ const Toolbar = ({ capsLock, keyboardDisplay, volume, setUserData }) => {
           alt="Home"
           title="Return Home"
           className="w-8 h-auto rounded-lg hover:bg-blue-100 ease-in-out duration-500"
+          draggable="false"
         />
       </Link>
       {capsLock ? (
@@ -45,6 +46,7 @@ const Toolbar = ({ capsLock, keyboardDisplay, volume, setUserData }) => {
           alt="Redo"
           title="Redo"
           className="w-8 h-auto rounded-lg hover:bg-blue-100 cursor-pointer ease-in-out duration-500"
+          draggable="false"
           onClick={() => location.reload()}
         />
         <img
@@ -56,6 +58,7 @@ const Toolbar = ({ capsLock, keyboardDisplay, volume, setUserData }) => {
           alt="Home"
           title={volume ? "Volume On" : "Volume Off"}
           className="w-8 h-auto rounded-lg hover:bg-blue-100 cursor-pointer ease-in-out duration-500"
+          draggable="false"
           onClick={toggleVolume}
         />
         <img
@@ -69,6 +72,7 @@ const Toolbar = ({ capsLock, keyboardDisplay, volume, setUserData }) => {
             keyboardDisplay ? "Keyboard Display On" : "Keyboard Display Off"
           }
           className="w-8 h-auto rounded-lg hover:bg-blue-100 cursor-pointer ease-in-out duration-500"
+          draggable="false"
           onClick={toggleKeyboardDisplay}
         />
       </div>

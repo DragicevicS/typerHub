@@ -61,7 +61,7 @@ const KeyboardLayout = ({ currentLetter, keyboardDisplay }) => {
       pinkie: "bg-red-900",
       ring: "bg-gray-600",
       middle: "bg-amber-800",
-      index: key.hand === "left" ? "bg-indigo-800" : "bg-blue-800",
+      index: key.hand === "left" ? "bg-indigo-900" : "bg-blue-600",
       thumb: "bg-teal-800",
     };
 
@@ -75,7 +75,7 @@ const KeyboardLayout = ({ currentLetter, keyboardDisplay }) => {
     ) {
       classes.push("sm:px-3", "lg:px-5");
     } else {
-      classes.push("flex-grow");
+      classes.push("flex-grow tracking-tighter");
     }
 
     return classes.join(" ");
@@ -106,11 +106,11 @@ const KeyboardLayout = ({ currentLetter, keyboardDisplay }) => {
           <p className="text-lg">Middle |</p>
         </div>
         <div className="flex items-center gap-2">
-          <div className="bg-indigo-800 w-6 h-6 border-black border-2 rounded-md"></div>
+          <div className="bg-indigo-900 w-6 h-6 border-black border-2 rounded-md"></div>
           <p className="text-lg">Index(left) |</p>
         </div>
         <div className="flex items-center gap-2">
-          <div className="bg-blue-800 w-6 h-6 border-black border-2 rounded-md"></div>
+          <div className="bg-blue-600 w-6 h-6 border-black border-2 rounded-md"></div>
           <p className="text-lg">Index(right) |</p>
         </div>
         <div className="flex items-center gap-2">
