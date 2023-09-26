@@ -106,7 +106,7 @@ const ScreenStats = ({
             alt="Bullseye arrow"
             className="w-6"
           />
-          Accuracy : {accPercent}% ({accuracyCounter}/{text.length} letters)
+          Accuracy : {accPercent}% ({accuracyCounter}/{text.length} characters)
         </div>
         <div className="flex justify-center">
           <img
