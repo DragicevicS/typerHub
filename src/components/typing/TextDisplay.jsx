@@ -6,23 +6,26 @@ const TextDisplay = ({ text, correctLetter, counter, keyboardDisplay }) => {
   const spanWidth = 22;
   const rowHeight = 36;
   const [lettersInRow, setLettersInRow] = useState(0);
-  const [scrollIncrement, setScrollIncrement] = useState(0);
 
   useEffect(() => {
     if (containerRef.current) {
       const containerWidth = containerRef.current.clientWidth;
       const newLettersInRow = Math.floor(containerWidth / spanWidth);
       setLettersInRow(newLettersInRow);
-      setScrollIncrement(newLettersInRow);
     }
-  }, []);
+  }, [text]);
 
   useEffect(() => {
-    if (containerRef.current && counter > lettersInRow) {
+    if (containerRef.current && counter % lettersInRow === 0 && counter !== 0) {
       containerRef.current.scrollTop += rowHeight;
-      setLettersInRow((prevState) => prevState + scrollIncrement);
     }
-  }, [counter, lettersInRow, scrollIncrement]);
+  }, [counter, lettersInRow]);
+
+  useEffect(() => {
+    if (containerRef.current) {
+      containerRef.current.scrollTop = 0;
+    }
+  }, [text]);
 
   return (
     <div

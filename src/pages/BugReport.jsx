@@ -1,7 +1,7 @@
 import emailjs from "@emailjs/browser";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import { PUBLIC_KEY, SERVICE_ID, TEMPLATE_ID } from "../data/credentials";
+import { PUBLIC_KEY, SERVICE_ID, TEMPLATE_ID } from "../data/emailInfo";
 
 const BugReport = () => {
   const handleSubmit = (event) => {

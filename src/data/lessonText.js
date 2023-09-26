@@ -34,10 +34,28 @@ const lessonText = {
     ],
   },
   intermediate: {
-    1: ["Capitalization"],
-    2: ["Punctuation"],
-    3: ["Short Paragraphs"],
-    4: ["int recap"],
+    1: [
+      "Apple Sun Dog Fish Grape House Jump Kite Lemon Ant Star Duck Frog Giraffe Horse Jelly Kangaroo Lion All Snake Dragon Fox Gull Hut Jacket Koala Lamp",
+      "Queen Wagon Elephant Rainbow Tiger Yacht Umbrella Igloo Octopus Penguin Quilt Whale Eagle Rabbit Turtle Yellow Umbrella Igloo Ostrich Panda",
+      "Zebra Xylophone Cactus Violet Banana Nectarine Mango Zero Cat Vase Bee Noodle Magnet Zone Carrot Velvet Nest Moth Zucchini Candle Vine Mushroom",
+      "Ant Bear Cat Dog Elephant Fish Giraffe Horse Igloo Jacket Kite Lion Monkey Nest Owl Penguin Quilt Rabbit Sun Tiger Umbrella Vase Whale Xylophone Yacht Zebra",
+    ],
+    2: [
+      `He visited three cities on his trip: Paris, London and Rome. The cat, with its fluffy tail, leaped onto the windowsill. I need to buy groceries: milk, eggs and bread.`,
+      `After work, I'll go to the gym, then meet you for dinner. She said, "I'll be there in a minute." The storm was brewing; dark clouds gathered overhead.`,
+      `The recipe called for sugar, salt and flour. His favorite books include "To Kill a Mockingbird" and "Pride and Prejudice." The concert tickets were expensive; however, it was worth every penny.`,
+      `The river was calm, reflecting the stars above. John's hobbies include hiking, painting and playing the guitar. "I can't believe you did that," he exclaimed. To be continued...`,
+    ],
+    3: [
+      "The sun hung low on the horizon, casting long shadows across the tranquil meadow. Birds chirped in the distance as a gentle breeze rustled the leaves of the tall oak trees. It was a perfect afternoon for a leisurely walk. Sarah took a deep breath, inhaling the earthy scent of the forest. With each step, she felt a sense of calm wash over her, leaving behind the worries of the day.",
+      "In the heart of the bustling city, a small cafe nestled in between towering skyscrapers. Its quaint charm attracted people from all walks of life. Inside, the aroma of freshly brewed coffee mingled with the sweet scent of pastries. The soft murmur of conversation filled the air as friends gathered to catch up, and strangers found solace in the simple pleasure of a warm cup of joe.",
+      "As the night descended, the city came alive with a vibrant energy. Neon signs lit up the streets, and the distant sounds of music and laughter echoed through the urban canyons. On a rooftop bar, people clinked glasses under a canopy of stars. It was a reminder that in the midst of chaos, there was always a space for connection, celebration, and the promise of a new day.",
+    ],
+    4: [
+      `In the heart of the small town of Elmsworth, Mrs. Clara Bennett was known as the "Lady of Letters." She owned the local post office and had a penchant for writing to anyone and everyone. To most, receiving a handwritten letter from Clara was a cherished occasion.`,
+      `On sunny afternoons, Clara could often be spotted in Elmsworth Park, writing under the shade of a grand old oak tree. With a quill in hand and an inkpot beside her, she'd weave tales of the town's history, events, and daily happenings. The park's serene setting, with birds chirping and the distant sound of the river, often served as her muse.`,
+      `One day, Mr. Jonathan Grey, a historian from the city, visited Elmsworth. He had heard tales of Clara's letters and was eager to meet her. Intrigued by her accounts of the town, he proposed turning her letters into a book. Clara hesitated but, with Jonathan's persistence, she agreed. The town of Elmsworth was soon buzzing with excitement about their very own "Lady of Letters" becoming an author.`,
+    ],
   },
   advanced: {
     1: ["1234"],

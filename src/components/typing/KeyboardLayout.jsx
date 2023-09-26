@@ -7,10 +7,7 @@ const KeyboardLayout = ({ currentLetter, keyboardDisplay }) => {
   const getHandForCurrentLetter = () => {
     for (const row of keyRows) {
       for (const key of row) {
-        if (
-          key.normalPressValue === currentLetter ||
-          key.shiftPressValue === currentLetter
-        ) {
+        if (key.shiftPressValue === currentLetter) {
           return key.hand;
         }
       }
@@ -53,8 +50,11 @@ const KeyboardLayout = ({ currentLetter, keyboardDisplay }) => {
       classes.push("border-white");
     }
 
-    if (key.displayValue === "Shift" && isShiftActivated(key)) {
-      classes.push("border-white");
+    if (key.displayValue === "Shift") {
+      classes.push("px-3");
+      if (isShiftActivated(key)) {
+        classes.push("border-white");
+      }
     }
 
     const fingerColors = {
