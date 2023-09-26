@@ -22,6 +22,27 @@ const Home = () => {
     localStorage.setItem("userData", JSON.stringify(tempUserData));
   };
 
+  const renderContent = () => {
+    switch (homeTab) {
+      case 0:
+        return (
+          <TypingLessons userData={userData} resetTempData={resetTempData} />
+        );
+      case 1:
+        return (
+          <TypingPractice userData={userData} resetTempData={resetTempData} />
+        );
+      case 2:
+        return (
+          <TypingTests userData={userData} resetTempData={resetTempData} />
+        );
+      case 3:
+        return <PersonalStats userData={userData} />;
+      default:
+        return;
+    }
+  };
+
   return (
     <div className="flex flex-col w-full h-full">
       <Header />
@@ -29,56 +50,22 @@ const Home = () => {
         <div className="flex justify-center w-full h-full">
           <nav className="min-w-max">
             <ul className="flex flex-col gap-10 font-cursive cursor-pointer text-2xl">
-              <li
-                className={`p-3 border-l-2 border-blue-500 rounded-l-full ${
-                  homeTab === 0 ? "bg-gray-900" : "bg-gray-800 hover-effect"
-                }`}
-                onClick={() => setHomeTab(0)}
-              >
-                Typing <span className="text-blue-500">Lessons</span>
-              </li>
-              <li
-                className={`p-3 border-l-2 border-blue-500 rounded-l-full ${
-                  homeTab === 1 ? "bg-gray-900" : "bg-gray-800 hover-effect"
-                }`}
-                onClick={() => setHomeTab(1)}
-              >
-                Typing <span className="text-blue-500">Practice</span>
-              </li>
-              <li
-                className={`p-3 border-l-2 border-blue-500 rounded-l-full ${
-                  homeTab === 2 ? "bg-gray-900" : "bg-gray-800 hover-effect"
-                }`}
-                onClick={() => setHomeTab(2)}
-              >
-                Typing <span className="text-blue-500">Tests</span>
-              </li>
-              <li
-                className={`p-3 border-l-2 border-blue-500 rounded-l-full ${
-                  homeTab === 3 ? "bg-gray-900" : "bg-gray-800 hover-effect"
-                }`}
-                onClick={() => setHomeTab(3)}
-              >
-                Personal <span className="text-blue-500">Stats</span>
-              </li>
+              {["Lessons", "Practice", "Tests", "Stats"].map((tab, index) => (
+                <li
+                  key={tab}
+                  className={`p-3 border-l-2 border-blue-500 rounded-l-full ${
+                    homeTab === index ? "bg-black" : "bg-gray-900 hover-effect"
+                  }`}
+                  onClick={() => setHomeTab(index)}
+                >
+                  {index === 3 ? "Personal " : "Typing "}
+                  <span className="text-blue-500">{tab}</span>
+                </li>
+              ))}
             </ul>
           </nav>
-          <div className="flex flex-col items-center h-full py-5 gap-2 bg-gray-900 overflow-y-auto border border-gray-900 rounded-tr-lg rounded-br-lg rounded-bl-lg min-w-[355px] sm:px-10 md:w-5/6 lg:max-w-[1000px]">
-            {homeTab === 0 ? (
-              <TypingLessons
-                userData={userData}
-                resetTempData={resetTempData}
-              />
-            ) : homeTab === 1 ? (
-              <TypingPractice
-                userData={userData}
-                resetTempData={resetTempData}
-              />
-            ) : homeTab === 2 ? (
-              <TypingTests userData={userData} resetTempData={resetTempData} />
-            ) : homeTab === 3 ? (
-              <PersonalStats userData={userData} />
-            ) : undefined}
+          <div className="flex flex-col items-center h-full py-5 gap-2 bg-black overflow-y-auto border border-black rounded-tr-lg rounded-br-lg rounded-bl-lg min-w-[355px] sm:px-10 md:w-5/6 lg:max-w-[1000px]">
+            {renderContent()}
           </div>
         </div>
       </main>

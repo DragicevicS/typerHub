@@ -71,13 +71,19 @@ const TypingLessons = ({ userData, resetTempData }) => {
       </div>
       <div className="flex flex-col gap-2 w-full px-3 py-1">
         <div className="flex gap-3">
-          <h3 className="text-xl font-extrabold">Advanced</h3>
-          {userData.completion.lessons.advanced.includes(false) ? null : (
-            <img
-              src="../../../images/check.png"
-              alt="Checkmark"
-              title="Completed"
-            />
+          {userData.completion.lessons.advanced.includes(false) ? (
+            <h3 className="text-xl font-extrabold">Advanced</h3>
+          ) : (
+            <>
+              <h3 className="text-xl font-extrabold text-green-200">
+                Advanced
+              </h3>
+              <img
+                src="../../../images/check.png"
+                alt="Checkmark"
+                title="Completed"
+              />
+            </>
           )}
         </div>
         {advancedLessons.map((title, index) => (

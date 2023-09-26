@@ -23,13 +23,13 @@ const Toolbar = ({ capsLock, keyboardDisplay, volume, setUserData }) => {
   };
 
   return (
-    <div className="flex text-center items-center w-full px-6 py-1 bg-gray-700 ">
+    <div className="flex text-center items-center w-full px-6 py-1 bg-blue-500 ">
       <Link to="/">
         <img
           src="../../../images/arrow-left.svg"
           alt="Home"
           title="Return Home"
-          className="w-8 h-auto rounded-lg hover:bg-blue-100 ease-in-out duration-500"
+          className="w-8 h-auto bg-blue-100 rounded-lg hover:bg-blue-500 ease-in-out duration-500"
           draggable="false"
         />
       </Link>
@@ -45,7 +45,7 @@ const Toolbar = ({ capsLock, keyboardDisplay, volume, setUserData }) => {
           src="../../../images/redo.svg"
           alt="Redo"
           title="Redo"
-          className="w-8 h-auto rounded-lg hover:bg-blue-100 cursor-pointer ease-in-out duration-500"
+          className="w-8 h-auto bg-blue-100 rounded-lg hover:bg-blue-500 cursor-pointer ease-in-out duration-500"
           draggable="false"
           onClick={() => location.reload()}
         />
@@ -57,7 +57,7 @@ const Toolbar = ({ capsLock, keyboardDisplay, volume, setUserData }) => {
           }
           alt="Home"
           title={volume ? "Volume On" : "Volume Off"}
-          className="w-8 h-auto rounded-lg hover:bg-blue-100 cursor-pointer ease-in-out duration-500"
+          className="w-8 h-auto bg-blue-100 rounded-lg hover:bg-blue-500 cursor-pointer ease-in-out duration-500"
           draggable="false"
           onClick={toggleVolume}
         />
@@ -71,7 +71,7 @@ const Toolbar = ({ capsLock, keyboardDisplay, volume, setUserData }) => {
           title={
             keyboardDisplay ? "Keyboard Display On" : "Keyboard Display Off"
           }
-          className="w-8 h-auto rounded-lg hover:bg-blue-100 cursor-pointer ease-in-out duration-500"
+          className="w-8 h-auto bg-blue-100 rounded-lg hover:bg-blue-500 cursor-pointer ease-in-out duration-500"
           draggable="false"
           onClick={toggleKeyboardDisplay}
         />

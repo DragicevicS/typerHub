@@ -90,8 +90,8 @@ const lessonText = {
       "I have read 52 books this year, and, interestingly, 14 of them were solely focused on ancient civilizations and their intriguing mysteries.",
       "If you visit the museum, you'll find artifacts from 2000 B.C., along with detailed descriptions of the daily life from that era.",
       `She exclaimed, "$500 for that vintage watch? That's a steal!" and immediately decided to buy it without a second thought.`,
-      `When John said, "I've visited 30+ countries, including Norway, Sweden, and Finland," his friend retorted, "Well, I've been to 50 - beat that!"`,
-      `At #5 on the bestseller list, the book titled "Symbols & Secrets: A Journey Through Time" dives deep into 21 different ancient scripts, each with its unique characters like %, &, @, and /.`,
+      `When John said, "I've visited 30+ countries, including Norway, Sweden and Finland," his friend retorted, "Well, I've been to 50 - beat that!"`,
+      `At #5 on the bestseller list, the book titled "Symbols & Secrets: A Journey Through Time" dives deep into 21 different ancient scripts, each with its unique characters like: %, &, @ and /.`,
     ],
   },
 };

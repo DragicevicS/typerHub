@@ -3,7 +3,7 @@ import FloatingLettersAnimation from "./FloatingLettersAnimation";
 
 const Header = () => {
   return (
-    <header className="flex items-center flex-shrink-0 p-5 relative overflow-hidden bg-gray-900">
+    <header className="flex items-center flex-shrink-0 p-5 relative overflow-hidden bg-black">
       <Link to="/">
         <h1 className="text-7xl px-2 inline ml-8 font-cursive italic underline">
           Typer

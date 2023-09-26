@@ -24,7 +24,7 @@
 }
 
 .hover-effect:hover {
-  box-shadow: inset 250px 0 0 0 rgb(17, 24, 39);
+  box-shadow: inset 250px 0 0 0 black;
   color: rgb(219, 234, 254);
 }
 
@@ -53,10 +53,10 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #555;
   border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #888;
 }
