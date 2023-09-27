@@ -39,7 +39,6 @@ TestDisplay.propTypes = {
   title: PropTypes.string.isRequired,
   difficulty: PropTypes.string.isRequired,
   userData: PropTypes.object.isRequired,
-  resetTempData: PropTypes.func.isRequired,
 };
 
 export default TestDisplay;

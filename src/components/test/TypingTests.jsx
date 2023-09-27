@@ -21,7 +21,6 @@ const TypingTests = ({ userData }) => {
 
 TypingTests.propTypes = {
   userData: PropTypes.object.isRequired,
-  resetTempData: PropTypes.func.isRequired,
 };
 
 export default TypingTests;

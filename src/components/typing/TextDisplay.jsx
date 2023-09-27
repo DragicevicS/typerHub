@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const TextDisplay = ({ text, correctLetter, counter, keyboardDisplay }) => {
   const containerRef = useRef(null);
   const spanWidth = 22;
-  const rowHeight = 36;
+  const rowHeight = 39;
   const [lettersInRow, setLettersInRow] = useState(0);
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const TextDisplay = ({ text, correctLetter, counter, keyboardDisplay }) => {
     <div
       ref={containerRef}
       className={`${
-        keyboardDisplay ? "max-h-[35%]" : "h-[90%]"
+        keyboardDisplay ? "max-h-[35%]" : "h-[80%]"
       } overflow-y-auto overflow-x-hidden leading-loose font-mono scroll-smooth`}
     >
       {text.split("").map((letter, index) => (
