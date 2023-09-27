@@ -1,7 +1,8 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import Error from "./pages/Error.jsx";
-import Typing from "./pages/Typing.jsx";
+import Lesson from "./pages/Lesson.jsx";
+import Test from "./pages/Test.jsx";
 import BugReport from "./pages/BugReport.jsx";
 
 const Router = () => {
@@ -12,8 +13,13 @@ const Router = () => {
       errorElement: <Error />,
     },
     {
-      path: "typing/:difficulty/:lesson/:index",
-      element: <Typing />,
+      path: "lesson/:difficulty/:lesson/:index",
+      element: <Lesson />,
+      errorElement: <Error />,
+    },
+    {
+      path: "/test/:difficulty",
+      element: <Test />,
       errorElement: <Error />,
     },
     {

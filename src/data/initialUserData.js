@@ -10,9 +10,9 @@ const initialUserData = {
       advanced: [false, false, false, false],
     },
     tests: {
-      beginner: [false],
-      intermediate: [false],
-      advanced: [false],
+      beginner: false,
+      intermediate: false,
+      advanced: false,
     },
   },
   speed: {
@@ -23,9 +23,9 @@ const initialUserData = {
     },
     practice: {},
     tests: {
-      beginner: [0],
-      intermediate: [0],
-      advanced: [0],
+      beginner: 0,
+      intermediate: 0,
+      advanced: 0,
     },
   },
   accuracy: {
@@ -36,9 +36,9 @@ const initialUserData = {
     },
     practice: {},
     tests: {
-      beginner: [0],
-      intermediate: [0],
-      advanced: [0],
+      beginner: 0,
+      intermediate: 0,
+      advanced: 0,
     },
   },
   stars: {
@@ -46,12 +46,6 @@ const initialUserData = {
       beginner: [0, 0, 0, 0],
       intermediate: [0, 0, 0, 0],
       advanced: [0, 0, 0, 0],
-    },
-    practice: {},
-    tests: {
-      beginner: [0],
-      intermediate: [0],
-      advanced: [0],
     },
   },
   temp: {

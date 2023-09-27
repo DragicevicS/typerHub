@@ -1,5 +1,5 @@
-import useLocalStorage from "../../hooks/useLocalStorage";
-import initialUserData from "../../data/initialUserData";
+import useLocalStorage from "../hooks/useLocalStorage";
+import initialUserData from "../data/initialUserData";
 
 const PersonalStats = () => {
   const [userData, setUserData] = useLocalStorage("userData", initialUserData);

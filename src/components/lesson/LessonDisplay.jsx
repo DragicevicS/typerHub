@@ -47,7 +47,7 @@ const LessonDisplay = ({
           </div>
         </div>
         <Link
-          to={`/typing/${difficulty}/${index + 1}/1`}
+          to={`/lesson/${difficulty}/${index + 1}/1`}
           onClick={resetTempData}
         >
           <button className="h-min min-w-[84px] py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:text-gray-900 ease-in-out duration-500">

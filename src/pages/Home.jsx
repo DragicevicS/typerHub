@@ -1,12 +1,12 @@
 import { useState } from "react";
 import useLocalStorage from "../hooks/useLocalStorage";
 import initialUserData from "../data/initialUserData";
-import Header from "../components/Header";
-import TypingLessons from "../components/home/TypingLessons";
-import TypingPractice from "../components/home/TypingPractice";
-import TypingTests from "../components/home/TypingTests";
-import PersonalStats from "../components/home/PersonalStats";
-import Footer from "../components/Footer";
+import Header from "../components/general/Header";
+import TypingLessons from "../components/lesson/TypingLessons";
+import TypingPractice from "../components/practice/TypingPractice";
+import TypingTests from "../components/test/TypingTests";
+import PersonalStats from "../components/PersonalStats";
+import Footer from "../components/general/Footer";
 
 const Home = () => {
   const [userData, setUserData] = useLocalStorage("userData", initialUserData);
@@ -29,13 +29,9 @@ const Home = () => {
           <TypingLessons userData={userData} resetTempData={resetTempData} />
         );
       case 1:
-        return (
-          <TypingPractice userData={userData} resetTempData={resetTempData} />
-        );
+        return <TypingPractice userData={userData} />;
       case 2:
-        return (
-          <TypingTests userData={userData} resetTempData={resetTempData} />
-        );
+        return <TypingTests userData={userData} />;
       case 3:
         return <PersonalStats userData={userData} />;
       default:

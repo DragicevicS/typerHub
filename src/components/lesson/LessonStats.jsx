@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import lessonText from "../../data/lessonText";
 import PropTypes from "prop-types";
 
-const ScreenStats = ({
+const LessonStats = ({
   difficulty,
   lesson,
   levelCounter,
@@ -148,7 +148,7 @@ const ScreenStats = ({
         </div>
         {nextTextExists ? (
           <Link
-            to={`/typing/${difficulty}/${lesson}/${levelCounter + 1}`}
+            to={`/lesson/${difficulty}/${lesson}/${levelCounter + 1}`}
             className="text-center mt-2"
           >
             <button className="h-min px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:text-gray-900 ease-in-out duration-500">
@@ -167,7 +167,7 @@ const ScreenStats = ({
   );
 };
 
-ScreenStats.propTypes = {
+LessonStats.propTypes = {
   difficulty: PropTypes.string.isRequired,
   lesson: PropTypes.string.isRequired,
   levelCounter: PropTypes.number.isRequired,
@@ -178,4 +178,4 @@ ScreenStats.propTypes = {
   setUserData: PropTypes.func.isRequired,
 };
 
-export default ScreenStats;
+export default LessonStats;

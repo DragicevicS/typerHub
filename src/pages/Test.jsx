@@ -4,17 +4,16 @@ import initialUserData from "../data/initialUserData";
 import useTypingLogic from "../hooks/useTypingLogic";
 import TextDisplay from "../components/typing/TextDisplay";
 import KeyboardLayout from "../components/typing/KeyboardLayout";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
+import Footer from "../components/general/Footer";
+import Header from "../components/general/Header";
 import Toolbar from "../components/typing/Toolbar";
-import lessonText from "../data/lessonText";
-import ScreenStats from "../components/typing/ScreenStats";
+import testText from "../data/testText";
+import TestStats from "../components/test/TestStats";
 
-const Typing = () => {
+const Test = () => {
   const params = useParams();
-  const { difficulty, lesson, index } = params;
-  const levelCounter = parseInt(index, 10);
-  const text = lessonText[difficulty][lesson][levelCounter - 1];
+  const { difficulty } = params;
+  const text = testText[difficulty];
   const [userData, setUserData] = useLocalStorage("userData", initialUserData);
 
   const {
@@ -50,10 +49,8 @@ const Typing = () => {
             />
           </div>
         ) : (
-          <ScreenStats
+          <TestStats
             difficulty={difficulty}
-            lesson={lesson}
-            levelCounter={levelCounter}
             accuracyCounter={accuracyCounter}
             text={text}
             speed={speed}
@@ -67,4 +64,4 @@ const Typing = () => {
   );
 };
 
-export default Typing;
+export default Test;
