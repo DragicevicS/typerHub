@@ -5,12 +5,12 @@ import PropTypes from "prop-types";
 const TestStats = ({
   difficulty,
   accuracyCounter,
-  text,
   speed,
   userData,
   setUserData,
+  typedText,
 }) => {
-  const accPercent = Math.round((accuracyCounter * 100) / text.length);
+  const accPercent = Math.round((accuracyCounter * 100) / typedText.length);
 
   const handleTestCompletion = () => {
     let newUserData = { ...userData };
@@ -63,6 +63,9 @@ const TestStats = ({
 
   return (
     <div className="flex flex-col gap-5 h-full justify-center items-center">
+      <h3 className="text-3xl font-bold">
+        Time&apos;s <span className="text-blue-500">up</span>!
+      </h3>
       <h3 className="text-3xl font-bold">{feedbackMessage()}</h3>
       <div className="flex flex-col gap-3 px-20 py-10 border-2 rounded-sm text-lg">
         <div className="flex gap-1">
@@ -71,7 +74,8 @@ const TestStats = ({
             alt="Bullseye arrow"
             className="w-6"
           />
-          Accuracy : {accPercent}% ({accuracyCounter}/{text.length} characters)
+          Accuracy : {accPercent}% ({accuracyCounter}/{typedText.length}{" "}
+          characters)
         </div>
         <div className="flex justify-center">
           <img
@@ -132,10 +136,10 @@ const TestStats = ({
 TestStats.propTypes = {
   difficulty: PropTypes.string.isRequired,
   accuracyCounter: PropTypes.number.isRequired,
-  text: PropTypes.string.isRequired,
   speed: PropTypes.number,
   userData: PropTypes.object.isRequired,
   setUserData: PropTypes.func.isRequired,
+  typedText: PropTypes.string.isRequired,
 };
 
 export default TestStats;

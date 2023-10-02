@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import useLocalStorage from "../hooks/useLocalStorage";
 import initialUserData from "../data/initialUserData";
-import useTypingLogic from "../hooks/useTypingLogic";
+import useTestLogic from "../hooks/useTestLogic";
 import TextDisplay from "../components/typing/TextDisplay";
 import KeyboardLayout from "../components/typing/KeyboardLayout";
 import Footer from "../components/general/Footer";
@@ -23,7 +23,10 @@ const Test = () => {
     accuracyCounter,
     capsLock,
     speed,
-  } = useTypingLogic(text, userData.preferences.volume);
+    testTime,
+    timeRemaining,
+    typedText,
+  } = useTestLogic(text, userData.preferences.volume);
 
   return (
     <div className="flex flex-col w-full h-full">
@@ -34,8 +37,10 @@ const Test = () => {
           keyboardDisplay={userData.preferences.keyboardDisplay}
           volume={userData.preferences.volume}
           setUserData={setUserData}
+          testTime={testTime}
+          timeRemaining={timeRemaining}
         />
-        {counter < text.length ? (
+        {timeRemaining > 0 ? (
           <div className="flex flex-col justify-evenly h-full sm:px-1 lg:max-w-[1000px]">
             <TextDisplay
               text={text}
@@ -52,10 +57,10 @@ const Test = () => {
           <TestStats
             difficulty={difficulty}
             accuracyCounter={accuracyCounter}
-            text={text}
             speed={speed}
             userData={userData}
             setUserData={setUserData}
+            typedText={typedText}
           />
         )}
       </main>

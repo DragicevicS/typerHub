@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 
 const useTypingLogic = (text, volume) => {
-  const numOfWords = text.split(" ").length;
-
   const initialState = {
     counter: 0,
     currentLetter: text[0],
@@ -106,13 +104,7 @@ const useTypingLogic = (text, volume) => {
     });
   }, [text]);
 
-  const timeInMinutes =
-    state.startTime && state.endTime
-      ? (state.endTime - state.startTime) / (1000 * 60)
-      : null;
-  const speed = timeInMinutes ? Math.round(numOfWords / timeInMinutes) : 0;
-  console.log(numOfWords);
-  return { ...state, capsLock, speed };
+  return { ...state, setState, capsLock };
 };
 
 export default useTypingLogic;

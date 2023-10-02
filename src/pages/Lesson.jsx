@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import useLocalStorage from "../hooks/useLocalStorage";
 import initialUserData from "../data/initialUserData";
-import useTypingLogic from "../hooks/useTypingLogic";
+import useLessonLogic from "../hooks/useLessonLogic";
 import TextDisplay from "../components/typing/TextDisplay";
 import KeyboardLayout from "../components/typing/KeyboardLayout";
 import Footer from "../components/general/Footer";
@@ -24,7 +24,7 @@ const Lesson = () => {
     accuracyCounter,
     capsLock,
     speed,
-  } = useTypingLogic(text, userData.preferences.volume);
+  } = useLessonLogic(text, userData.preferences.volume);
 
   return (
     <div className="flex flex-col w-full h-full">
