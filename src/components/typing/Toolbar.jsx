@@ -98,9 +98,11 @@ const Toolbar = ({
           />
         </div>
       </div>
-      <div className="flex w-full h-2" title="Timer">
-        {setTimerDivs(testTime, timeRemaining)}
-      </div>
+      {testTime === undefined ? null : (
+        <div className="flex w-full h-2" title="Timer">
+          {setTimerDivs(testTime, timeRemaining)}
+        </div>
+      )}
     </div>
   );
 };

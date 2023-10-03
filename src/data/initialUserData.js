@@ -9,6 +9,11 @@ const initialUserData = {
       intermediate: [false, false, false, false],
       advanced: [false, false, false, false],
     },
+    practice: {
+      beginner: [false, false, false, false],
+      intermediate: [false, false, false, false],
+      advanced: [false, false, false, false],
+    },
     tests: {
       beginner: false,
       intermediate: false,
@@ -21,7 +26,6 @@ const initialUserData = {
       intermediate: [0, 0, 0, 0],
       advanced: [0, 0, 0, 0],
     },
-    practice: {},
     tests: {
       beginner: 0,
       intermediate: 0,
@@ -34,7 +38,6 @@ const initialUserData = {
       intermediate: [0, 0, 0, 0],
       advanced: [0, 0, 0, 0],
     },
-    practice: {},
     tests: {
       beginner: 0,
       intermediate: 0,
