@@ -14,8 +14,8 @@ const PracticeStats = ({
   const accPercent = Math.round((accuracyCounter * 100) / text.length);
 
   const handlePracticeCompletion = () => {
-    let newUserData = { ...userData };
-
+    let newUserData = userData;
+    newUserData.completion.practice[difficulty][levelCounter - 1] = true;
     setUserData(newUserData);
 
     localStorage.setItem("userData", JSON.stringify(newUserData));
@@ -105,11 +105,12 @@ const PracticeStats = ({
           Speed : {speed} WPM
         </div>
         <div className="flex gap-3 justify-center mt-2">
-          <Link to={`/practice/${difficulty}/${levelCounter + 1}`}>
-            <button className="h-min min-w-[170px] px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:text-gray-900 ease-in-out duration-500">
-              Practice More
-            </button>
-          </Link>
+          <button
+            className="h-min min-w-[170px] px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:text-gray-900 ease-in-out duration-500"
+            onClick={() => location.reload()}
+          >
+            Redo
+          </button>
           <Link to="/">
             <button className="h-min min-w-[170px] px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:text-gray-900 ease-in-out duration-500">
               Finish Practice

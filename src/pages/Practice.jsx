@@ -14,7 +14,7 @@ const Practice = () => {
   const params = useParams();
   const { difficulty, index } = params;
   const levelCounter = parseInt(index, 10);
-  const text = practiceText[difficulty][index - 1];
+  const text = practiceText[difficulty][levelCounter - 1];
   const [userData, setUserData] = useLocalStorage("userData", initialUserData);
 
   const {
