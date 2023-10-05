@@ -1,7 +1,7 @@
 const practiceText = {
-  beginner: ["test1", "test2", "test3", "test4"],
-  intermediate: [],
-  advanced: [],
+  beginner: ["b1", "b2", "b3", "b4"],
+  intermediate: ["i1", "i2", "i3", "i4"],
+  advanced: ["a1", "a2", "a3", "a4"],
 };
 
 export default practiceText;

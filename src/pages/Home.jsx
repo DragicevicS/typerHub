@@ -50,7 +50,9 @@ const Home = () => {
                 <li
                   key={tab}
                   className={`p-3 border-l-2 border-blue-500 rounded-l-full ${
-                    homeTab === index ? "bg-black" : "bg-gray-900 hover-effect"
+                    homeTab === index
+                      ? "bg-black"
+                      : "bg-gray-900 tab-name ease-in-out duration-500"
                   }`}
                   onClick={() => setHomeTab(index)}
                 >
@@ -60,7 +62,7 @@ const Home = () => {
               ))}
             </ul>
           </nav>
-          <div className="flex flex-col items-center h-full py-5 gap-2 bg-black overflow-y-auto border border-black rounded-tr-lg rounded-br-lg rounded-bl-lg min-w-[355px] sm:px-10 md:w-5/6 lg:max-w-[1000px]">
+          <div className="flex flex-col items-center h-full py-5 gap-2 bg-black overflow-y-auto border border-black rounded-tr-lg rounded-br-lg rounded-bl-lg min-w-[355px] sm:px-10 md:w-5/6 lg:max-w-[1000px] cursor-default">
             {renderContent()}
           </div>
         </div>

@@ -10,22 +10,23 @@
   box-sizing: border-box;
 }
 
+/* Home Tab Hover */
+
+.tab-name {
+  box-shadow: inset 0 0 0 0 rgb(219, 234, 254);
+}
+
+.tab-name:hover {
+  box-shadow: inset 250px 0 0 0 black;
+}
+
+/* Floating Letters Animation */
+
 .floating {
-  font-size: 1rem;
   color: rgb(219, 234, 254);
   animation-name: floating;
   animation-duration: 4.5s;
   animation-iteration-count: infinite;
-}
-
-.hover-effect {
-  box-shadow: inset 0 0 0 0 rgb(219, 234, 254);
-  transition: all 0.5s ease-in-out;
-}
-
-.hover-effect:hover {
-  box-shadow: inset 250px 0 0 0 black;
-  color: rgb(219, 234, 254);
 }
 
 @keyframes floating {
@@ -59,4 +60,11 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: #888;
+}
+
+/* Radio Input */
+
+input[type="radio"]:checked + label {
+  border-color: white;
+  background-color: black;
 }

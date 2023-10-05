@@ -44,7 +44,7 @@ const FloatingLettersAnimation = () => {
       {letters.map((letter, index) => (
         <span
           key={index}
-          className="floating absolute opacity-50 cursor-default"
+          className="floating absolute opacity-50 cursor-default text-md"
           style={{
             animationDelay: positions[index].delay,
             top: positions[index].top,

@@ -45,12 +45,15 @@ const Toolbar = ({
   return (
     <div className="w-full">
       <div className="flex text-center items-center w-full px-6 py-1 bg-blue-500">
-        <Link to="/">
+        <Link
+          to="/"
+          className="px-5 bg-blue-100 hover:bg-blue-500 rounded-lg ease-in-out duration-500"
+        >
           <img
             src="../../../images/arrow-left.svg"
             alt="Home"
             title="Return Home"
-            className="w-8 h-auto bg-blue-100 rounded-lg hover:bg-blue-500 ease-in-out duration-500"
+            className="w-8 h-auto"
             draggable="false"
           />
         </Link>
