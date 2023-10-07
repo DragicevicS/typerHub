@@ -5,9 +5,9 @@ const TestDisplay = ({ title, difficulty, userData }) => {
   const isCompleted = userData.completion.tests[difficulty];
   return (
     <div
-      className={`flex items-center justify-between gap-1 w-full px-3 py-2 border-2 ${
+      className={`flex items-center justify-between gap-1 w-full px-3 py-2 border-2 rounded-md ${
         isCompleted ? "border-green-200 opacity-[0.85]" : "border-blue-500"
-      }`}
+      } animate-fadeIn`}
     >
       <div>
         <div className="flex gap-3 p-1">

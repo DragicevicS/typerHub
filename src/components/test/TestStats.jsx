@@ -62,7 +62,7 @@ const TestStats = ({
   };
 
   return (
-    <div className="flex flex-col gap-5 h-full justify-center items-center">
+    <div className="flex flex-col gap-5 h-full justify-center items-center animate-fadeIn">
       <h3 className="text-3xl font-bold">
         Time&apos;s <span className="text-blue-500">up</span>!
       </h3>

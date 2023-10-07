@@ -7,7 +7,11 @@ export default {
       mono: ["Consolas, monospace"],
       cursive: ["Tektur", "cursive"],
     },
-    extend: {},
+    extend: {
+      animation: {
+        fadeIn: "fadeIn 0.7s backwards",
+      },
+    },
   },
   plugins: [],
 };

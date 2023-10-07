@@ -48,7 +48,7 @@ const TypingLessons = ({ userData, resetTempData }) => {
   return (
     <>
       <h2 className="font-cursive text-2xl">Typing Lessons</h2>
-      <div className="flex flex-col gap-2 w-full px-3 py-1">
+      <div className="flex flex-col gap-1 w-full px-3 py-1 animate-fadeIn">
         <div className="flex items-center gap-3">
           {userData.completion.lessons.beginner.includes(false) ? (
             <h3 className="text-xl font-extrabold">Beginner</h3>
@@ -75,7 +75,7 @@ const TypingLessons = ({ userData, resetTempData }) => {
           />
         </div>
         <div
-          className={`flex flex-col gap-3 overflow-hidden ease-out duration-700 ${
+          className={`flex flex-col gap-2 overflow-hidden ease-out duration-700 ${
             expandedSection === "beginner" ? "max-h-full" : "max-h-0"
           }`}
         >
@@ -92,7 +92,7 @@ const TypingLessons = ({ userData, resetTempData }) => {
             ))}
         </div>
       </div>
-      <div className="flex flex-col gap-2 w-full px-3 py-1">
+      <div className="flex flex-col gap-1 w-full px-3 py-1">
         <div className="flex items-center gap-3">
           {userData.completion.lessons.intermediate.includes(false) ? (
             <h3 className="text-xl font-extrabold">Intermediate</h3>
@@ -119,7 +119,7 @@ const TypingLessons = ({ userData, resetTempData }) => {
           />
         </div>
         <div
-          className={`flex flex-col gap-3 overflow-hidden ease-out duration-700 ${
+          className={`flex flex-col gap-2 overflow-hidden ease-out duration-700 ${
             expandedSection === "intermediate" ? "max-h-full" : "max-h-0"
           }`}
         >
@@ -136,7 +136,7 @@ const TypingLessons = ({ userData, resetTempData }) => {
             ))}
         </div>
       </div>
-      <div className="flex flex-col gap-2 w-full px-3 py-1">
+      <div className="flex flex-col gap-1 w-full px-3 py-1">
         <div className="flex items-center gap-3">
           {userData.completion.lessons.advanced.includes(false) ? (
             <h3 className="text-xl font-extrabold">Advanced</h3>
@@ -163,7 +163,7 @@ const TypingLessons = ({ userData, resetTempData }) => {
           />
         </div>
         <div
-          className={`flex flex-col gap-3 overflow-hidden ease-out duration-700 ${
+          className={`flex flex-col gap-2 overflow-hidden ease-out duration-700 ${
             expandedSection === "advanced" ? "max-h-full" : "max-h-0"
           }`}
         >

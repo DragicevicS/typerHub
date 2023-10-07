@@ -28,7 +28,7 @@ const BugReport = () => {
   return (
     <div className="flex flex-col w-full h-full">
       <Header />
-      <main className="flex flex-col justify-center items-center flex-grow gap-5 w-full">
+      <main className="flex flex-col justify-center items-center flex-grow gap-5 w-full animate-fadeIn">
         <h2 className="text-2xl">Report Bug or Issue</h2>
         <form
           className="flex flex-col gap-3 w-2/3 max-w-[700px]"

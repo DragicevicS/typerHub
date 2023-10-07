@@ -22,9 +22,9 @@ const PracticeDisplay = ({ title, difficulty, userData }) => {
 
   return (
     <div
-      className={`flex items-center justify-between gap-1 w-full px-3 py-2 border-2 border-blue-500 ${
+      className={`flex items-center justify-between gap-1 w-full px-3 py-2 border-2 border-blue-500 rounded-md ${
         isCompleted && "border-green-200"
-      }`}
+      } animate-fadeIn`}
     >
       <div className="flex flex-col gap-1 w-5/6">
         <h3 className="text-xl font-extrabold">

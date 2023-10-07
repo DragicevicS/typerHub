@@ -47,7 +47,7 @@ const Toolbar = ({
       <div className="flex text-center items-center w-full px-6 py-1 bg-blue-500">
         <Link
           to="/"
-          className="px-5 bg-blue-100 hover:bg-blue-500 rounded-lg ease-in-out duration-500"
+          className="px-5 bg-blue-100 hover:bg-blue-500 rounded-lg ease-in-out duration-500 animate-fadeIn"
         >
           <img
             src="../../../images/arrow-left.svg"
@@ -69,7 +69,7 @@ const Toolbar = ({
             src="../../../images/redo.svg"
             alt="Redo"
             title="Redo"
-            className="w-8 h-8 bg-blue-100 rounded-lg hover:bg-blue-500 cursor-pointer ease-in-out duration-500"
+            className="w-8 h-8 bg-blue-100 rounded-lg hover:bg-blue-500 cursor-pointer ease-in-out duration-500 animate-fadeIn"
             draggable="false"
             onClick={() => location.reload()}
           />
@@ -81,7 +81,7 @@ const Toolbar = ({
             }
             alt="Home"
             title={volume ? "Volume On" : "Volume Off"}
-            className="w-8 h-8 bg-blue-100 rounded-lg hover:bg-blue-500 cursor-pointer ease-in-out duration-500"
+            className="w-8 h-8 bg-blue-100 rounded-lg hover:bg-blue-500 cursor-pointer ease-in-out duration-500 animate-fadeIn"
             draggable="false"
             onClick={toggleVolume}
           />
@@ -95,7 +95,7 @@ const Toolbar = ({
             title={
               keyboardDisplay ? "Keyboard Display On" : "Keyboard Display Off"
             }
-            className="w-8 h-8 bg-blue-100 rounded-lg hover:bg-blue-500 cursor-pointer ease-in-out duration-500"
+            className="w-8 h-8 bg-blue-100 rounded-lg hover:bg-blue-500 cursor-pointer ease-in-out duration-500 animate-fadeIn"
             draggable="false"
             onClick={toggleKeyboardDisplay}
           />

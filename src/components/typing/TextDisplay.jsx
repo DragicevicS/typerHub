@@ -32,7 +32,7 @@ const TextDisplay = ({ text, correctLetter, counter, keyboardDisplay }) => {
       ref={containerRef}
       className={`${
         keyboardDisplay ? "max-h-[35%]" : "h-[80%]"
-      } overflow-y-auto overflow-x-hidden leading-loose font-mono scroll-smooth`}
+      } overflow-y-auto overflow-x-hidden leading-loose font-mono scroll-smooth animate-fadeIn`}
     >
       {text.split("").map((letter, index) => (
         <span
