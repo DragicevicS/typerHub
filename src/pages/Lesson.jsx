@@ -1,14 +1,14 @@
 import { useParams } from "react-router-dom";
+import Header from "../components/general/Header";
+import Footer from "../components/general/Footer";
+import Toolbar from "../components/typing/Toolbar";
+import TextDisplay from "../components/typing/TextDisplay";
+import KeyboardLayout from "../components/typing/KeyboardLayout";
+import LessonStats from "../components/lesson/LessonStats";
 import useLocalStorage from "../hooks/useLocalStorage";
 import initialUserData from "../data/initialUserData";
 import useLessonLogic from "../hooks/useLessonLogic";
-import TextDisplay from "../components/typing/TextDisplay";
-import KeyboardLayout from "../components/typing/KeyboardLayout";
-import Footer from "../components/general/Footer";
-import Header from "../components/general/Header";
-import Toolbar from "../components/typing/Toolbar";
 import lessonText from "../data/lessonText";
-import LessonStats from "../components/lesson/LessonStats";
 
 const Lesson = () => {
   const params = useParams();

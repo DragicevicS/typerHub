@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import LessonDisplay from "./LessonDisplay";
 import PropTypes from "prop-types";
+import LessonDisplay from "./LessonDisplay";
 
 const TypingLessons = ({ userData, resetTempData }) => {
   const [expandedSection, setExpandedSection] = useState(null);
@@ -50,7 +50,7 @@ const TypingLessons = ({ userData, resetTempData }) => {
       <h2 className="font-cursive text-2xl">Typing Lessons</h2>
       <div className="flex flex-col gap-2 w-full px-3 py-1">
         <div className="flex items-center gap-3">
-          {!userData.completion.lessons.beginner.includes(false) ? (
+          {userData.completion.lessons.beginner.includes(false) ? (
             <h3 className="text-xl font-extrabold">Beginner</h3>
           ) : (
             <>

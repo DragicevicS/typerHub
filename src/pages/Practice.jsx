@@ -1,13 +1,13 @@
 import { useParams } from "react-router-dom";
-import useLocalStorage from "../hooks/useLocalStorage";
-import initialUserData from "../data/initialUserData";
-import useLessonLogic from "../hooks/useLessonLogic";
+import Header from "../components/general/Header";
+import Footer from "../components/general/Footer";
+import Toolbar from "../components/typing/Toolbar";
 import TextDisplay from "../components/typing/TextDisplay";
 import KeyboardLayout from "../components/typing/KeyboardLayout";
 import PracticeStats from "../components/practice/PracticeStats";
-import Footer from "../components/general/Footer";
-import Header from "../components/general/Header";
-import Toolbar from "../components/typing/Toolbar";
+import useLocalStorage from "../hooks/useLocalStorage";
+import initialUserData from "../data/initialUserData";
+import useLessonLogic from "../hooks/useLessonLogic";
 import practiceText from "../data/practiceText";
 
 const Practice = () => {

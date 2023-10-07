@@ -1,14 +1,14 @@
 import { useParams } from "react-router-dom";
+import Header from "../components/general/Header";
+import Footer from "../components/general/Footer";
+import Toolbar from "../components/typing/Toolbar";
+import TextDisplay from "../components/typing/TextDisplay";
+import KeyboardLayout from "../components/typing/KeyboardLayout";
+import TestStats from "../components/test/TestStats";
 import useLocalStorage from "../hooks/useLocalStorage";
 import initialUserData from "../data/initialUserData";
 import useTestLogic from "../hooks/useTestLogic";
-import TextDisplay from "../components/typing/TextDisplay";
-import KeyboardLayout from "../components/typing/KeyboardLayout";
-import Footer from "../components/general/Footer";
-import Header from "../components/general/Header";
-import Toolbar from "../components/typing/Toolbar";
 import testText from "../data/testText";
-import TestStats from "../components/test/TestStats";
 
 const Test = () => {
   const params = useParams();

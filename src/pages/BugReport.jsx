@@ -1,6 +1,6 @@
 import emailjs from "@emailjs/browser";
-import Footer from "../components/general/Footer";
 import Header from "../components/general/Header";
+import Footer from "../components/general/Footer";
 import { PUBLIC_KEY, SERVICE_ID, TEMPLATE_ID } from "../data/emailInfo";
 
 const BugReport = () => {

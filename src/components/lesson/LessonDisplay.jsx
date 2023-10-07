@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import lessonText from "../../data/lessonText";
 import PropTypes from "prop-types";
+import lessonText from "../../data/lessonText";
 
 const LessonDisplay = ({
   title,
