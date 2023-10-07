@@ -41,7 +41,7 @@ const LessonDisplay = ({
                 src="../../../images/star.png"
                 alt="Star"
                 title="Accuracy star"
-                className="w-6"
+                className="w-6 h-6"
               />
             </span>
           </div>

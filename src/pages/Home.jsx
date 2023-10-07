@@ -42,7 +42,7 @@ const Home = () => {
   return (
     <div className="flex flex-col w-full h-full">
       <Header />
-      <main className="flex-grow p-10 overflow-y-auto">
+      <main className="flex-grow p-9 overflow-y-auto">
         <div className="flex justify-center w-full h-full">
           <nav className="min-w-max">
             <ul className="flex flex-col gap-10 font-cursive cursor-pointer text-2xl">

@@ -72,7 +72,7 @@ const TestStats = ({
           <img
             src="../../../images/bullseye.svg"
             alt="Bullseye arrow"
-            className="w-6"
+            className="w-6 h-7"
           />
           Accuracy : {accPercent}% ({accuracyCounter}/{typedText.length}{" "}
           characters)
@@ -85,7 +85,7 @@ const TestStats = ({
                 : "../../../images/star-outline.svg"
             }
             alt="Star"
-            className="w-10"
+            className="w-10 h-10"
           />
           <img
             src={
@@ -94,7 +94,7 @@ const TestStats = ({
                 : "../../../images/star-outline.svg"
             }
             alt="Star"
-            className="w-10"
+            className="w-10 h-10"
           />
           <img
             src={
@@ -103,7 +103,7 @@ const TestStats = ({
                 : "../../../images/star-outline.svg"
             }
             alt="Star"
-            className="w-10"
+            className="w-10 h-10"
           />
         </div>
         <hr />
@@ -111,7 +111,7 @@ const TestStats = ({
           <img
             src="../../../images/lightning-bolt.svg"
             alt="Lightning bolt"
-            className="w-6"
+            className="w-6 h-7"
           />
           Speed : {speed} WPM
         </div>

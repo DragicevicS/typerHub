@@ -16,8 +16,16 @@ const PracticeDisplay = ({ title, difficulty, userData }) => {
     return count;
   };
 
+  const isCompleted =
+    countProgress(userData.completion.practice[difficulty]) ===
+    userData.completion.practice[difficulty].length;
+
   return (
-    <div className="flex items-center justify-between gap-1 w-full px-3 py-2 border-2 border-blue-500">
+    <div
+      className={`flex items-center justify-between gap-1 w-full px-3 py-2 border-2 border-blue-500 ${
+        isCompleted && "border-green-200"
+      }`}
+    >
       <div className="flex flex-col gap-1 w-5/6">
         <h3 className="text-xl font-extrabold">
           {title} |{" "}

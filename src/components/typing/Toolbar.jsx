@@ -53,7 +53,7 @@ const Toolbar = ({
             src="../../../images/arrow-left.svg"
             alt="Home"
             title="Return Home"
-            className="w-8 h-auto"
+            className="w-8 h-8"
             draggable="false"
           />
         </Link>
@@ -69,7 +69,7 @@ const Toolbar = ({
             src="../../../images/redo.svg"
             alt="Redo"
             title="Redo"
-            className="w-8 h-auto bg-blue-100 rounded-lg hover:bg-blue-500 cursor-pointer ease-in-out duration-500"
+            className="w-8 h-8 bg-blue-100 rounded-lg hover:bg-blue-500 cursor-pointer ease-in-out duration-500"
             draggable="false"
             onClick={() => location.reload()}
           />
@@ -81,7 +81,7 @@ const Toolbar = ({
             }
             alt="Home"
             title={volume ? "Volume On" : "Volume Off"}
-            className="w-8 h-auto bg-blue-100 rounded-lg hover:bg-blue-500 cursor-pointer ease-in-out duration-500"
+            className="w-8 h-8 bg-blue-100 rounded-lg hover:bg-blue-500 cursor-pointer ease-in-out duration-500"
             draggable="false"
             onClick={toggleVolume}
           />
@@ -95,7 +95,7 @@ const Toolbar = ({
             title={
               keyboardDisplay ? "Keyboard Display On" : "Keyboard Display Off"
             }
-            className="w-8 h-auto bg-blue-100 rounded-lg hover:bg-blue-500 cursor-pointer ease-in-out duration-500"
+            className="w-8 h-8 bg-blue-100 rounded-lg hover:bg-blue-500 cursor-pointer ease-in-out duration-500"
             draggable="false"
             onClick={toggleKeyboardDisplay}
           />

@@ -15,7 +15,7 @@ const Header = () => {
           src="../../../images/bug.svg"
           alt="Report bug or issue"
           title="Report bug or issue"
-          className="w-10 h-auto bg-blue-100 rounded-lg hover:bg-blue-500 cursor-pointer ease-in-out duration-500"
+          className="w-10 h-10 bg-blue-100 rounded-lg hover:bg-blue-500 cursor-pointer ease-in-out duration-500"
           draggable="false"
         />
       </Link>

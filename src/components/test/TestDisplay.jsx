@@ -17,6 +17,7 @@ const TestDisplay = ({ title, difficulty, userData }) => {
               src="../../../images/check.png"
               alt="Checkmark"
               title="Completed"
+              className="w-7 h-7"
             />
           )}
         </div>
