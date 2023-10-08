@@ -1,4 +1,7 @@
 const initialUserData = {
+  personalInfo: {
+    username: "",
+  },
   preferences: {
     volume: true,
     keyboardDisplay: true,

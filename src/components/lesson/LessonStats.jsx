@@ -151,13 +151,19 @@ const LessonStats = ({
             to={`/lesson/${difficulty}/${lesson}/${levelCounter + 1}`}
             className="text-center mt-2"
           >
-            <button className="h-min px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:text-gray-900 ease-in-out duration-500">
+            <button
+              type="button"
+              className="h-min px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:text-gray-900 ease-in-out duration-500"
+            >
               Next
             </button>
           </Link>
         ) : (
           <Link to="/" className="text-center mt-2">
-            <button className="h-min px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:text-gray-900 ease-in-out duration-500">
+            <button
+              type="button"
+              className="h-min px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:text-gray-900 ease-in-out duration-500"
+            >
               Finish Lesson
             </button>
           </Link>

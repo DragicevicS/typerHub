@@ -10,15 +10,6 @@ const Header = () => {
           <span className="ml-[-1px] text-blue-500">Hub</span>
         </h1>
       </Link>
-      <Link to="/bug-report" className="ml-auto">
-        <img
-          src="../../../images/bug.svg"
-          alt="Report bug or issue"
-          title="Report bug or issue"
-          className="w-10 h-10 bg-blue-100 rounded-lg hover:bg-blue-500 cursor-pointer ease-in-out duration-500"
-          draggable="false"
-        />
-      </Link>
       <FloatingLettersAnimation />
     </header>
   );

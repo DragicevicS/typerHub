@@ -5,7 +5,7 @@ import Header from "../components/general/Header";
 import TypingLessons from "../components/lesson/TypingLessons";
 import TypingPractice from "../components/practice/TypingPractice";
 import TypingTests from "../components/test/TypingTests";
-import PersonalStats from "../components/PersonalStats";
+import PersonalInfo from "../components/personal/PersonalInfo";
 import Footer from "../components/general/Footer";
 
 const Home = () => {
@@ -33,7 +33,7 @@ const Home = () => {
       case 2:
         return <TypingTests userData={userData} />;
       case 3:
-        return <PersonalStats userData={userData} />;
+        return <PersonalInfo userData={userData} />;
       default:
         return;
     }
@@ -46,7 +46,7 @@ const Home = () => {
         <div className="flex justify-center w-full h-full">
           <nav className="min-w-max">
             <ul className="flex flex-col gap-10 font-cursive cursor-pointer text-2xl">
-              {["Lessons", "Practice", "Tests", "Stats"].map((tab, index) => (
+              {["Lessons", "Practice", "Tests", "Info"].map((tab, index) => (
                 <li
                   key={tab}
                   className={`p-3 border-l-2 border-blue-500 rounded-l-full ${

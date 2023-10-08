@@ -106,13 +106,17 @@ const PracticeStats = ({
         </div>
         <div className="flex gap-3 justify-center mt-2">
           <button
+            type="button"
             className="h-min min-w-[170px] px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:text-gray-900 ease-in-out duration-500"
             onClick={() => location.reload()}
           >
             Redo
           </button>
           <Link to="/">
-            <button className="h-min min-w-[170px] px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:text-gray-900 ease-in-out duration-500">
+            <button
+              type="button"
+              className="h-min min-w-[170px] px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:text-gray-900 ease-in-out duration-500"
+            >
               Finish Practice
             </button>
           </Link>
