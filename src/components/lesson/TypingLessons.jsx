@@ -51,10 +51,18 @@ const TypingLessons = ({ userData, resetTempData }) => {
       <div className="flex flex-col gap-1 w-full px-3 py-1 animate-fadeIn">
         <div className="flex items-center gap-3">
           {userData.completion.lessons.beginner.includes(false) ? (
-            <h3 className="text-xl font-extrabold">Beginner</h3>
+            <h3
+              className="text-xl font-extrabold cursor-pointer"
+              onClick={() => toggleAccordion("beginner")}
+            >
+              Beginner
+            </h3>
           ) : (
             <>
-              <h3 className="text-xl font-extrabold text-green-200">
+              <h3
+                className="text-xl font-extrabold text-green-200 cursor-pointer"
+                onClick={() => toggleAccordion("beginner")}
+              >
                 Beginner
               </h3>
               <img
@@ -68,8 +76,8 @@ const TypingLessons = ({ userData, resetTempData }) => {
           <img
             src="../../../images/drop-arrow.png"
             alt="Dropdown arrow"
-            className={`w-5 h-3 ml-auto cursor-pointer rotate-180 duration-500 ${
-              expandedSection === "beginner" && "rotate-0"
+            className={`w-5 h-3 ml-auto cursor-pointer duration-500 ${
+              expandedSection === "beginner" ? "rotate-0" : "rotate-180"
             }`}
             onClick={() => toggleAccordion("beginner")}
           />
@@ -95,10 +103,18 @@ const TypingLessons = ({ userData, resetTempData }) => {
       <div className="flex flex-col gap-1 w-full px-3 py-1">
         <div className="flex items-center gap-3">
           {userData.completion.lessons.intermediate.includes(false) ? (
-            <h3 className="text-xl font-extrabold">Intermediate</h3>
+            <h3
+              className="text-xl font-extrabold cursor-pointer"
+              onClick={() => toggleAccordion("intermediate")}
+            >
+              Intermediate
+            </h3>
           ) : (
             <>
-              <h3 className="text-xl font-extrabold text-green-200">
+              <h3
+                className="text-xl font-extrabold cursor-pointer text-green-200"
+                onClick={() => toggleAccordion("intermediate")}
+              >
                 Intermediate
               </h3>
               <img
@@ -112,8 +128,8 @@ const TypingLessons = ({ userData, resetTempData }) => {
           <img
             src="../../../images/drop-arrow.png"
             alt="Dropdown arrow"
-            className={`w-5 h-3 ml-auto cursor-pointer rotate-180 duration-500 ${
-              expandedSection === "intermediate" && "rotate-0"
+            className={`w-5 h-3 ml-auto cursor-pointer duration-500 ${
+              expandedSection === "intermediate" ? "rotate-0" : "rotate-180"
             }`}
             onClick={() => toggleAccordion("intermediate")}
           />
@@ -139,10 +155,18 @@ const TypingLessons = ({ userData, resetTempData }) => {
       <div className="flex flex-col gap-1 w-full px-3 py-1">
         <div className="flex items-center gap-3">
           {userData.completion.lessons.advanced.includes(false) ? (
-            <h3 className="text-xl font-extrabold">Advanced</h3>
+            <h3
+              className="text-xl font-extrabold cursor-pointer"
+              onClick={() => toggleAccordion("advanced")}
+            >
+              Advanced
+            </h3>
           ) : (
             <>
-              <h3 className="text-xl font-extrabold text-green-200">
+              <h3
+                className="text-xl font-extrabold text-green-200 cursor-pointer"
+                onClick={() => toggleAccordion("advanced")}
+              >
                 Advanced
               </h3>
               <img
@@ -156,8 +180,8 @@ const TypingLessons = ({ userData, resetTempData }) => {
           <img
             src="../../../images/drop-arrow.png"
             alt="Dropdown arrow"
-            className={`w-5 h-3 ml-auto cursor-pointer rotate-180 duration-500 ${
-              expandedSection === "advanced" && "rotate-0"
+            className={`w-5 h-3 ml-auto cursor-pointer duration-500 ${
+              expandedSection === "advanced" ? "rotate-0" : "rotate-180"
             }`}
             onClick={() => toggleAccordion("advanced")}
           />
