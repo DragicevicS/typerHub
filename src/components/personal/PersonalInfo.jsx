@@ -7,6 +7,7 @@ import {
   calculateAvgAccuracy,
   getTotalTextCount,
   getStarsEarned,
+  showProblemKeys,
   handleDataReset,
 } from "./InfoFunctions";
 import lessonText from "../../data/lessonText";
@@ -54,6 +55,13 @@ const PersonalInfo = () => {
             {getStarsEarned(userData)} / {getTotalTextCount(lessonText) * 3}
           </p>
           <img src="../../images/star.png" alt="Star" className="w-6 h-6" />
+        </div>
+        <hr />
+        <div className="flex gap-3 items-center">
+          <p>Problem Keys:</p>
+          <p className="text-xl text-blue-50  ml-auto">
+            {showProblemKeys(userData)}
+          </p>
         </div>
         <hr />
         <div className="flex flex-col gap-5">

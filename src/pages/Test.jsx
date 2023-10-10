@@ -26,7 +26,7 @@ const Test = () => {
     testTime,
     timeRemaining,
     typedText,
-  } = useTestLogic(text, userData.preferences.volume);
+  } = useTestLogic(text, userData.preferences.volume, userData, setUserData);
 
   return (
     <div className="flex flex-col w-full h-full">

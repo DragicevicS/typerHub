@@ -1,7 +1,7 @@
 import useTypingLogic from "./useTypingLogic";
 
-const useLessonLogic = (text, volume) => {
-  const typingLogic = useTypingLogic(text, volume);
+const useLessonLogic = (text, volume, userData, setUserData) => {
+  const typingLogic = useTypingLogic(text, volume, userData, setUserData);
 
   const numOfWords = text.split(" ").length;
   const timeInMinutes =

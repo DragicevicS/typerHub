@@ -24,7 +24,7 @@ const Lesson = () => {
     accuracyCounter,
     capsLock,
     speed,
-  } = useLessonLogic(text, userData.preferences.volume);
+  } = useLessonLogic(text, userData.preferences.volume, userData, setUserData);
 
   return (
     <div className="flex flex-col w-full h-full">

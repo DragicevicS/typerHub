@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import useTypingLogic from "./useTypingLogic";
 
-const useTestLogic = (text, volume) => {
-  const typingLogic = useTypingLogic(text, volume);
+const useTestLogic = (text, volume, userData, setUserData) => {
+  const typingLogic = useTypingLogic(text, volume, userData, setUserData);
 
   const testTime = 90;
   const [timeRemaining, setTimeRemaining] = useState(testTime);

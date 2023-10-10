@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useTypingLogic = (text, volume) => {
+const useTypingLogic = (text, volume, userData, setUserData) => {
   const initialState = {
     counter: 0,
     currentLetter: text[0],
@@ -44,6 +44,17 @@ const useTypingLogic = (text, volume) => {
       playSound(keyboardSound);
     };
 
+    const updateProblemKeys = () => {
+      const updatedProblemKeys = { ...userData.problemKeys };
+      if (state.currentLetter === " ") return;
+      updatedProblemKeys[state.currentLetter] =
+        (updatedProblemKeys[state.currentLetter] || 0) + 1;
+      setUserData((prevUserData) => ({
+        ...prevUserData,
+        problemKeys: updatedProblemKeys,
+      }));
+    };
+
     const handleIncorrectInput = () => {
       setState((prevState) => ({
         ...prevState,
@@ -57,6 +68,7 @@ const useTypingLogic = (text, volume) => {
         typo: true,
       }));
       playSound(errorSound);
+      updateProblemKeys();
     };
 
     const isSpecialKey = (key) =>
@@ -84,6 +96,7 @@ const useTypingLogic = (text, volume) => {
         handleIncorrectInput();
       } else {
         playSound(errorSound);
+        updateProblemKeys();
       }
     };
 

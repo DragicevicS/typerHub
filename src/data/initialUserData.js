@@ -59,6 +59,7 @@ const initialUserData = {
     accuracy: [],
     stars: [],
   },
+  problemKeys: {},
 };
 
 export default initialUserData;

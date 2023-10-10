@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import debounce from "lodash/debounce";
 
 const useLocalStorage = (key, defaultValue) => {
   const [value, setValue] = useState(() => {
@@ -15,9 +16,13 @@ const useLocalStorage = (key, defaultValue) => {
     return currentValue;
   });
 
-  useEffect(() => {
+  const saveToLocalStorage = debounce((value) => {
     localStorage.setItem(key, JSON.stringify(value));
-  }, [value, key]);
+  }, 200);
+
+  useEffect(() => {
+    saveToLocalStorage(value);
+  }, [value]);
 
   return [value, setValue];
 };

@@ -80,11 +80,26 @@ export const getStarsEarned = (userData) => {
   return totalStars;
 };
 
+export const showProblemKeys = (userData) => {
+  const problemKeysArray = Object.entries(userData.problemKeys);
+
+  problemKeysArray.sort((a, b) => b[1] - a[1]);
+
+  const top3 = problemKeysArray.slice(0, 3).map((item) => item[0]);
+
+  if (top3[0] === undefined) return;
+  if (top3[1] === undefined) return `${top3[0]}`;
+  if (top3[2] === undefined) return `${top3[0]}, ${top3[1]}`;
+  return `${top3[0]}, ${top3[1]}, ${top3[2]}`;
+};
+
 export const handleDataReset = (userData, setUserData) => {
   const currentPreferences = userData.preferences;
+  const currentPersonalInfo = userData.personalInfo;
   setUserData({
     ...initialUserData,
     preferences: currentPreferences,
+    personalInfo: currentPersonalInfo,
   });
-  location.reload();
+  setTimeout(() => location.reload(), 200);
 };
