@@ -87,7 +87,7 @@ const PersonalInfo = () => {
         </div>
         <div
           id="popup"
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-2/3 h-64 w-[400px] flex-col p-5 text-blue-50 bg-gray-800 rounded-md hidden z-[2000]"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-2/3 h-64 w-[400px] flex-col p-5 text-blue-50 bg-gray-800 rounded-md hidden z-[2000] animate-fadeIn ease-in-out duration-500"
         >
           <h2 className="text-center mb-6 text-xl text-red-500">Warning!</h2>
           <p className="flex-grow text-lg">

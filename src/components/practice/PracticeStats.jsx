@@ -13,12 +13,16 @@ const PracticeStats = ({
 }) => {
   const accPercent = Math.round((accuracyCounter * 100) / text.length);
 
+  const getStarImage = (acc) => {
+    return acc
+      ? "../../../images/star.png"
+      : "../../../images/star-outline.svg";
+  };
+
   const handlePracticeCompletion = () => {
-    let newUserData = userData;
+    let newUserData = { ...userData };
     newUserData.completion.practice[difficulty][levelCounter - 1] = true;
     setUserData(newUserData);
-
-    localStorage.setItem("userData", JSON.stringify(newUserData));
   };
 
   useEffect(() => {
@@ -68,29 +72,17 @@ const PracticeStats = ({
         </div>
         <div className="flex justify-center">
           <img
-            src={
-              accPercent >= 85
-                ? "../../../images/star.png"
-                : "../../../images/star-outline.svg"
-            }
+            src={getStarImage(accPercent >= 85)}
             alt="Star"
             className="w-10 h-10"
           />
           <img
-            src={
-              accPercent >= 90
-                ? "../../../images/star.png"
-                : "../../../images/star-outline.svg"
-            }
+            src={getStarImage(accPercent >= 90)}
             alt="Star"
             className="w-10 h-10"
           />
           <img
-            src={
-              accPercent >= 95
-                ? "../../../images/star.png"
-                : "../../../images/star-outline.svg"
-            }
+            src={getStarImage(accPercent >= 95)}
             alt="Star"
             className="w-10 h-10"
           />
@@ -107,7 +99,7 @@ const PracticeStats = ({
         <div className="flex gap-3 justify-center mt-2">
           <button
             type="button"
-            className="h-min min-w-[170px] px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:text-gray-900 ease-in-out duration-500"
+            className="h-min min-w-[170px] px-5 py-1 font-cursive text-blue-100 bg-transparent border-2 border-transparent hover:border-blue-100 ease-in-out duration-500"
             onClick={() => location.reload()}
           >
             Redo
@@ -115,7 +107,7 @@ const PracticeStats = ({
           <Link to="/">
             <button
               type="button"
-              className="h-min min-w-[170px] px-5 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:text-gray-900 ease-in-out duration-500"
+              className="h-min min-w-[170px] px-5 py-1 font-cursive text-blue-100 bg-gray-600 border-2 border-transparent hover:bg-blue-100 hover:text-gray-900 ease-in-out duration-500"
             >
               Finish Practice
             </button>

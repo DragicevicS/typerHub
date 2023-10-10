@@ -19,7 +19,6 @@ const Home = () => {
     tempUserData.temp.stars = [];
 
     setUserData(tempUserData);
-    localStorage.setItem("userData", JSON.stringify(tempUserData));
   };
 
   const renderContent = () => {
