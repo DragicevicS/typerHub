@@ -8,6 +8,7 @@ import {
   getTotalTextCount,
   getStarsEarned,
   showProblemKeys,
+  togglePopup,
   handleDataReset,
 } from "./InfoFunctions";
 import lessonText from "../../data/lessonText";
@@ -18,7 +19,7 @@ const PersonalInfo = () => {
   return (
     <>
       <h2 className="font-cursive text-2xl">Personal Info</h2>
-      <div className="flex flex-col justify-center gap-5 h-full w-1/3 text-blue-500 animate-fadeIn">
+      <div className="relative flex flex-col justify-center gap-5 h-full w-1/3 text-blue-500 animate-fadeIn">
         <div className="flex gap-3 items-center">
           <label htmlFor="username">Username:</label>
           <input
@@ -67,8 +68,9 @@ const PersonalInfo = () => {
         <div className="flex flex-col gap-5">
           <button
             type="button"
+            id="reset-button"
             className="h-min py-1 text-base font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:text-gray-900 ease-in-out duration-500"
-            onClick={() => handleDataReset(userData, setUserData)}
+            onClick={() => togglePopup()}
           >
             Reset progress
           </button>
@@ -83,6 +85,37 @@ const PersonalInfo = () => {
             />
           </Link>
         </div>
+        <div
+          id="popup"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-2/3 h-64 w-[400px] flex-col p-5 text-blue-50 bg-gray-800 rounded-md hidden z-[2000]"
+        >
+          <h2 className="text-center mb-6 text-xl text-red-500">Warning!</h2>
+          <p className="flex-grow text-lg">
+            Will not be able to retrieve your progress once it&apos;s reset. Are
+            you sure you want to do this?
+          </p>
+          <div className="flex gap-3 ml-auto">
+            <button
+              type="button"
+              className="relative px-3 py-1 border-2 border-transparent hover:border-blue-50 rounded-md"
+              onClick={togglePopup}
+            >
+              Cancel
+            </button>
+            <button
+              type="button"
+              className="px-3 py-1 bg-blue-500 border-2 border-transparent hover:border-blue-50 rounded-md"
+              onClick={() => handleDataReset(userData, setUserData)}
+            >
+              Confirm
+            </button>
+          </div>
+        </div>
+        <div
+          id="backdrop"
+          className="fixed top-0 left-0 w-full h-full bg-black opacity-50 hidden"
+          onClick={togglePopup}
+        ></div>
       </div>
     </>
   );

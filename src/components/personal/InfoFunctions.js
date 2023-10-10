@@ -93,6 +93,19 @@ export const showProblemKeys = (userData) => {
   return `${top3[0]}, ${top3[1]}, ${top3[2]}`;
 };
 
+export const togglePopup = () => {
+  const popup = document.getElementById("popup");
+  const backdrop = document.getElementById("backdrop");
+
+  if (popup.classList.contains("hidden")) {
+    popup.classList.replace("hidden", "flex");
+    backdrop.classList.replace("hidden", "block");
+  } else {
+    popup.classList.replace("flex", "hidden");
+    backdrop.classList.replace("block", "hidden");
+  }
+};
+
 export const handleDataReset = (userData, setUserData) => {
   const currentPreferences = userData.preferences;
   const currentPersonalInfo = userData.personalInfo;

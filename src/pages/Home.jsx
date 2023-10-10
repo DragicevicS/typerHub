@@ -1,12 +1,12 @@
 import { useState } from "react";
-import useLocalStorage from "../hooks/useLocalStorage";
-import initialUserData from "../data/initialUserData";
 import Header from "../components/general/Header";
+import Footer from "../components/general/Footer";
 import TypingLessons from "../components/lesson/TypingLessons";
 import TypingPractice from "../components/practice/TypingPractice";
 import TypingTests from "../components/test/TypingTests";
 import PersonalInfo from "../components/personal/PersonalInfo";
-import Footer from "../components/general/Footer";
+import initialUserData from "../data/initialUserData";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 const Home = () => {
   const [userData, setUserData] = useLocalStorage("userData", initialUserData);
