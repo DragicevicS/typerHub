@@ -67,8 +67,7 @@ const PracticeStats = ({
             alt="Bullseye arrow"
             className="w-6 h-7"
           />
-          Accuracy : {accPercent}% ({accuracyCounter}/{text.length}
-          characters)
+          Accuracy : {accPercent}% ({accuracyCounter}/{text.length} characters)
         </div>
         <div className="flex justify-center">
           <img
