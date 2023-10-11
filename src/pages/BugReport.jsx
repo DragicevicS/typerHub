@@ -36,11 +36,12 @@ const BugReport = () => {
         >
           <div className="relative p-4">
             <input
-              type="input"
+              type="text"
               className="w-full px-1 py-2 border-b-2 border-gray-400 bg-transparent text-blue-100 outline-none transition-colors duration-300 focus:border-blue-500 focus:placeholder-transparent"
               name="subject"
               id="subject"
               maxLength="100"
+              autoComplete="off"
               required
             />
             <label
@@ -69,11 +70,12 @@ const BugReport = () => {
           </div>
           <div className="relative p-4">
             <input
-              type="input"
+              type="text"
               className="w-full px-1 py-2 border-b-2 border-gray-400 bg-transparent text-blue-100 outline-none transition-colors duration-300 focus:border-blue-500 focus:placeholder-transparent"
               name="from"
               id="from"
               placeholder="(optional)"
+              autoComplete="off"
             />
             <label
               htmlFor="from"

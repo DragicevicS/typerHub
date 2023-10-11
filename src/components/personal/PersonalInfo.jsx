@@ -30,6 +30,7 @@ const PersonalInfo = () => {
             maxLength="25"
             placeholder="e.g. TyperMan"
             value={userData.personalInfo.username}
+            autoComplete="off"
             onChange={(e) => handleUsernameEdit(userData, e, setUserData)}
           />
         </div>

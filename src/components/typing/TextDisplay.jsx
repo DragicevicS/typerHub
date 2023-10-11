@@ -37,12 +37,11 @@ const TextDisplay = ({ text, correctLetter, counter, keyboardDisplay }) => {
       {text.split("").map((letter, index) => (
         <span
           className={`text-3xl px-[2px] ${
-            correctLetter[index] === true
-              ? "bg-green-100 text-black rounded-sm"
-              : correctLetter[index] === false
-              ? "bg-red-200 text-black rounded-sm"
-              : ""
-          } ${index === counter ? "bg-gray-600 rounded-sm animate-pulse" : ""}`}
+            correctLetter[index] === true &&
+            "bg-green-100 text-black rounded-sm"
+          } ${
+            correctLetter[index] === false && "bg-red-200 text-black rounded-sm"
+          } ${index === counter && "bg-gray-600 rounded-sm animate-pulse"}`}
           key={index}
         >
           {letter}
