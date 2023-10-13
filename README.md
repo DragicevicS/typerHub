@@ -29,7 +29,7 @@ To get started with TyperHub, follow these simple steps:
 Your progress will be automatically saved, and you can track your average speed and accuracy in the personal info tab.
 
 # Development
-If you want to run TyperHub locally, follow these steps:
+If you want to run TyperHub locally or contribute to the project, follow these steps:
 
 **Clone the repository:**
 
@@ -53,7 +53,7 @@ If you want to run TyperHub locally, follow these steps:
 
 I welcome feedback and contributions to improve TyperHub. If you have any suggestions, bug reports, or feature requests, please open an issue on the GitHub repository or send an email throught the website's "Report a bug or issue" function on the Personal Info tab.
 
-If you'd like to contribute, feel free to fork the repository and submit a pull request. We appreciate your help in making TyperHub better!
+If you'd like to contribute, feel free to fork the repository and submit a pull request. I appreciate your help in making TyperHub better!
 
 # License
 
