@@ -2,7 +2,7 @@
 
 # Introduction
 
-TyperHub is a simple web app designed to help users improve their keyboard typing skills. It offers a user-friendly platform for practicing typing lessons, texts, and tests. TyperHub is built using React, Tailwind CSS, and is hosted on Netlify.
+TyperHub is a web app designed to help users improve their keyboard typing skills. It offers a user-friendly platform for typing lessons, practice texts, and tests. TyperHub is built using React, Tailwind CSS, and is hosted on Netlify.
 
 # Features
 
