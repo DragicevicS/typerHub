@@ -61,7 +61,7 @@ const Home = () => {
               ))}
             </ul>
           </nav>
-          <div className="flex flex-col items-center h-full py-5 px-1 lg:px-10 gap-2 bg-black overflow-y-auto border border-black rounded-tr-lg rounded-br-lg rounded-bl-lg md:w-5/6 lg:max-w-[1000px] cursor-default">
+          <div className="flex flex-col items-center h-full py-5 px-1 lg:px-10 gap-2 bg-black overflow-y-auto border border-black max-md:rounded-tl-lg rounded-tr-lg rounded-br-lg rounded-bl-lg md:w-5/6 lg:max-w-[1000px] cursor-default">
             {renderContent()}
           </div>
         </div>
