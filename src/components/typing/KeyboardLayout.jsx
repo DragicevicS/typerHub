@@ -31,15 +31,17 @@ const KeyboardLayout = ({ currentLetter, keyboardDisplay }) => {
       "flex",
       "justify-center",
       "items-center",
-      "rounded-md",
-      "p-2",
+      "min-w-max",
+      "p-[1px]",
+      "md:p-2",
       "border-2",
       "border-black",
+      "rounded-md",
       "bg-opacity-70",
     ];
 
     if (key.displayValue === "F" || key.displayValue === "J") {
-      classes.push("underline", "underline-offset-8");
+      classes.push("underline", "underline-offset-3", "md:underline-offset-8");
     }
 
     if (
@@ -82,9 +84,12 @@ const KeyboardLayout = ({ currentLetter, keyboardDisplay }) => {
   };
 
   return (
-    <div className="flex flex-col gap-1 items-center min-w-[720px] rounded-sm cursor-default font-sans animate-fadeIn">
+    <div className="flex flex-col gap-0 md:gap-1 items-center rounded-sm cursor-default font-sans animate-fadeIn">
       {keyRows.map((row, rowIndex) => (
-        <div className="flex gap-1 w-full justify-center" key={rowIndex}>
+        <div
+          className="flex justify-center gap-0 md:gap-1 w-full text-xs md:text-base"
+          key={rowIndex}
+        >
           {row.map((key, keyIndex) => (
             <div className={determineClasses(key)} key={keyIndex}>
               {key.displayValue}
@@ -92,30 +97,30 @@ const KeyboardLayout = ({ currentLetter, keyboardDisplay }) => {
           ))}
         </div>
       ))}
-      <div className="flex w-full gap-3 justify-center flex-wrap">
+      <div className="flex w-full gap-0.5 md:gap-3 justify-center flex-wrap text-base md:text-lg">
         <div className="flex items-center gap-2">
           <div className="bg-red-900 w-6 h-6 border-black border-2 rounded-md"></div>
-          <p className="text-lg">Pinkie |</p>
+          <p>Pinkie |</p>
         </div>
         <div className="flex items-center gap-2">
           <div className="bg-gray-600 w-6 h-6 border-black border-2 rounded-md"></div>
-          <p className="text-lg">Ring |</p>
+          <p>Ring |</p>
         </div>
         <div className="flex items-center gap-2">
           <div className="bg-amber-800 w-6 h-6 border-black border-2 rounded-md"></div>
-          <p className="text-lg">Middle |</p>
+          <p>Middle |</p>
         </div>
         <div className="flex items-center gap-2">
           <div className="bg-indigo-900 w-6 h-6 border-black border-2 rounded-md"></div>
-          <p className="text-lg">Index(left) |</p>
+          <p>Index(left) |</p>
         </div>
         <div className="flex items-center gap-2">
           <div className="bg-blue-600 w-6 h-6 border-black border-2 rounded-md"></div>
-          <p className="text-lg">Index(right) |</p>
+          <p>Index(right) |</p>
         </div>
         <div className="flex items-center gap-2">
           <div className="bg-teal-800 w-6 h-6 border-black border-2 rounded-md"></div>
-          <p className="text-lg">Thumb</p>
+          <p>Thumb</p>
         </div>
       </div>
     </div>

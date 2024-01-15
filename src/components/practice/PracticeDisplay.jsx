@@ -27,7 +27,7 @@ const PracticeDisplay = ({ title, difficulty, userData }) => {
       } animate-fadeIn`}
     >
       <div className="flex flex-col gap-1 w-5/6">
-        <h3 className="text-xl font-extrabold">
+        <h3 className="text-lg md:text-xl font-extrabold">
           {title} |{" "}
           <span className="text-blue-500" title="Completed">
             {countProgress(userData.completion.practice[difficulty])}/
@@ -65,7 +65,7 @@ const PracticeDisplay = ({ title, difficulty, userData }) => {
         <Link to={`/practice/${difficulty}/${selectedIndex}`}>
           <button
             type="button"
-            className="h-min min-w-[84px] py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:text-gray-900 ease-in-out duration-500"
+            className="h-min md:min-w-[84px] max-md:px-1 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:text-gray-900 ease-in-out duration-500"
           >
             Practice
           </button>
@@ -73,7 +73,7 @@ const PracticeDisplay = ({ title, difficulty, userData }) => {
       ) : (
         <button
           type="button"
-          className="h-min min-w-[84px] py-1 font-cursive text-blue-100 bg-gray-600 opacity-50 cursor-default"
+          className="h-min md:min-w-[84px] max-md:px-1 py-1 font-cursive text-blue-100 bg-gray-600 opacity-50 cursor-default"
           title="Please select text for practice"
         >
           Practice

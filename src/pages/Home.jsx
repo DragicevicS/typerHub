@@ -39,16 +39,16 @@ const Home = () => {
   };
 
   return (
-    <div className="flex flex-col w-full h-full">
+    <div className="flex flex-col w-full h-[100dvh]">
       <Header />
-      <main className="flex-grow p-9 overflow-y-auto animate-fadeIn">
-        <div className="flex justify-center w-full h-full">
-          <nav className="min-w-max">
-            <ul className="flex flex-col gap-10 font-cursive cursor-pointer text-2xl">
+      <main className="flex-grow px-2 lg:px-9 py-2 lg:py-5 animate-fadeIn">
+        <div className="flex flex-col md:flex-row justify-center gap-1 md:gap-0 w-full h-full">
+          <nav className="md:min-w-max">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 md:flex md:flex-col flex-wrap gap-2 md:gap-9 font-cursive cursor-pointer text-xl md:text-2xl">
               {["Lessons", "Practice", "Tests", "Info"].map((tab, index) => (
                 <li
                   key={tab}
-                  className={`p-3 border-l-2 border-blue-500 rounded-l-full ${
+                  className={`py-1 px-2.5 md:p-3 border-l-2 border-blue-500 max-md:rounded-r-full rounded-l-full col-span-1 ${
                     homeTab === index
                       ? "bg-black"
                       : "bg-gray-900 tab-name ease-in-out duration-500"
@@ -61,7 +61,7 @@ const Home = () => {
               ))}
             </ul>
           </nav>
-          <div className="flex flex-col items-center h-full py-5 gap-2 bg-black overflow-y-auto border border-black rounded-tr-lg rounded-br-lg rounded-bl-lg min-w-[355px] sm:px-10 md:w-5/6 lg:max-w-[1000px] cursor-default">
+          <div className="flex flex-col items-center h-full py-5 px-1 lg:px-10 gap-2 bg-black overflow-y-auto border border-black rounded-tr-lg rounded-br-lg rounded-bl-lg md:w-5/6 lg:max-w-[1000px] cursor-default">
             {renderContent()}
           </div>
         </div>

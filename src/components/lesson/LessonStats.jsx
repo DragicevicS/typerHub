@@ -95,7 +95,7 @@ const LessonStats = ({
   return (
     <div className="flex flex-col gap-5 h-full justify-center items-center cursor-default animate-fadeIn">
       <h3 className="text-3xl font-bold">{feedbackMessage()}</h3>
-      <div className="flex flex-col gap-3 px-20 py-10 border-2 rounded-sm text-lg">
+      <div className="flex flex-col gap-3 px-10 md:px-20 py-10 border-2 rounded-sm text-lg">
         <div className="flex gap-1">
           <img
             src="../../../images/bullseye.svg"

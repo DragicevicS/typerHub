@@ -47,7 +47,7 @@ const Toolbar = ({
       <div className="flex text-center items-center w-full px-6 py-1 bg-blue-500">
         <Link
           to="/"
-          className="px-5 bg-blue-100 hover:bg-blue-500 rounded-lg ease-in-out duration-500 animate-fadeIn"
+          className="px-2 md:px-5 bg-blue-100 hover:bg-blue-500 rounded-lg ease-in-out duration-500 animate-fadeIn"
         >
           <img
             src="../../../images/arrow-left.svg"

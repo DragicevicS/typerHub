@@ -11,7 +11,7 @@ const TestDisplay = ({ title, difficulty, userData }) => {
     >
       <div>
         <div className="flex gap-3 p-1">
-          <h3 className="text-xl font-extrabold">{title}</h3>
+          <h3 className="text-lg md:text-xl font-extrabold">{title}</h3>
           {!isCompleted ? null : (
             <img
               src="../../../images/check.png"
@@ -22,7 +22,7 @@ const TestDisplay = ({ title, difficulty, userData }) => {
           )}
         </div>
         <hr />
-        <div className="flex gap-3 w-full p-1 text-blue-500">
+        <div className="flex flex-col md:flex-row gap-3 w-full p-1 text-blue-500">
           <span>Best speed: {userData.speed.tests[difficulty]} WPM</span>
           <span>Best accuracy: {userData.accuracy.tests[difficulty]}%</span>
         </div>
@@ -30,7 +30,7 @@ const TestDisplay = ({ title, difficulty, userData }) => {
       <Link to={`/test/${difficulty}`}>
         <button
           type="button"
-          className="h-min min-w-[84px] py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:text-gray-900 ease-in-out duration-500"
+          className="h-min md:min-w-[84px] max-md:px-1 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:text-gray-900 ease-in-out duration-500"
         >
           {!isCompleted ? <>Start</> : <>Redo</>}
         </button>

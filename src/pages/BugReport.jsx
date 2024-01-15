@@ -31,7 +31,7 @@ const BugReport = () => {
       <main className="flex flex-col justify-center items-center flex-grow gap-5 w-full animate-fadeIn">
         <h2 className="text-2xl">Report Bug or Issue</h2>
         <form
-          className="flex flex-col gap-3 w-2/3 max-w-[700px]"
+          className="flex flex-col gap-3 w-[90%] md:w-2/3 max-w-[700px] max-md:mb-1"
           onSubmit={handleSubmit}
         >
           <div className="relative p-4">

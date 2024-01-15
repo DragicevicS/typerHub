@@ -36,7 +36,7 @@ const TextDisplay = ({ text, correctLetter, counter, keyboardDisplay }) => {
     >
       {text.split("").map((letter, index) => (
         <span
-          className={`text-3xl px-[2px] ${
+          className={`text-xl md:text-2xl lg:text-3xl px-[2px] ${
             correctLetter[index] === true &&
             "bg-green-100 text-black rounded-sm"
           } ${

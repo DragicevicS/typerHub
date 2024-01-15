@@ -6,7 +6,7 @@ const TypingPractice = ({ userData }) => {
 
   return (
     <>
-      <h2 className="font-cursive text-2xl mb-1">Typing Practice</h2>
+      <h2 className="font-cursive text-xl md:text-2xl mb-1">Typing Practice</h2>
       {practiceDifficulty.map((title, index) => (
         <PracticeDisplay
           key={index}

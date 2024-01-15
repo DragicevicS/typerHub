@@ -27,7 +27,7 @@ const LessonDisplay = ({
             {title}
           </h3>
           <hr />
-          <div className="flex gap-1 text-blue-500">
+          <div className="flex flex-col md:flex-row gap-1 text-blue-500">
             <span>
               Avg speed: {userData.speed.lessons[difficulty][index]} WPM |{" "}
             </span>
@@ -52,7 +52,7 @@ const LessonDisplay = ({
         >
           <button
             type="button"
-            className="h-min min-w-[84px] py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:text-gray-900 ease-in-out duration-500"
+            className="h-min md:min-w-[84px] max-md:px-1 py-1 font-cursive text-blue-100 bg-gray-600 hover:bg-blue-100 hover:text-gray-900 ease-in-out duration-500"
           >
             {!isCompleted ? <>Start</> : <>Redo</>}
           </button>

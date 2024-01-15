@@ -47,12 +47,12 @@ const TypingLessons = ({ userData, resetTempData }) => {
 
   return (
     <>
-      <h2 className="font-cursive text-2xl">Typing Lessons</h2>
+      <h2 className="font-cursive text-xl md:text-2xl">Typing Lessons</h2>
       <div className="flex flex-col gap-1 w-full px-3 py-1 animate-fadeIn">
         <div className="flex items-center gap-3">
           {userData.completion.lessons.beginner.includes(false) ? (
             <h3
-              className="text-xl font-extrabold cursor-pointer"
+              className="text-lg md:text-xl font-extrabold cursor-pointer"
               onClick={() => toggleAccordion("beginner")}
             >
               Beginner
@@ -60,7 +60,7 @@ const TypingLessons = ({ userData, resetTempData }) => {
           ) : (
             <>
               <h3
-                className="text-xl font-extrabold text-green-200 cursor-pointer"
+                className="text-lg md:text-xl font-extrabold text-green-200 cursor-pointer"
                 onClick={() => toggleAccordion("beginner")}
               >
                 Beginner
@@ -104,7 +104,7 @@ const TypingLessons = ({ userData, resetTempData }) => {
         <div className="flex items-center gap-3">
           {userData.completion.lessons.intermediate.includes(false) ? (
             <h3
-              className="text-xl font-extrabold cursor-pointer"
+              className="text-lg md:text-xl font-extrabold cursor-pointer"
               onClick={() => toggleAccordion("intermediate")}
             >
               Intermediate
@@ -112,7 +112,7 @@ const TypingLessons = ({ userData, resetTempData }) => {
           ) : (
             <>
               <h3
-                className="text-xl font-extrabold cursor-pointer text-green-200"
+                className="text-lg md:text-xl font-extrabold text-green-200 cursor-pointer"
                 onClick={() => toggleAccordion("intermediate")}
               >
                 Intermediate
@@ -156,7 +156,7 @@ const TypingLessons = ({ userData, resetTempData }) => {
         <div className="flex items-center gap-3">
           {userData.completion.lessons.advanced.includes(false) ? (
             <h3
-              className="text-xl font-extrabold cursor-pointer"
+              className="text-lg md:text-xl font-extrabold cursor-pointer"
               onClick={() => toggleAccordion("advanced")}
             >
               Advanced
@@ -164,7 +164,7 @@ const TypingLessons = ({ userData, resetTempData }) => {
           ) : (
             <>
               <h3
-                className="text-xl font-extrabold text-green-200 cursor-pointer"
+                className="text-lg md:text-xl font-extrabold text-green-200 cursor-pointer"
                 onClick={() => toggleAccordion("advanced")}
               >
                 Advanced

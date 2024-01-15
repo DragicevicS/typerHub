@@ -71,7 +71,7 @@ const TestStats = ({
         Time&apos;s <span className="text-blue-500">up</span>!
       </h3>
       <h3 className="text-3xl font-bold">{feedbackMessage()}</h3>
-      <div className="flex flex-col gap-3 px-20 py-10 border-2 rounded-sm text-lg">
+      <div className="flex flex-col gap-3 px-10 px-20 py-10 border-2 rounded-sm text-lg">
         <div className="flex gap-1">
           <img
             src="../../../images/bullseye.svg"

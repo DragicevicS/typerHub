@@ -18,13 +18,13 @@ const PersonalInfo = () => {
 
   return (
     <>
-      <h2 className="font-cursive text-2xl">Personal Info</h2>
-      <div className="relative flex flex-col justify-center gap-5 h-full w-1/3 text-blue-500 animate-fadeIn">
+      <h2 className="font-cursive text-xl md:text-2xl">Personal Info</h2>
+      <div className="relative flex flex-col justify-center gap-5 h-full w-[90%] lg:w-[35%] text-blue-500 animate-fadeIn">
         <div className="flex gap-3 items-center">
           <label htmlFor="username">Username:</label>
           <input
             type="text"
-            className="w-[218px] p-1 text-blue-50 text-lg border-b-2 border-transparent bg-transparent  outline-none ease-in-out duration-500 focus:border-blue-500 focus:placeholder-transparent"
+            className="w-[180px] md:w-[218px] p-1 text-blue-50 text-lg border-b-2 border-transparent bg-transparent  outline-none ease-in-out duration-500 focus:border-blue-500 focus:placeholder-transparent"
             name="username"
             id="username"
             maxLength="25"
@@ -37,7 +37,7 @@ const PersonalInfo = () => {
         <hr />
         <div className="flex gap-3 items-center">
           <p>Speed: </p>
-          <p className="text-xl text-blue-50 ml-auto">
+          <p className="text-lg md:text-xl text-blue-50 ml-auto">
             {calculateAvgSpeed(userData)}
             <span className="text-base"> WPM</span>
           </p>
@@ -45,7 +45,7 @@ const PersonalInfo = () => {
         <hr />
         <div className="flex gap-3 items-center">
           <p>Accuracy: </p>
-          <p className="text-xl text-blue-50 ml-auto">
+          <p className="text-lg md:text-xl text-blue-50 ml-auto">
             {calculateAvgAccuracy(userData)}
             <span className="text-base"> %</span>
           </p>
@@ -53,7 +53,7 @@ const PersonalInfo = () => {
         <hr />
         <div className="flex gap-3 items-center">
           <p>Stars: </p>
-          <p className="text-xl text-blue-50  ml-auto">
+          <p className="text-lg md:text-xl text-blue-50  ml-auto">
             {getStarsEarned(userData)} / {getTotalTextCount(lessonText) * 3}
           </p>
           <img src="../../images/star.png" alt="Star" className="w-6 h-6" />
@@ -61,7 +61,7 @@ const PersonalInfo = () => {
         <hr />
         <div className="flex gap-3 items-center">
           <p>Problem Keys:</p>
-          <p className="text-xl text-blue-50  ml-auto">
+          <p className="text-lg md:text-xl text-blue-50  ml-auto">
             {showProblemKeys(userData)}
           </p>
         </div>
@@ -88,10 +88,12 @@ const PersonalInfo = () => {
         </div>
         <div
           id="popup"
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-2/3 h-64 w-[400px] flex-col p-5 text-blue-50 bg-gray-800 rounded-md hidden z-[2000] animate-fadeIn ease-in-out duration-500"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-2/3 h-64 w-[90vw] md:w-[400px] flex-col p-5 text-blue-50 bg-gray-800 rounded-md hidden z-[2000] animate-fadeIn ease-in-out duration-500"
         >
-          <h2 className="text-center mb-6 text-xl text-red-500">Warning!</h2>
-          <p className="flex-grow text-lg">
+          <h2 className="text-center mb-6 text-lg md:text-xl text-red-500">
+            Warning!
+          </h2>
+          <p className="flex-grow text-base md:text-lg">
             Will not be able to retrieve your progress once it&apos;s reset. Are
             you sure you want to do this?
           </p>

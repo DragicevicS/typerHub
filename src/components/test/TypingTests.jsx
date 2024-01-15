@@ -6,7 +6,7 @@ const TypingTests = ({ userData }) => {
 
   return (
     <>
-      <h2 className="font-cursive text-2xl mb-1">Typing Tests</h2>
+      <h2 className="font-cursive text-xl md:text-2xl mb-1">Typing Tests</h2>
       {testDifficulty.map((title, index) => (
         <TestDisplay
           key={index}
