@@ -97,29 +97,29 @@ const KeyboardLayout = ({ currentLetter, keyboardDisplay }) => {
           ))}
         </div>
       ))}
-      <div className="flex w-full gap-0.5 md:gap-3 justify-center flex-wrap text-base md:text-lg">
-        <div className="flex items-center gap-2">
-          <div className="bg-red-900 w-6 h-6 border-black border-2 rounded-md"></div>
+      <div className="flex w-full gap-1 md:gap-3 justify-center flex-wrap text-xs md:text-lg">
+        <div className="flex items-center gap-1 md:gap-2">
+          <div className="bg-red-900 w-5 h-5 border-black border-2 rounded-md"></div>
           <p>Pinkie |</p>
         </div>
-        <div className="flex items-center gap-2">
-          <div className="bg-gray-600 w-6 h-6 border-black border-2 rounded-md"></div>
+        <div className="flex items-center gap-1 md:gap-2">
+          <div className="bg-gray-600 w-5 h-5 border-black border-2 rounded-md"></div>
           <p>Ring |</p>
         </div>
-        <div className="flex items-center gap-2">
-          <div className="bg-amber-800 w-6 h-6 border-black border-2 rounded-md"></div>
+        <div className="flex items-center gap-1 md:gap-2">
+          <div className="bg-amber-800 w-5 h-5 border-black border-2 rounded-md"></div>
           <p>Middle |</p>
         </div>
-        <div className="flex items-center gap-2">
-          <div className="bg-indigo-900 w-6 h-6 border-black border-2 rounded-md"></div>
+        <div className="flex items-center gap-1 md:gap-2">
+          <div className="bg-indigo-900 w-5 h-5 border-black border-2 rounded-md"></div>
           <p>Index(left) |</p>
         </div>
-        <div className="flex items-center gap-2">
-          <div className="bg-blue-600 w-6 h-6 border-black border-2 rounded-md"></div>
+        <div className="flex items-center gap-1 md:gap-2">
+          <div className="bg-blue-600 w-5 h-5 border-black border-2 rounded-md"></div>
           <p>Index(right) |</p>
         </div>
-        <div className="flex items-center gap-2">
-          <div className="bg-teal-800 w-6 h-6 border-black border-2 rounded-md"></div>
+        <div className="flex items-center gap-1 md:gap-2">
+          <div className="bg-teal-800 w-5 h-5 border-black border-2 rounded-md"></div>
           <p>Thumb</p>
         </div>
       </div>

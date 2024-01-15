@@ -39,7 +39,7 @@ const Home = () => {
   };
 
   return (
-    <div className="flex flex-col w-full h-[100dvh]">
+    <div className="flex flex-col w-full h-full">
       <Header />
       <main className="flex-grow px-2 lg:px-9 py-2 lg:py-5 animate-fadeIn">
         <div className="flex flex-col md:flex-row justify-center gap-1 md:gap-0 w-full h-full">
